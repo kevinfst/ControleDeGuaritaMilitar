@@ -15,10 +15,10 @@ import java.sql.SQLException;
 public class conexDAO {
     private final String drive = "com.mysql.cj.jdbc.Driver";
     String port = "3306";
-    String nm_banco = "Soldeirs";
+    String nm_banco = "soldiers";
     private final String usuario = "root";
     private final String senha = "";
-    private final String url = "jdbc:mysql://localhost:\" + port + \"/\" + nm_banco + \"?user=\" + usuario + \"&password=\" + senha;";
+    private final String url = "jdbc:mysql://localhost:" + port + "/" + nm_banco + "?user=" + usuario + "&password=" + senha;
 
     public Connection conexBanco() {
         Connection conex = null;
@@ -33,9 +33,9 @@ public class conexDAO {
         return conex;
     }
 
-    public void desligarConexao(Connection con) {
+    public void desligarConexao(Connection conex) {
         try {
-            con.close();
+            conex.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
