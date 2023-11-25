@@ -97,6 +97,8 @@ public final class painel_jsp extends org.glassfish.wasp.runtime.HttpJspBase
          String usLogin = (String) session.getAttribute("nm_usuarioLogin");
          
          String usSenha = (String) session.getAttribute("cd_senha");
+         
+         String nm_patente = (String) session.getAttribute("nm_patente");
 
 
 
@@ -223,76 +225,76 @@ public final class painel_jsp extends org.glassfish.wasp.runtime.HttpJspBase
       out.write("                    <button type=\"button\" class=\"btn-close\" data-dismiss=\"modal\" aria-label=\"Close\"></button>\n");
       out.write("                </div>\n");
       out.write("\n");
-      out.write("                <!-- Corpo do Modal -->\n");
-      out.write("                <div class=\"modal-body\">\n");
-      out.write("                    <div class=\"form-group\">\n");
-      out.write("                        <label for=\"nomeInput\"><strong>Nome</strong></label>\n");
-      out.write("                        <input type=\"text\" class=\"form-control\" id=\"nomeInput\" value=\"");
+      out.write("                <form action=\"atualizarPerfil.jsp\" method=\"post\">\n");
+      out.write("                    <!-- Corpo do Modal -->\n");
+      out.write("                    <div class=\"modal-body\">\n");
+      out.write("                        <div class=\"form-group\">\n");
+      out.write("                            <label for=\"nomeInput\"><strong>Nome</strong></label>\n");
+      out.write("                            <input type=\"text\" class=\"form-control\" id=\"nomeInput\" name=\"nomeInput\" value=\"");
       out.print( nomeUsuario);
       out.write("\">\n");
-      out.write("                    </div>\n");
-      out.write("                    <div class=\"form-group\">\n");
-      out.write("                        <label for=\"idadeInput\"><strong>Idade</strong></label>\n");
-      out.write("                        <input type=\"text\" class=\"form-control\" id=\"idadeInput\" value=\"");
+      out.write("                        </div>\n");
+      out.write("                        <div class=\"form-group\">\n");
+      out.write("                            <label for=\"idadeInput\"><strong>Idade</strong></label>\n");
+      out.write("                            <input type=\"text\" class=\"form-control\" id=\"idadeInput\" name=\"idadeInput\" value=\"");
       out.print( idadeUsuario);
       out.write("\">\n");
-      out.write("                    </div>\n");
+      out.write("                        </div>\n");
       out.write("\n");
-      out.write("                    <div class=\"form-group\">\n");
-      out.write("                        <label for=\"nascimentoInput\"><strong>Data de Nascimento</strong></label>\n");
-      out.write("                        <input type=\"text\" class=\"form-control\" id=\"nascimentoInput\" value=\"");
+      out.write("                        <div class=\"form-group\">\n");
+      out.write("                            <label for=\"nascimentoInput\"><strong>Data de Nascimento</strong></label>\n");
+      out.write("                            <input type=\"text\" class=\"form-control\" id=\"nascimentoInput\" name=\"nascimentoInput\" value=\"");
       out.print( dataNas);
       out.write("\">\n");
-      out.write("\n");
-      out.write("                    </div>\n");
-      out.write("                    <div class=\"form-group\">\n");
-      out.write("                        <label for=\"nomeGuerraInput\"><strong>Nome de Guerra</strong></label>\n");
-      out.write("                        <input type=\"text\" class=\"form-control\" id=\"nomeGuerraInput\" value=\"");
+      out.write("                        </div>\n");
+      out.write("                        <div class=\"form-group\">\n");
+      out.write("                            <label for=\"nomeGuerraInput\"><strong>Nome de Guerra</strong></label>\n");
+      out.write("                            <input type=\"text\" class=\"form-control\" id=\"nomeGuerraInput\" name=\"nomeGuerraInput\" value=\"");
       out.print( nomeGuerra);
       out.write("\">\n");
-      out.write("                    </div>\n");
+      out.write("                        </div>\n");
       out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("                    <label for=\"patenteInput\"><strong>Patente</strong></label>\n");
-      out.write("                    <select id=\"nm_patente\" aria-label=\"Escolha a Patente\" name=\"nm_patente\" class=\"form-control form-control-lg form-select\" required>\n");
-      out.write("                        <option selected disabled value=\"\">Escolha a patente</option>\n");
-      out.write("                        <option value=\"sentinela\" ");
+      out.write("                        <div class=\"form-group\">\n");
+      out.write("                            <label for=\"patenteInput\"><strong>Patente</strong></label>\n");
+      out.write("                            <select id=\"nm_patente\" aria-label=\"Escolha a Patente\" name=\"nm_patente\" class=\"form-control form-control-lg form-select\" required value=\"");
+      out.print( nm_patente);
+      out.write("\">\n");
+      out.write("                                <option selected disabled >Escolha a patente</option>\n");
+      out.write("                                <option value=\"sentinela\" ");
       out.print( "sentinela".equals(nomePatente) ? "selected" : "" );
       out.write(">Sentinela</option>\n");
-      out.write("                        <option value=\"comandante\" ");
+      out.write("                                <option value=\"comandante\" ");
       out.print( "comandante".equals(nomePatente) ? "selected" : "" );
       out.write(">Comandante</option>\n");
-      out.write("                    </select>\n");
+      out.write("                            </select>\n");
+      out.write("                        </div>\n");
       out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("                    <div class=\"form-group\">\n");
-      out.write("                        <label for=\"loginInput\"><strong>Login</strong></label>\n");
-      out.write("                        <input type=\"text\" class=\"form-control\" id=\"loginInput\" value=\"");
+      out.write("                        <div class=\"form-group\">\n");
+      out.write("                            <label for=\"loginInput\"><strong>Login</strong></label>\n");
+      out.write("                            <input type=\"text\" class=\"form-control\" id=\"loginInput\" name=\"loginInput\" value=\"");
       out.print( usLogin);
       out.write("\">\n");
-      out.write("                    </div>\n");
-      out.write("                    <div class=\"form-group\">\n");
-      out.write("                        <label for=\"senhaInput\"><strong>Senha</strong></label>\n");
-      out.write("                        <div class=\"input-group\">\n");
-      out.write("                            <input type=\"password\" class=\"form-control\" id=\"senhaInput\" value=\"");
+      out.write("                            <input type=\"hidden\" class=\"form-control\" id=\"usuarioID\" name=\"usuarioID\" value=\"");
+      out.print( usuarioID);
+      out.write("\">\n");
+      out.write("                        </div>\n");
+      out.write("                        <div class=\"form-group\">\n");
+      out.write("                            <label for=\"senhaInput\"><strong>Senha</strong></label>\n");
+      out.write("                            <div class=\"input-group\">\n");
+      out.write("                                <input type=\"password\" class=\"form-control\" id=\"senhaInput\" name=\"senhaInput\" value=\"");
       out.print( usSenha);
       out.write("\" readonly>\n");
-      out.write("                            <button class=\"btn btn-secondary\" type=\"button\" id=\"mostrarSenhaBtn\">Mostrar</button>\n");
+      out.write("                                <button class=\"btn btn-secondary\" type=\"button\" id=\"mostrarSenhaBtn\">Mostrar</button>\n");
+      out.write("                            </div>\n");
       out.write("                        </div>\n");
       out.write("                    </div>\n");
-      out.write("                    <!-- Adicione mais campos conforme necessário -->\n");
-      out.write("                </div>\n");
       out.write("\n");
-      out.write("                <!-- Rodapé do Modal -->\n");
-      out.write("                <div class=\"modal-footer\">\n");
-      out.write("                    <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Salvar</button>\n");
-      out.write("                    <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Fechar</button>\n");
-      out.write("                </div>\n");
+      out.write("                    <!-- Rodapé do Modal -->\n");
+      out.write("                    <div class=\"modal-footer\">\n");
+      out.write("                        <button type=\"submit\" class=\"btn btn-secondary\">Salvar</button>\n");
+      out.write("                        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Fechar</button>\n");
+      out.write("                    </div>\n");
+      out.write("                </form>\n");
       out.write("\n");
       out.write("\n");
       out.write("            </div>\n");
@@ -310,7 +312,6 @@ public final class painel_jsp extends org.glassfish.wasp.runtime.HttpJspBase
       out.write("    <div class=\"modal\" id=\"solicitacoesTrocaModal\">\n");
       out.write("        <div class=\"modal-dialog modal-lg\">\n");
       out.write("            <div class=\"modal-content\">\n");
-      out.write("\n");
       out.write("\n");
       out.write("                <!-- Cabeçalho do Modal -->\n");
       out.write("                <div class=\"modal-header\">\n");
@@ -332,65 +333,75 @@ public final class painel_jsp extends org.glassfish.wasp.runtime.HttpJspBase
       out.write("                            </tr>\n");
       out.write("                        </thead>\n");
       out.write("                        <tbody>\n");
-      out.write("                            \n");
       out.write("                            ");
- try {
-                            Class.forName("com.mysql.cj.jdbc.Driver");
-                                   Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
-                                   Statement stmt = conn.createStatement();
-                                   String query = "SELECT * FROM usuario";
-                                   ResultSet rs = stmt.executeQuery(query); 
+ 
+                                try {
+                                    Class.forName("com.mysql.cj.jdbc.Driver");
+                                    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+                                    Statement stmt = conn.createStatement();
+                                    String query = "SELECT troca_horario.*, solicitante.nm_usuario AS solicitante_nome, destinatario.nm_usuario AS destinatario_nome FROM troca_horario INNER JOIN usuario AS solicitante ON troca_horario.id_usuario_solicitante = solicitante.id_usuario INNER JOIN usuario AS destinatario ON troca_horario.id_usuario_destinatario = destinatario.id_usuario";
+                                    ResultSet rs = stmt.executeQuery(query);
+                            
+                                    while (rs.next()) { 
+                                        String solicitante = rs.getString("solicitante_nome");
+                                        String destinatario = rs.getString("destinatario_nome");
+                                        String id_usuario_solicitante = rs.getString("id_usuario_solicitante");
+                                        String id_usuario_destinatario = rs.getString("id_usuario_destinatario");
+                                        String data_solicitacao = rs.getString("data_solicitacao");
+                                        String status_solicitacao = rs.getString("status_solicitacao");
+                            
       out.write("\n");
-      out.write("                                   \n");
-      out.write("                                   ");
-while (rs.next()) { 
-                                     String nm_usuario = rs.getString("nm_usuario");
-                                       String id_usuario = rs.getString("id_usuario");
       out.write("\n");
-      out.write("                                    ");
-      out.print( nm_usuario );
+      out.write("                            <tr>\n");
+      out.write("                                <td>");
+      out.print( id_usuario_solicitante );
+      out.write("</td>\n");
+      out.write("                                <td>");
+      out.print( solicitante );
+      out.write("</td>\n");
+      out.write("                                <td>");
+      out.print( data_solicitacao );
+      out.write("</td>\n");
+      out.write("                                <td>");
+      out.print( status_solicitacao );
+      out.write("</td>\n");
+      out.write("                                <td>\n");
+      out.write("                                    <form action=\"processar_solicitacao.jsp\" method=\"post\">\n");
+      out.write("                                        <input type=\"hidden\" name=\"id_solicitacao\" value=\"");
+      out.print( id_usuario_solicitante );
+      out.write("\">\n");
+      out.write("                                        <button class=\"btn btn-success\" type=\"submit\" name=\"acao\" value=\"aceitar\">Aceitar</button>\n");
+      out.write("                                        <button class=\"btn btn-danger\" type=\"submit\" name=\"acao\" value=\"recusar\">Recusar</button>\n");
+      out.write("                                    </form>\n");
+      out.write("                                </td>\n");
+      out.write("                            </tr>\n");
       out.write("\n");
-      out.write("                                    ");
- } 
-      out.write("\n");
-      out.write("                                    ");
-
-                                        rs.close();
-                                        stmt.close();
-                                        conn.close();
-                                    } catch (Exception e) {
-                                        e.printStackTrace();
+      out.write("                            ");
+ 
                                     }
+                                    rs.close();
+                                    stmt.close();
+                                    conn.close();
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
                             
       out.write("\n");
       out.write("                            <!-- Adicione linhas conforme necessário com os dados das solicitações -->\n");
-      out.write("                            <!-- Exemplo:\n");
-      out.write("                                 <tr>\n");
-      out.write("                                    <td>1</td>\n");
-      out.write("                                    <td>Soldado1</td>\n");
-      out.write("                                    <td>2023-11-24 12:30:00</td>\n");
-      out.write("                                    <td>Pendente</td>\n");
-      out.write("                                    <td>\n");
-      out.write("                                        <button class=\"btn btn-success\">Aceitar</button>\n");
-      out.write("                                        <button class=\"btn btn-danger\">Recusar</button>\n");
-      out.write("                                    </td>\n");
-      out.write("                                 </tr>\n");
-      out.write("                            -->\n");
+      out.write("                            <!-- Exemplo: -->\n");
+      out.write("\n");
       out.write("                        </tbody>\n");
       out.write("                    </table>\n");
       out.write("                </div>\n");
       out.write("\n");
       out.write("                <!-- Rodapé do Modal -->\n");
       out.write("                <div class=\"modal-footer\">\n");
-      out.write("\n");
-      out.write("                    <button class=\"btn btn-success\">Aceitar</button>\n");
-      out.write("                    <button class=\"btn btn-danger\">Recusar</button>\n");
-      out.write("\n");
       out.write("                    <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Fechar</button>\n");
       out.write("                </div>\n");
       out.write("            </div>\n");
       out.write("        </div>\n");
       out.write("    </div>\n");
+      out.write("\n");
       out.write("\n");
       out.write("\n");
       out.write("\n");
@@ -492,8 +503,8 @@ while (rs.next()) {
       out.write("                            <div class=\"mb-3\">\n");
       out.write("                                <label for=\"tipo_escala\" class=\"form-label\">Tipo de Escala</label>\n");
       out.write("                                <select class=\"form-select\" id=\"tipo_escala\" name=\"tipo_escala\">  \n");
-      out.write("                                    <option value=\"cinza\">Cinza</option>\n");
-      out.write("                                    <option value=\"vermelha\">Vermelha</option>\n");
+      out.write("                                    <option value=\"Cinza\">Cinza</option>\n");
+      out.write("                                    <option value=\"Vermelha\">Vermelha</option>\n");
       out.write("\n");
       out.write("                                </select>\n");
       out.write("                            </div>\n");
@@ -515,7 +526,7 @@ while (rs.next()) {
       out.write("                                </select>\n");
       out.write("\n");
       out.write("                            </div>\n");
-      out.write("       \n");
+      out.write("\n");
       out.write("                            <button type=\"submit\" class=\"btn btn-primary\">Adicionar</button>\n");
       out.write("                            ");
 
@@ -573,7 +584,7 @@ String diaHoraGuarda = rs.getString("dia_hora_guarda");
 
 // Supondo que "diaHoraGuarda" seja uma string representando a data e hora
 SimpleDateFormat formatoOriginal = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-SimpleDateFormat formatoNovo = new SimpleDateFormat("dd/MM/yyyy | HH:mm");
+SimpleDateFormat formatoNovo = new SimpleDateFormat("dd/MM/yyyy");
 
 Date data;
     
@@ -627,13 +638,13 @@ Date data;
       out.write("                        ");
  if (loggedInUserId != rs.getInt("id_usuario")) { 
       out.write("\n");
-      out.write("                        \n");
+      out.write("\n");
       out.write("                        <form action=\"solicitarTroca.jsp\" method=\"post\">\n");
       out.write("                            <input type=\"hidden\" name=\"idEscala\" value=\"");
-      out.print( idEscala );
+      out.print( rs.getInt("id_usuario") );
       out.write("\">\n");
       out.write("                            <button class=\"btn btn-primary\" type=\"submit\" value=\"");
-      out.print( idEscala );
+      out.print( rs.getInt("id_usuario") );
       out.write("\">Solicitar Troca</button>\n");
       out.write("                        </form>\n");
       out.write("                        ");

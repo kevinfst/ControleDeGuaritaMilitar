@@ -44,6 +44,8 @@
          String usLogin = (String) session.getAttribute("nm_usuarioLogin");
          
          String usSenha = (String) session.getAttribute("cd_senha");
+         
+         String nm_patente = (String) session.getAttribute("nm_patente");
 
 
 
@@ -163,60 +165,56 @@
                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                 </div>
 
-                <!-- Corpo do Modal -->
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="nomeInput"><strong>Nome</strong></label>
-                        <input type="text" class="form-control" id="nomeInput" value="<%= nomeUsuario%>">
-                    </div>
-                    <div class="form-group">
-                        <label for="idadeInput"><strong>Idade</strong></label>
-                        <input type="text" class="form-control" id="idadeInput" value="<%= idadeUsuario%>">
-                    </div>
+                <form action="atualizarPerfil.jsp" method="post">
+                    <!-- Corpo do Modal -->
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="nomeInput"><strong>Nome</strong></label>
+                            <input type="text" class="form-control" id="nomeInput" name="nomeInput" value="<%= nomeUsuario%>">
+                        </div>
+                        <div class="form-group">
+                            <label for="idadeInput"><strong>Idade</strong></label>
+                            <input type="text" class="form-control" id="idadeInput" name="idadeInput" value="<%= idadeUsuario%>">
+                        </div>
 
-                    <div class="form-group">
-                        <label for="nascimentoInput"><strong>Data de Nascimento</strong></label>
-                        <input type="text" class="form-control" id="nascimentoInput" value="<%= dataNas%>">
+                        <div class="form-group">
+                            <label for="nascimentoInput"><strong>Data de Nascimento</strong></label>
+                            <input type="text" class="form-control" id="nascimentoInput" name="nascimentoInput" value="<%= dataNas%>">
+                        </div>
+                        <div class="form-group">
+                            <label for="nomeGuerraInput"><strong>Nome de Guerra</strong></label>
+                            <input type="text" class="form-control" id="nomeGuerraInput" name="nomeGuerraInput" value="<%= nomeGuerra%>">
+                        </div>
 
-                    </div>
-                    <div class="form-group">
-                        <label for="nomeGuerraInput"><strong>Nome de Guerra</strong></label>
-                        <input type="text" class="form-control" id="nomeGuerraInput" value="<%= nomeGuerra%>">
-                    </div>
+                        <div class="form-group">
+                            <label for="patenteInput"><strong>Patente</strong></label>
+                            <select id="nm_patente" aria-label="Escolha a Patente" name="nm_patente" class="form-control form-control-lg form-select" required value="<%= nm_patente%>">
+                                <option selected disabled >Escolha a patente</option>
+                                <option value="sentinela" <%= "sentinela".equals(nomePatente) ? "selected" : "" %>>Sentinela</option>
+                                <option value="comandante" <%= "comandante".equals(nomePatente) ? "selected" : "" %>>Comandante</option>
+                            </select>
+                        </div>
 
-
-
-
-                    <label for="patenteInput"><strong>Patente</strong></label>
-                    <select id="nm_patente" aria-label="Escolha a Patente" name="nm_patente" class="form-control form-control-lg form-select" required>
-                        <option selected disabled value="">Escolha a patente</option>
-                        <option value="sentinela" <%= "sentinela".equals(nomePatente) ? "selected" : "" %>>Sentinela</option>
-                        <option value="comandante" <%= "comandante".equals(nomePatente) ? "selected" : "" %>>Comandante</option>
-                    </select>
-
-
-
-
-
-                    <div class="form-group">
-                        <label for="loginInput"><strong>Login</strong></label>
-                        <input type="text" class="form-control" id="loginInput" value="<%= usLogin%>">
-                    </div>
-                    <div class="form-group">
-                        <label for="senhaInput"><strong>Senha</strong></label>
-                        <div class="input-group">
-                            <input type="password" class="form-control" id="senhaInput" value="<%= usSenha%>" readonly>
-                            <button class="btn btn-secondary" type="button" id="mostrarSenhaBtn">Mostrar</button>
+                        <div class="form-group">
+                            <label for="loginInput"><strong>Login</strong></label>
+                            <input type="text" class="form-control" id="loginInput" name="loginInput" value="<%= usLogin%>">
+                            <input type="hidden" class="form-control" id="usuarioID" name="usuarioID" value="<%= usuarioID%>">
+                        </div>
+                        <div class="form-group">
+                            <label for="senhaInput"><strong>Senha</strong></label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="senhaInput" name="senhaInput" value="<%= usSenha%>" readonly>
+                                <button class="btn btn-secondary" type="button" id="mostrarSenhaBtn">Mostrar</button>
+                            </div>
                         </div>
                     </div>
-                    <!-- Adicione mais campos conforme necessário -->
-                </div>
 
-                <!-- Rodapé do Modal -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Salvar</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                </div>
+                    <!-- Rodapé do Modal -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-secondary">Salvar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </form>
 
 
             </div>
@@ -234,7 +232,6 @@
     <div class="modal" id="solicitacoesTrocaModal">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-
 
                 <!-- Cabeçalho do Modal -->
                 <div class="modal-header">
@@ -256,57 +253,61 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <% 
+                                try {
+                                    Class.forName("com.mysql.cj.jdbc.Driver");
+                                    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+                                    Statement stmt = conn.createStatement();
+                                    String query = "SELECT troca_horario.*, solicitante.nm_usuario AS solicitante_nome, destinatario.nm_usuario AS destinatario_nome FROM troca_horario INNER JOIN usuario AS solicitante ON troca_horario.id_usuario_solicitante = solicitante.id_usuario INNER JOIN usuario AS destinatario ON troca_horario.id_usuario_destinatario = destinatario.id_usuario";
+                                    ResultSet rs = stmt.executeQuery(query);
+                            
+                                    while (rs.next()) { 
+                                        String solicitante = rs.getString("solicitante_nome");
+                                        String destinatario = rs.getString("destinatario_nome");
+                                        String id_usuario_solicitante = rs.getString("id_usuario_solicitante");
+                                        String id_usuario_destinatario = rs.getString("id_usuario_destinatario");
+                                        String data_solicitacao = rs.getString("data_solicitacao");
+                                        String status_solicitacao = rs.getString("status_solicitacao");
+                            %>
 
-                            <% try {
-                            Class.forName("com.mysql.cj.jdbc.Driver");
-                                   Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
-                                   Statement stmt = conn.createStatement();
-                                   String query = "SELECT * FROM `troca_horario`";
-                                   ResultSet rs = stmt.executeQuery(query); %>
+                            <tr>
+                                <td><%= id_usuario_solicitante %></td>
+                                <td><%= solicitante %></td>
+                                <td><%= data_solicitacao %></td>
+                                <td><%= status_solicitacao %></td>
+                                <td>
+                                    <form action="processar_solicitacao.jsp" method="post">
+                                        <input type="hidden" name="id_solicitacao" value="<%= id_usuario_solicitante %>">
+                                        <button class="btn btn-success" type="submit" name="acao" value="aceitar">Aceitar</button>
+                                        <button class="btn btn-danger" type="submit" name="acao" value="recusar">Recusar</button>
+                                    </form>
+                                </td>
+                            </tr>
 
-                            <%while (rs.next()) { 
-                              String nm_usuario = rs.getString("nm_usuario");          
-                              String nm_usuario = rs.getString("nm_usuario");
-                              
-                                       
-                             <%= nm_usuario %>
-                            <% } %>
-                            <%
-                                rs.close();
-                                stmt.close();
-                                conn.close();
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
+                            <% 
+                                    }
+                                    rs.close();
+                                    stmt.close();
+                                    conn.close();
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
                             %>
                             <!-- Adicione linhas conforme necessário com os dados das solicitações -->
-                            <!-- Exemplo:
-                                 <tr>
-                                    <td>1</td>
-                                    <td>Soldado1</td>
-                                    <td>2023-11-24 12:30:00</td>
-                                    <td>Pendente</td>
-                                    <td>
-                                        <button class="btn btn-success">Aceitar</button>
-                                        <button class="btn btn-danger">Recusar</button>
-                                    </td>
-                                 </tr>
-                            -->
+                            <!-- Exemplo: -->
+
                         </tbody>
                     </table>
                 </div>
 
                 <!-- Rodapé do Modal -->
                 <div class="modal-footer">
-
-                    <button class="btn btn-success">Aceitar</button>
-                    <button class="btn btn-danger">Recusar</button>
-
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                 </div>
             </div>
         </div>
     </div>
+
 
 
 
@@ -393,8 +394,8 @@
                             <div class="mb-3">
                                 <label for="tipo_escala" class="form-label">Tipo de Escala</label>
                                 <select class="form-select" id="tipo_escala" name="tipo_escala">  
-                                    <option value="cinza">Cinza</option>
-                                    <option value="vermelha">Vermelha</option>
+                                    <option value="Cinza">Cinza</option>
+                                    <option value="Vermelha">Vermelha</option>
 
                                 </select>
                             </div>
@@ -471,7 +472,7 @@ String diaHoraGuarda = rs.getString("dia_hora_guarda");
 
 // Supondo que "diaHoraGuarda" seja uma string representando a data e hora
 SimpleDateFormat formatoOriginal = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-SimpleDateFormat formatoNovo = new SimpleDateFormat("dd/MM/yyyy | HH:mm");
+SimpleDateFormat formatoNovo = new SimpleDateFormat("dd/MM/yyyy");
 
 Date data;
     
@@ -502,8 +503,8 @@ Date data;
                         <% if (loggedInUserId != rs.getInt("id_usuario")) { %>
 
                         <form action="solicitarTroca.jsp" method="post">
-                            <input type="hidden" name="idEscala" value="<%= idEscala %>">
-                            <button class="btn btn-primary" type="submit" value="<%= idEscala %>">Solicitar Troca</button>
+                            <input type="hidden" name="idEscala" value="<%= rs.getInt("id_usuario") %>">
+                            <button class="btn btn-primary" type="submit" value="<%= rs.getInt("id_usuario") %>">Solicitar Troca</button>
                         </form>
                         <% } %>
 

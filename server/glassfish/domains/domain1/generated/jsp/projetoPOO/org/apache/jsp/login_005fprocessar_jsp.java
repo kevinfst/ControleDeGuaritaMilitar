@@ -95,6 +95,11 @@ try {
     
     
     
+    String nm_patente = rs.getString("nm_patente");
+    session.setAttribute("nm_patente", nm_patente);
+    
+    
+    
 
        
 
