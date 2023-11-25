@@ -26319,3 +26319,21 @@ file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domai
 [2023-11-24T21:51:27.193152-03:00] [GF 7.0.3] [WARNING] [] [jakarta.enterprise.system.container.web.com.sun.web.security] [tid: _ThreadID=97 _ThreadName=admin-listener(3)] [levelValue: 900] [[
   Context path from ServletContext:  differs from path from bundle: /]]
 
+[2023-11-24T22:30:37.156120-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=99 _ThreadName=admin-listener(5)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@430d3021[name=/projetoPOO], urls=[
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/classes/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/lib/mysql-connector-j-8.1.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/ejb/projetoPOO//
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/projetoPOO/
+][delegate=true, context=/projetoPOO, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=17, pathTimestamps.size=1, resourceEntryCache.size=297]]]
+
+[2023-11-24T22:30:37.533077-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=192 _ThreadName=http-listener-1(4)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-24T22:30:38.103553-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=99 _ThreadName=admin-listener(5)] [levelValue: 800] [[
+  Loading application [projetoPOO] at [/projetoPOO]]]
+
+[2023-11-24T22:30:38.143581-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=99 _ThreadName=admin-listener(5)] [levelValue: 800] [[
+  projetoPOO was successfully deployed in 1.052 milliseconds.]]
+

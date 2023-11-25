@@ -177,18 +177,27 @@
                     <div class="form-group">
                         <label for="nascimentoInput"><strong>Data de Nascimento</strong></label>
                         <input type="text" class="form-control" id="nascimentoInput" value="<%= dataNas%>">
-                        
+
                     </div>
                     <div class="form-group">
                         <label for="nomeGuerraInput"><strong>Nome de Guerra</strong></label>
                         <input type="text" class="form-control" id="nomeGuerraInput" value="<%= nomeGuerra%>">
                     </div>
+
+
+
+
                     <label for="patenteInput"><strong>Patente</strong></label>
-                    <select id="nm_patente" aria-label="Escolha a Patente" name="nm_patente" class="form-control form-control-lg form-select" required>
-                        <option selected disabled value="">Escolha a patente</option>
-                        <option value="sentinela" <%= "sentinela".equals(nomePatente) ? "selected" : "" %>>Sentinela</option>
-                        <option value="comandante" <%= "comandante".equals(nomePatente) ? "selected" : "" %>>Comandante</option>
-                    </select>
+                <select id="nm_patente" aria-label="Escolha a Patente" name="nm_patente" class="form-control form-control-lg form-select" required>
+                         <option selected disabled value="">Escolha a patente</option>
+                         <option value="sentinela" <%= "sentinela".equals(nomePatente) ? "selected" : "" %>>Sentinela</option>
+                         <option value="comandante" <%= "comandante".equals(nomePatente) ? "selected" : "" %>>Comandante</option>
+                         </select>
+
+
+                    
+
+
                     <div class="form-group">
                         <label for="loginInput"><strong>Login</strong></label>
                         <input type="text" class="form-control" id="loginInput" value="<%= usLogin%>">
@@ -325,70 +334,67 @@
         <br>
 
         <!-- Add Modal -->
+
         <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="addModalLabel">Adicionar Novo Alimento</h5>
+                        <h5 class="modal-title" id="addModalLabel">Adicionar Nova Escala</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <!-- Add form fields here to input a new food item -->
                         <form method="post" action="addRecord.jsp">
                             <div class="mb-3">
-                                <label for="nome" class="form-label">Nome:</label>
-                                <input type="text" class="form-control" id="nome" name="nome">
+                                <label for="nome_soldado" class="form-label">Nome do Soldado</label>
+                                <select class="form-select" id="nome_soldado" name="Soldado">  
+                                    <option value="Sentinela">Sentinela</option>
+                                    <option value="comandante">Comandante</option>
+                                </select>
+                            </div>
+
+                    
+
+
+                            <div class="mb-3">
+
+                            </div>
+                           
+                            <div class="mb-3">
+
                             </div>
                             <div class="mb-3">
-                                <label for="descricao" class="form-label">Descrição:</label>
-                                <textarea class="form-control" id="descricao" name="descricao" rows="3"></textarea>
+                                <label for="dia_hora_guarda" class="form-label">Data e Hora da Guarda</label>
+                                <input type="date" class="form-control" id="dia_hora_guarda" name="dia_hora_guarda">
                             </div>
                             <div class="mb-3">
-                                <label for="preco" class="form-label">Preço:</label>
-                                <input type="text" class="form-control" id="preco" name="preco">
-                            </div>
-                            <div class="mb-3">
-                                <label for="categoria" class="form-label">Categoria:</label>
-                                <select class="form-select" id="categoria" name="categoria">
-                                    <option value="Frutas">Frutas</option>
-                                    <option value="Verduras">Verduras</option>
-                                    <option value="Carnes">Carnes</option>
-                                    <option value="Pescados e mariscos">Pescados e mariscos</option>
-                                    <option value="Lácteos">Lácteos</option>
-                                    <option value="Grãos">Grãos</option>
-                                    <option value="Legumes">Legumes</option>
-                                    <option value="Produtos processados">Produtos processados</option>
-                                    <option value="Doces e sobremesas">Doces e sobremesas</option>
-                                    <option value="Bebidas">Bebidas</option>
+                                <label for="tipo_escala" class="form-label">Tipo de Escala</label>
+                                <select class="form-select" id="tipo_escala" name="tipo_escala">  
+                                    <option value="cinza">Cinza</option>
+                                    <option value="vermelha">Vermelha</option>
+
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label for="origem" class="form-label">Origem:</label>
-                                <select class="form-select" id="origem" name="origem">
-                                    <option value="Local">Local</option>
-                                    <option value="Nacional">Nacional</option>
-                                    <option value="Importado">Importado</option>
+                                <label for="corte_cabelo_conformidade" class="form-label">Corte de Cabelo</label>
+                                <select class="form-select" id="corte_cabelo_conformidade" name="corte_cabelo_conformidade">  
+                                    <option value="conforme">Conforme</option>
+                                    <option value="nao_conforme">Não Conforme</option>
+
                                 </select>
+
                             </div>
                             <div class="mb-3">
-                                <label for="data_validade" class="form-label">Data de Validade:</label>
-                                <input type="date" class="form-control" id="data_validade" name="data_validade">
+                                <label for="identificacao_militar_conformidade" class="form-label">Identificação Militar</label>
+                                <select class="form-select" id="identificacao_militar_conformidade" name="identificacao_militar_conformidade">  
+                                    <option value="conforme">Conforme</option>
+                                    <option value="nao_conforme">Não Conforme</option>
+
+                                </select>
+
                             </div>
                             <div class="mb-3">
-                                <label for="calorias" class="form-label">Calorias:</label>
-                                <input type="text" class="form-control" id="calorias" name="calorias">
-                            </div>
-                            <div class="mb-3">
-                                <label for="peso_gramas" class="form-label">Peso (gramas):</label>
-                                <input type="text" class="form-control" id="peso_gramas" name="peso_gramas">
-                            </div>
-                            <div class="mb-3">
-                                <label for="fabricante" class="form-label">Fabricante:</label>
-                                <input type="text" class="form-control" id="fabricante" name="fabricante">
-                            </div>
-                            <div class="mb-3">
-                                <label for="codigo_de_barras" class="form-label"  >Código de Barras:</label>
-                                <input type="text" placeholder="Gerado automaticamente" class="form-control" disabled="" id="codigo_de_barras" name="codigo_de_barras">
+
                             </div>
                             <button type="submit" class="btn btn-primary">Adicionar</button>
                         </form>
@@ -396,6 +402,7 @@
                 </div>
             </div>
         </div>
+
 
 
 
@@ -424,7 +431,7 @@
                     String query = "SELECT * FROM escala_guarda INNER JOIN usuario ON escala_guarda.id_usuario = usuario.id_usuario";
                     ResultSet rs = stmt.executeQuery(query);
 
-                    while (rs.next()) {
+                    while (rs.next()) {  
                         int idEscala = rs.getInt("id");
                         String nomeSoldado = rs.getString("nm_usuario");
                         String patente = rs.getString("nm_patente");
