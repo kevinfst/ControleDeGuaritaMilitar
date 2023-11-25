@@ -64,7 +64,7 @@
   <servers>
     <server config-ref="server-config" name="server">
       <application-ref ref="__admingui" virtual-servers="__asadmin"></application-ref>
-      <application-ref ref="alimentos" virtual-servers="server"></application-ref>
+      <application-ref ref="projetoPOO" virtual-servers="server"></application-ref>
       <resource-ref ref="jdbc/__TimerPool"></resource-ref>
       <resource-ref ref="jdbc/__default"></resource-ref>
       <resource-ref ref="jdbc/sample"></resource-ref>
@@ -484,12 +484,12 @@
   </secure-admin>
   <clusters></clusters>
   <applications>
-    <application context-root="/alimentos" object-type="user" name="alimentos" directory-deployed="true" location="file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/">
+    <application context-root="/projetoPOO" object-type="user" name="projetoPOO" directory-deployed="true" location="file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/">
       <property name="archiveType" value="war"></property>
       <property name="defaultAppName" value="web"></property>
       <property name="appLocation" value="file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/"></property>
       <property name="keepSessions" value="true"></property>
-      <module name="alimentos">
+      <module name="projetoPOO">
         <engine sniffer="security"></engine>
         <engine sniffer="web"></engine>
       </module>
