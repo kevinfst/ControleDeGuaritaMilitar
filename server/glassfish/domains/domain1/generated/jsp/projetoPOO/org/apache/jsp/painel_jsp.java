@@ -256,18 +256,18 @@ public final class painel_jsp extends org.glassfish.wasp.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("                    <label for=\"patenteInput\"><strong>Patente</strong></label>\n");
-      out.write("                <select id=\"nm_patente\" aria-label=\"Escolha a Patente\" name=\"nm_patente\" class=\"form-control form-control-lg form-select\" required>\n");
-      out.write("                         <option selected disabled value=\"\">Escolha a patente</option>\n");
-      out.write("                         <option value=\"sentinela\" ");
+      out.write("                    <select id=\"nm_patente\" aria-label=\"Escolha a Patente\" name=\"nm_patente\" class=\"form-control form-control-lg form-select\" required>\n");
+      out.write("                        <option selected disabled value=\"\">Escolha a patente</option>\n");
+      out.write("                        <option value=\"sentinela\" ");
       out.print( "sentinela".equals(nomePatente) ? "selected" : "" );
       out.write(">Sentinela</option>\n");
-      out.write("                         <option value=\"comandante\" ");
+      out.write("                        <option value=\"comandante\" ");
       out.print( "comandante".equals(nomePatente) ? "selected" : "" );
       out.write(">Comandante</option>\n");
-      out.write("                         </select>\n");
+      out.write("                    </select>\n");
       out.write("\n");
       out.write("\n");
-      out.write("                    \n");
+      out.write("\n");
       out.write("\n");
       out.write("\n");
       out.write("                    <div class=\"form-group\">\n");
@@ -332,6 +332,37 @@ public final class painel_jsp extends org.glassfish.wasp.runtime.HttpJspBase
       out.write("                            </tr>\n");
       out.write("                        </thead>\n");
       out.write("                        <tbody>\n");
+      out.write("                            \n");
+      out.write("                            ");
+ try {
+                            Class.forName("com.mysql.cj.jdbc.Driver");
+                                   Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+                                   Statement stmt = conn.createStatement();
+                                   String query = "SELECT * FROM usuario";
+                                   ResultSet rs = stmt.executeQuery(query); 
+      out.write("\n");
+      out.write("                                   \n");
+      out.write("                                   ");
+while (rs.next()) { 
+                                     String nm_usuario = rs.getString("nm_usuario");
+                                       String id_usuario = rs.getString("id_usuario");
+      out.write("\n");
+      out.write("                                    ");
+      out.print( nm_usuario );
+      out.write("\n");
+      out.write("                                    ");
+ } 
+      out.write("\n");
+      out.write("                                    ");
+
+                                        rs.close();
+                                        stmt.close();
+                                        conn.close();
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+                            
+      out.write("\n");
       out.write("                            <!-- Adicione linhas conforme necessário com os dados das solicitações -->\n");
       out.write("                            <!-- Exemplo:\n");
       out.write("                                 <tr>\n");
@@ -425,24 +456,35 @@ public final class painel_jsp extends org.glassfish.wasp.runtime.HttpJspBase
       out.write("                    <div class=\"modal-body\">\n");
       out.write("                        <!-- Add form fields here to input a new food item -->\n");
       out.write("                        <form method=\"post\" action=\"addRecord.jsp\">\n");
+      out.write("                            ");
+ try {
+                            Class.forName("com.mysql.cj.jdbc.Driver");
+                                   Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+                                   Statement stmt = conn.createStatement();
+                                   String query = "SELECT * FROM usuario";
+                                   ResultSet rs = stmt.executeQuery(query); 
+      out.write("\n");
       out.write("                            <div class=\"mb-3\">\n");
       out.write("                                <label for=\"nome_soldado\" class=\"form-label\">Nome do Soldado</label>\n");
-      out.write("                                <select class=\"form-select\" id=\"nome_soldado\" name=\"Soldado\">  \n");
-      out.write("                                    <option value=\"Sentinela\">Sentinela</option>\n");
-      out.write("                                    <option value=\"comandante\">Comandante</option>\n");
+      out.write("                                <select class=\"form-select\" id=\"nome_soldado\" name=\"id_usuario\"> \n");
+      out.write("                                    ");
+while (rs.next()) { 
+                                     String nm_usuario = rs.getString("nm_usuario");
+                                       String id_usuario = rs.getString("id_usuario");
+      out.write("\n");
+      out.write("                                    <option value=\"");
+      out.print( id_usuario );
+      out.write('"');
+      out.write('>');
+      out.print( nm_usuario );
+      out.write("</option>\n");
+      out.write("                                    ");
+ } 
+      out.write("\n");
       out.write("                                </select>\n");
       out.write("                            </div>\n");
       out.write("\n");
-      out.write("                    \n");
       out.write("\n");
-      out.write("\n");
-      out.write("                            <div class=\"mb-3\">\n");
-      out.write("\n");
-      out.write("                            </div>\n");
-      out.write("                           \n");
-      out.write("                            <div class=\"mb-3\">\n");
-      out.write("\n");
-      out.write("                            </div>\n");
       out.write("                            <div class=\"mb-3\">\n");
       out.write("                                <label for=\"dia_hora_guarda\" class=\"form-label\">Data e Hora da Guarda</label>\n");
       out.write("                                <input type=\"date\" class=\"form-control\" id=\"dia_hora_guarda\" name=\"dia_hora_guarda\">\n");
@@ -458,8 +500,8 @@ public final class painel_jsp extends org.glassfish.wasp.runtime.HttpJspBase
       out.write("                            <div class=\"mb-3\">\n");
       out.write("                                <label for=\"corte_cabelo_conformidade\" class=\"form-label\">Corte de Cabelo</label>\n");
       out.write("                                <select class=\"form-select\" id=\"corte_cabelo_conformidade\" name=\"corte_cabelo_conformidade\">  \n");
-      out.write("                                    <option value=\"conforme\">Conforme</option>\n");
-      out.write("                                    <option value=\"nao_conforme\">Não Conforme</option>\n");
+      out.write("                                    <option value=\"1\">Conforme</option>\n");
+      out.write("                                    <option value=\"0\">Não Conforme</option>\n");
       out.write("\n");
       out.write("                                </select>\n");
       out.write("\n");
@@ -467,16 +509,24 @@ public final class painel_jsp extends org.glassfish.wasp.runtime.HttpJspBase
       out.write("                            <div class=\"mb-3\">\n");
       out.write("                                <label for=\"identificacao_militar_conformidade\" class=\"form-label\">Identificação Militar</label>\n");
       out.write("                                <select class=\"form-select\" id=\"identificacao_militar_conformidade\" name=\"identificacao_militar_conformidade\">  \n");
-      out.write("                                    <option value=\"conforme\">Conforme</option>\n");
-      out.write("                                    <option value=\"nao_conforme\">Não Conforme</option>\n");
+      out.write("                                    <option value=\"1\">Conforme</option>\n");
+      out.write("                                    <option value=\"0\">Não Conforme</option>\n");
       out.write("\n");
       out.write("                                </select>\n");
       out.write("\n");
       out.write("                            </div>\n");
-      out.write("                            <div class=\"mb-3\">\n");
-      out.write("\n");
-      out.write("                            </div>\n");
+      out.write("       \n");
       out.write("                            <button type=\"submit\" class=\"btn btn-primary\">Adicionar</button>\n");
+      out.write("                            ");
+
+                                        rs.close();
+                                        stmt.close();
+                                        conn.close();
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+                            
+      out.write("\n");
       out.write("                        </form>\n");
       out.write("                    </div>\n");
       out.write("                </div>\n");
@@ -511,8 +561,10 @@ public final class painel_jsp extends org.glassfish.wasp.runtime.HttpJspBase
                     Statement stmt = conn.createStatement();
                     String query = "SELECT * FROM escala_guarda INNER JOIN usuario ON escala_guarda.id_usuario = usuario.id_usuario";
                     ResultSet rs = stmt.executeQuery(query);
+                    
+                    
 
-                    while (rs.next()) {  
+                    while (rs.next()) { 
                         int idEscala = rs.getInt("id");
                         String nomeSoldado = rs.getString("nm_usuario");
                         String patente = rs.getString("nm_patente");
@@ -575,6 +627,7 @@ Date data;
       out.write("                        ");
  if (loggedInUserId != rs.getInt("id_usuario")) { 
       out.write("\n");
+      out.write("                        \n");
       out.write("                        <form action=\"solicitarTroca.jsp\" method=\"post\">\n");
       out.write("                            <input type=\"hidden\" name=\"idEscala\" value=\"");
       out.print( idEscala );
@@ -596,8 +649,15 @@ Date data;
       out.write("\n");
       out.write("                </tr>\n");
       out.write("                ");
+} 
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("                ");
 
-                    }
                     rs.close();
                     stmt.close();
                     conn.close();

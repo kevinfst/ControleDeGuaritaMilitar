@@ -188,14 +188,14 @@
 
 
                     <label for="patenteInput"><strong>Patente</strong></label>
-                <select id="nm_patente" aria-label="Escolha a Patente" name="nm_patente" class="form-control form-control-lg form-select" required>
-                         <option selected disabled value="">Escolha a patente</option>
-                         <option value="sentinela" <%= "sentinela".equals(nomePatente) ? "selected" : "" %>>Sentinela</option>
-                         <option value="comandante" <%= "comandante".equals(nomePatente) ? "selected" : "" %>>Comandante</option>
-                         </select>
+                    <select id="nm_patente" aria-label="Escolha a Patente" name="nm_patente" class="form-control form-control-lg form-select" required>
+                        <option selected disabled value="">Escolha a patente</option>
+                        <option value="sentinela" <%= "sentinela".equals(nomePatente) ? "selected" : "" %>>Sentinela</option>
+                        <option value="comandante" <%= "comandante".equals(nomePatente) ? "selected" : "" %>>Comandante</option>
+                    </select>
 
 
-                    
+
 
 
                     <div class="form-group">
@@ -256,6 +256,29 @@
                             </tr>
                         </thead>
                         <tbody>
+
+                            <% try {
+                            Class.forName("com.mysql.cj.jdbc.Driver");
+                                   Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+                                   Statement stmt = conn.createStatement();
+                                   String query = "SELECT * FROM `troca_horario`";
+                                   ResultSet rs = stmt.executeQuery(query); %>
+
+                            <%while (rs.next()) { 
+                              String nm_usuario = rs.getString("nm_usuario");          
+                              String nm_usuario = rs.getString("nm_usuario");
+                              
+                                       
+                             <%= nm_usuario %>
+                            <% } %>
+                            <%
+                                rs.close();
+                                stmt.close();
+                                conn.close();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            %>
                             <!-- Adicione linhas conforme necessário com os dados das solicitações -->
                             <!-- Exemplo:
                                  <tr>
@@ -345,24 +368,24 @@
                     <div class="modal-body">
                         <!-- Add form fields here to input a new food item -->
                         <form method="post" action="addRecord.jsp">
+                            <% try {
+                            Class.forName("com.mysql.cj.jdbc.Driver");
+                                   Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+                                   Statement stmt = conn.createStatement();
+                                   String query = "SELECT * FROM usuario";
+                                   ResultSet rs = stmt.executeQuery(query); %>
                             <div class="mb-3">
                                 <label for="nome_soldado" class="form-label">Nome do Soldado</label>
-                                <select class="form-select" id="nome_soldado" name="Soldado">  
-                                    <option value="Sentinela">Sentinela</option>
-                                    <option value="comandante">Comandante</option>
+                                <select class="form-select" id="nome_soldado" name="id_usuario"> 
+                                    <%while (rs.next()) { 
+                                     String nm_usuario = rs.getString("nm_usuario");
+                                       String id_usuario = rs.getString("id_usuario");%>
+                                    <option value="<%= id_usuario %>"><%= nm_usuario %></option>
+                                    <% } %>
                                 </select>
                             </div>
 
-                    
 
-
-                            <div class="mb-3">
-
-                            </div>
-                           
-                            <div class="mb-3">
-
-                            </div>
                             <div class="mb-3">
                                 <label for="dia_hora_guarda" class="form-label">Data e Hora da Guarda</label>
                                 <input type="date" class="form-control" id="dia_hora_guarda" name="dia_hora_guarda">
@@ -378,8 +401,8 @@
                             <div class="mb-3">
                                 <label for="corte_cabelo_conformidade" class="form-label">Corte de Cabelo</label>
                                 <select class="form-select" id="corte_cabelo_conformidade" name="corte_cabelo_conformidade">  
-                                    <option value="conforme">Conforme</option>
-                                    <option value="nao_conforme">Não Conforme</option>
+                                    <option value="1">Conforme</option>
+                                    <option value="0">Não Conforme</option>
 
                                 </select>
 
@@ -387,16 +410,22 @@
                             <div class="mb-3">
                                 <label for="identificacao_militar_conformidade" class="form-label">Identificação Militar</label>
                                 <select class="form-select" id="identificacao_militar_conformidade" name="identificacao_militar_conformidade">  
-                                    <option value="conforme">Conforme</option>
-                                    <option value="nao_conforme">Não Conforme</option>
+                                    <option value="1">Conforme</option>
+                                    <option value="0">Não Conforme</option>
 
                                 </select>
 
                             </div>
-                            <div class="mb-3">
 
-                            </div>
                             <button type="submit" class="btn btn-primary">Adicionar</button>
+                            <%
+                                        rs.close();
+                                        stmt.close();
+                                        conn.close();
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+                            %>
                         </form>
                     </div>
                 </div>
@@ -430,8 +459,10 @@
                     Statement stmt = conn.createStatement();
                     String query = "SELECT * FROM escala_guarda INNER JOIN usuario ON escala_guarda.id_usuario = usuario.id_usuario";
                     ResultSet rs = stmt.executeQuery(query);
+                    
+                    
 
-                    while (rs.next()) {  
+                    while (rs.next()) { 
                         int idEscala = rs.getInt("id");
                         String nomeSoldado = rs.getString("nm_usuario");
                         String patente = rs.getString("nm_patente");
@@ -469,6 +500,7 @@ Date data;
                     <td>
 
                         <% if (loggedInUserId != rs.getInt("id_usuario")) { %>
+
                         <form action="solicitarTroca.jsp" method="post">
                             <input type="hidden" name="idEscala" value="<%= idEscala %>">
                             <button class="btn btn-primary" type="submit" value="<%= idEscala %>">Solicitar Troca</button>
@@ -483,8 +515,13 @@ Date data;
 
 
                 </tr>
+                <%} %>
+
+
+
+
+
                 <%
-                    }
                     rs.close();
                     stmt.close();
                     conn.close();

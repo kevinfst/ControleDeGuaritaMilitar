@@ -2,15 +2,12 @@
 
 <%
 // Retrieve form data from request
-String nome = request.getParameter("nome");
-String descricao = request.getParameter("descricao");
-String preco = request.getParameter("preco");
-String categoria = request.getParameter("categoria");
-String origem = request.getParameter("origem");
-String dataValidade = request.getParameter("data_validade");
-String calorias = request.getParameter("calorias");
-String pesoGramas = request.getParameter("peso_gramas");
-String fabricante = request.getParameter("fabricante");
+String hora_guarda = request.getParameter("dia_hora_guarda");
+String escala = request.getParameter("tipo_escala");
+int cabelo_conformidade = Integer.parseInt(request.getParameter("corte_cabelo_conformidade"));
+int identificacao_conformidade = Integer.parseInt(request.getParameter("identificacao_militar_conformidade"));
+int id_usuario = Integer.parseInt(request.getParameter("id_usuario"));
+
 
 // Generate a random 12-digit barcode
 Random random = new Random();
@@ -21,7 +18,7 @@ for (int i = 0; i < 12; i++) {
 String codigoDeBarras = barcodeBuilder.toString();
 
 // Database connection parameters
-String dbUrl = "jdbc:mysql://localhost/alimentos?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+String dbUrl = "jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 String dbUser = "root";
 String dbPassword = "";
 
@@ -34,19 +31,17 @@ try {
     conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 
     // SQL query to insert a new record
-    String sql = "INSERT INTO alimentos (nome, descricao, preco, categoria, origem, data_validade, calorias, peso_gramas, fabricante, codigo_de_barras) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+   String escalaDef = "INSERT INTO escala_guarda (id_usuario, dia_hora_guarda, corte_cabelo_conformidade, identificacao_militar_conformidade, tipo_escala) VALUES (?,?,?,?,?)";    
+stmt = conn.prepareStatement(escalaDef); //executar
+stmt.setInt(1, id_usuario);
+stmt.setTimestamp(2, Timestamp.valueOf(hora_guarda + " 00:00:00")); // Converte a string para java.sql.Timestamp
+stmt.setInt(3, cabelo_conformidade);
+stmt.setInt(4, identificacao_conformidade);
+stmt.setString(5, escala);
+
+
+   
     
-    stmt = conn.prepareStatement(sql);
-    stmt.setString(1, nome);
-    stmt.setString(2, descricao);
-    stmt.setBigDecimal(3, new BigDecimal(preco));
-    stmt.setString(4, categoria);
-    stmt.setString(5, origem);
-    stmt.setDate(6, Date.valueOf(dataValidade));
-    stmt.setInt(7, Integer.parseInt(calorias));
-    stmt.setBigDecimal(8, new BigDecimal(pesoGramas));
-    stmt.setString(9, fabricante);
-    stmt.setString(10, codigoDeBarras);
 
     // Execute the SQL query to insert the new record
     int rowsAffected = stmt.executeUpdate();
