@@ -34057,3 +34057,1724 @@ variable session is already defined in method _jspService(jakarta.servlet.http.H
 	at java.base/java.lang.Thread.run(Thread.java:1623)
 ]]
 
+[2023-11-25T15:30:53.553852-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00092] [jakarta.enterprise.system.core] [tid: _ThreadID=8542 _ThreadName=Thread-56] [levelValue: 800] [[
+  Server shutdown initiated]]
+
+[2023-11-25T15:30:53.560686-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=8542 _ThreadName=Thread-56] [levelValue: 800] [[
+  FileMonitoring shutdown]]
+
+[2023-11-25T15:30:53.570451-03:00] [GF 7.0.3] [INFO] [NCLS-JMX-00002] [jakarta.enterprise.system.jmx] [tid: _ThreadID=8542 _ThreadName=Thread-56] [levelValue: 800] [[
+  JMXStartupService: Stopped JMXConnectorServer: null]]
+
+[2023-11-25T15:30:53.570451-03:00] [GF 7.0.3] [INFO] [NCLS-JMX-00001] [jakarta.enterprise.system.jmx] [tid: _ThreadID=8542 _ThreadName=Thread-56] [levelValue: 800] [[
+  JMXStartupService and JMXConnectors have been shut down.]]
+
+[2023-11-25T15:30:53.591470-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=8545 _ThreadName=RunLevelControllerThread-1700937053580] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@5bc4c6b6[name=/projetoPOO], urls=[
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/classes/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/lib/mysql-connector-j-8.1.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/ejb/projetoPOO/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/projetoPOO/
+][delegate=true, context=/projetoPOO, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=7, pathTimestamps.size=1, resourceEntryCache.size=315]]]
+
+[2023-11-25T15:30:53.685722-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=8545 _ThreadName=RunLevelControllerThread-1700937053580] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@70e7b84e[name=], urls=[
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/lib/install/applications/__admingui/WEB-INF/classes/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/lib/install/applications/__admingui/WEB-INF/lib/console-core-7.0.3-SNAPSHOT.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/lib/install/applications/__admingui/WEB-INF/lib/console-core-7.0.3.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/ejb/__admingui//
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/lib/install/applications/__admingui/WEB-INF/extra/woodstock-webui-jsf-suntheme-6.0.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/lib/install/applications/__admingui/WEB-INF/extra/dojo-ajax-nodemo-1.12.4.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/lib/install/applications/__admingui/WEB-INF/extra/woodstock-webui-jsf-6.0.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/lib/install/applications/__admingui/WEB-INF/extra/json-2.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/lib/install/applications/__admingui/WEB-INF/extra/prototype-1.7.3.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/lib/install/applications/__admingui/WEB-INF/extra/commons-io-2.11.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/__admingui/
+][delegate=true, context=, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=615, pathTimestamps.size=2, resourceEntryCache.size=4]]]
+
+[2023-11-25T15:30:53.689612-03:00] [GF 7.0.3] [SEVERE] [AS-WEB-UTIL-00016] [org.glassfish.web.loader.ReferenceCleaner] [tid: _ThreadID=8545 _ThreadName=RunLevelControllerThread-1700937053580] [levelValue: 1000] [[
+  The web application [] created a ThreadLocal with key of [class java.lang.ThreadLocal (toString: java.lang.ThreadLocal@312cc442)] and a value of [class org.glassfish.admingui.theme.AdminguiThemeContext (toString: org.glassfish.admingui.theme.AdminguiThemeContext@6583789d)] but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.]]
+
+[2023-11-25T15:30:53.690588-03:00] [GF 7.0.3] [SEVERE] [AS-WEB-UTIL-00016] [org.glassfish.web.loader.ReferenceCleaner] [tid: _ThreadID=8545 _ThreadName=RunLevelControllerThread-1700937053580] [levelValue: 1000] [[
+  The web application [] created a ThreadLocal with key of [class java.lang.ThreadLocal (toString: java.lang.ThreadLocal@312cc442)] and a value of [class org.glassfish.admingui.theme.AdminguiThemeContext (toString: org.glassfish.admingui.theme.AdminguiThemeContext@6583789d)] but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.]]
+
+[2023-11-25T15:30:53.691565-03:00] [GF 7.0.3] [SEVERE] [AS-WEB-UTIL-00016] [org.glassfish.web.loader.ReferenceCleaner] [tid: _ThreadID=8545 _ThreadName=RunLevelControllerThread-1700937053580] [levelValue: 1000] [[
+  The web application [] created a ThreadLocal with key of [class java.lang.ThreadLocal (toString: java.lang.ThreadLocal@312cc442)] and a value of [class org.glassfish.admingui.theme.AdminguiThemeContext (toString: org.glassfish.admingui.theme.AdminguiThemeContext@6583789d)] but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.]]
+
+[2023-11-25T15:30:53.692541-03:00] [GF 7.0.3] [SEVERE] [AS-WEB-UTIL-00016] [org.glassfish.web.loader.ReferenceCleaner] [tid: _ThreadID=8545 _ThreadName=RunLevelControllerThread-1700937053580] [levelValue: 1000] [[
+  The web application [] created a ThreadLocal with key of [class java.lang.ThreadLocal (toString: java.lang.ThreadLocal@312cc442)] and a value of [class org.glassfish.admingui.theme.AdminguiThemeContext (toString: org.glassfish.admingui.theme.AdminguiThemeContext@6583789d)] but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.]]
+
+[2023-11-25T15:30:53.692541-03:00] [GF 7.0.3] [SEVERE] [AS-WEB-UTIL-00016] [org.glassfish.web.loader.ReferenceCleaner] [tid: _ThreadID=8545 _ThreadName=RunLevelControllerThread-1700937053580] [levelValue: 1000] [[
+  The web application [] created a ThreadLocal with key of [class java.lang.ThreadLocal (toString: java.lang.ThreadLocal@312cc442)] and a value of [class org.glassfish.admingui.theme.AdminguiThemeContext (toString: org.glassfish.admingui.theme.AdminguiThemeContext@6583789d)] but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.]]
+
+[2023-11-25T15:30:53.770183-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=8545 _ThreadName=RunLevelControllerThread-1700937053580] [levelValue: 800] [[
+  JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool]]]
+
+[2023-11-25T15:30:53.792639-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00013] [jakarta.enterprise.system.core] [tid: _ThreadID=8542 _ThreadName=Thread-56] [levelValue: 800] [[
+  Shutdown procedure finished]]
+
+[2023-11-25T15:30:53.802402-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=31 _ThreadName=GlassFish Shutdown Hook] [levelValue: 800] [[
+  Completed shutdown of GlassFish runtime]]
+
+[2023-11-25T15:33:43.649642-03:00] [GF 7.0.3] [INFO] [] [com.sun.enterprise.server.logging.LogManagerService] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Using property file: C:\Users\zCodexs\Documents\GitHub\alimentos\server\glassfish\domains\domain1\config\logging.properties]]
+
+[2023-11-25T15:33:43.754109-03:00] [GF 7.0.3] [INFO] [NCLS-LOGGING-00009] [com.sun.enterprise.server.logging.LogManagerService] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Running GlassFish Version: Eclipse GlassFish 7.0.3 (branch: master, commit: 8e1807085bf84d182c5344675a3fb243a5134037, timestamp: 2023-03-29T19:58:00Z)]]
+
+[2023-11-25T15:33:44.022609-03:00] [GF 7.0.3] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [admin-realm] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2023-11-25T15:33:44.025537-03:00] [GF 7.0.3] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [file] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2023-11-25T15:33:44.030936-03:00] [GF 7.0.3] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [certificate] of classtype [com.sun.enterprise.security.auth.realm.certificate.CertificateRealm] successfully created.]]
+
+[2023-11-25T15:33:44.380463-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 63ms - bound to [/0.0.0.0:8080]]]
+
+[2023-11-25T15:33:44.409753-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 4ms - bound to [/0.0.0.0:8181]]]
+
+[2023-11-25T15:33:44.418542-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 3ms - bound to [/0.0.0.0:4848]]]
+
+[2023-11-25T15:33:44.546440-03:00] [GF 7.0.3] [INFO] [SEC-SVCS-00100] [jakarta.enterprise.security.services] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Authorization Service has successfully initialized.]]
+
+[2023-11-25T15:33:44.655790-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00061] [jakarta.enterprise.system.core] [tid: _ThreadID=82 _ThreadName=http-listener-1(2)] [levelValue: 800] [[
+  Attempting to start the web container.]]
+
+[2023-11-25T15:33:44.659696-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.ha.store.spi.BackingStoreFactoryRegistry] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry]]
+
+[2023-11-25T15:33:44.776715-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 4ms - bound to [/0.0.0.0:3700]]]
+
+[2023-11-25T15:33:45.047822-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=82 _ThreadName=http-listener-1(2)] [levelValue: 800] [[
+  Created HTTP listener http-listener-1 on host/port 0.0.0.0:8080]]
+
+[2023-11-25T15:33:45.052703-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=82 _ThreadName=http-listener-1(2)] [levelValue: 800] [[
+  Created HTTP listener http-listener-2 on host/port 0.0.0.0:8181]]
+
+[2023-11-25T15:33:45.055632-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=82 _ThreadName=http-listener-1(2)] [levelValue: 800] [[
+  Created HTTP listener admin-listener on host/port 0.0.0.0:4848]]
+
+[2023-11-25T15:33:45.100546-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00200] [jakarta.enterprise.web] [tid: _ThreadID=82 _ThreadName=http-listener-1(2)] [levelValue: 800] [[
+  Created virtual server server]]
+
+[2023-11-25T15:33:45.104449-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00200] [jakarta.enterprise.web] [tid: _ThreadID=82 _ThreadName=http-listener-1(2)] [levelValue: 800] [[
+  Created virtual server __asadmin]]
+
+[2023-11-25T15:33:45.548020-03:00] [GF 7.0.3] [INFO] [AS-WEB-CORE-00306] [jakarta.enterprise.web.core] [tid: _ThreadID=82 _ThreadName=http-listener-1(2)] [levelValue: 800] [[
+  Setting JAAS app name glassfish-web]]
+
+[2023-11-25T15:33:45.548996-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00201] [jakarta.enterprise.web] [tid: _ThreadID=82 _ThreadName=http-listener-1(2)] [levelValue: 800] [[
+  Virtual server server loaded default web module ]]
+
+[2023-11-25T15:33:46.345525-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00062] [jakarta.enterprise.system.core] [tid: _ThreadID=82 _ThreadName=http-listener-1(2)] [levelValue: 800] [[
+  Done with starting web container in 1.690 ms.]]
+
+[2023-11-25T15:33:46.388863-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=82 _ThreadName=http-listener-1(2)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T15:33:46.649363-03:00] [GF 7.0.3] [INFO] [NCLS-SECURITY-01002] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Java security manager is disabled.]]
+
+[2023-11-25T15:33:46.650339-03:00] [GF 7.0.3] [INFO] [NCLS-SECURITY-01010] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Entering Security Startup Service.]]
+
+[2023-11-25T15:33:46.660116-03:00] [GF 7.0.3] [INFO] [NCLS-SECURITY-01143] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Loading policy provider org.glassfish.exousia.modules.locked.SimplePolicyProvider.]]
+
+[2023-11-25T15:33:46.731940-03:00] [GF 7.0.3] [INFO] [NCLS-SECURITY-01011] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Security Service(s) started successfully.]]
+
+[2023-11-25T15:33:47.261534-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Loading application [projetoPOO] at [/projetoPOO]]]
+
+[2023-11-25T15:33:47.263488-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00022] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Loading application projetoPOO done in 2.395 ms]]
+
+[2023-11-25T15:33:47.267393-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00017] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Eclipse GlassFish 7.0.3 (branch: master, commit: 8e1807085bf84d182c5344675a3fb243a5134037, timestamp: 2023-03-29T19:58:00Z) startup time: Embedded (3.298 ms), startup services (3.739 ms), total (7.037 ms)]]
+
+[2023-11-25T15:33:47.353714-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 3ms - bound to [/0.0.0.0:7676]]]
+
+[2023-11-25T15:33:47.619278-03:00] [GF 7.0.3] [INFO] [NCLS-JMX-00005] [jakarta.enterprise.system.jmx] [tid: _ThreadID=127 _ThreadName=Thread-9] [levelValue: 800] [[
+  JMXStartupService has started JMXConnector on JMXService URL service:jmx:rmi://DESKTOP-M36LNG6:8686/jndi/rmi://DESKTOP-M36LNG6:8686/jmxrmi]]
+
+[2023-11-25T15:33:48.787771-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=169 _ThreadName=pool-20-thread-1] [levelValue: 800] [[
+  Created HTTP listener http-listener-2 on host/port 0.0.0.0:8181]]
+
+[2023-11-25T15:33:48.799489-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=169 _ThreadName=pool-20-thread-1] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 3ms - bound to [/0.0.0.0:8181]]]
+
+[2023-11-25T15:33:48.964489-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=165 _ThreadName=pool-18-thread-1] [levelValue: 800] [[
+  Created HTTP listener http-listener-1 on host/port 0.0.0.0:8080]]
+
+[2023-11-25T15:33:48.978157-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=165 _ThreadName=pool-18-thread-1] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 5ms - bound to [/0.0.0.0:8080]]]
+
+[2023-11-25T15:33:49.523929-03:00] [GF 7.0.3] [INFO] [] [org.jboss.weld.Version] [tid: _ThreadID=171 _ThreadName=Thread-23] [levelValue: 800] [[
+  WELD-000900: 5.1.0 (Final)]]
+
+[2023-11-25T15:33:50.027444-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.compiler.Compiler] [tid: _ThreadID=81 _ThreadName=http-listener-1(1)] [levelValue: 1000] [[
+  Error compiling file: C:\Users\zCodexs\Documents\GitHub\alimentos\server\glassfish\domains\domain1\generated\jsp\projetoPOO\org\apache\jsp\index_jsp.java]]
+
+[2023-11-25T15:33:50.036232-03:00] [GF 7.0.3] [WARNING] [] [jakarta.enterprise.web.vs.server] [tid: _ThreadID=81 _ThreadName=http-listener-1(1)] [levelValue: 900] [[
+  StandardWrapperValve[jsp]: Servlet.service() for servlet jsp threw exception
+org.glassfish.wasp.WaspException: PWC6033: Error in Javac compilation for JSP
+
+PWC6199: Generated servlet error:
+source value 8 is obsolete and will be removed in a future release
+
+PWC6199: Generated servlet error:
+target value 8 is obsolete and will be removed in a future release
+
+PWC6199: Generated servlet error:
+To suppress warnings about obsolete options, use -Xlint:-options.
+
+PWC6199: Generated servlet error:
+cannot access org.apache.jsp
+  null
+
+
+	at org.glassfish.wasp.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:89)
+	at org.glassfish.wasp.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:247)
+	at org.glassfish.wasp.compiler.Compiler.generateClass(Compiler.java:346)
+	at org.glassfish.wasp.compiler.Compiler.compile(Compiler.java:399)
+	at org.glassfish.wasp.JspCompilationContext.compile(JspCompilationContext.java:561)
+	at org.glassfish.wasp.servlet.JspServletWrapper.service(JspServletWrapper.java:288)
+	at org.glassfish.wasp.servlet.JspServlet.serviceJspFile(JspServlet.java:358)
+	at org.glassfish.wasp.servlet.JspServlet.service(JspServlet.java:287)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1368)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:217)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:120)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:611)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:550)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:75)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:121)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:295)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:188)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:453)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:145)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:174)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:153)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:196)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:88)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:246)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:178)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:118)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:96)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:51)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:510)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:82)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:83)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:101)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:535)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:515)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+]]
+
+[2023-11-25T15:33:50.994060-03:00] [GF 7.0.3] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=171 _ThreadName=Thread-23] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jms.injection.JMSCDIExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2023-11-25T15:33:51.056546-03:00] [GF 7.0.3] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=171 _ThreadName=Thread-23] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jersey.ext.cdi1x.internal.ProcessAllAnnotatedTypes.processAnnotatedType(@Observes ProcessAnnotatedType<?>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2023-11-25T15:33:51.120983-03:00] [GF 7.0.3] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=171 _ThreadName=Thread-23] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] org.glassfish.sse.impl.ServerSentEventCdiExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2023-11-25T15:33:52.948451-03:00] [GF 7.0.3] [INFO] [NCLS-REST-00001] [jakarta.enterprise.admin.rest] [tid: _ThreadID=97 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  Listening to REST requests at context: /management/domain.]]
+
+[2023-11-25T15:33:54.481860-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.soteria.servlet.SamRegistrationInstaller] [tid: _ThreadID=171 _ThreadName=Thread-23] [levelValue: 800] [[
+  Initializing Soteria 3.0.2 for context '']]
+
+[2023-11-25T15:33:54.577543-03:00] [GF 7.0.3] [INFO] [faces.config.listener.version] [jakarta.enterprise.resource.webcontainer.faces.config] [tid: _ThreadID=171 _ThreadName=Thread-23] [levelValue: 800] [[
+  Inicializando Mojarra 4.0.2 para o contexto '']]
+
+[2023-11-25T15:33:56.183040-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=171 _ThreadName=Thread-23] [levelValue: 800] [[
+  Loading application [__admingui] at [/]]]
+
+[2023-11-25T15:33:56.184017-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00022] [jakarta.enterprise.system.core] [tid: _ThreadID=171 _ThreadName=Thread-23] [levelValue: 800] [[
+  Loading application __admingui done in 7.909 ms]]
+
+[2023-11-25T15:33:56.598972-03:00] [GF 7.0.3] [WARNING] [] [jakarta.enterprise.system.container.web.com.sun.web.security] [tid: _ThreadID=95 _ThreadName=admin-listener(1)] [levelValue: 900] [[
+  Context path from ServletContext:  differs from path from bundle: /]]
+
+[2023-11-25T15:35:49.200271-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00092] [jakarta.enterprise.system.core] [tid: _ThreadID=270 _ThreadName=Thread-34] [levelValue: 800] [[
+  Server shutdown initiated]]
+
+[2023-11-25T15:35:49.207106-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=270 _ThreadName=Thread-34] [levelValue: 800] [[
+  FileMonitoring shutdown]]
+
+[2023-11-25T15:35:49.211988-03:00] [GF 7.0.3] [INFO] [NCLS-JMX-00002] [jakarta.enterprise.system.jmx] [tid: _ThreadID=270 _ThreadName=Thread-34] [levelValue: 800] [[
+  JMXStartupService: Stopped JMXConnectorServer: null]]
+
+[2023-11-25T15:35:49.212964-03:00] [GF 7.0.3] [INFO] [NCLS-JMX-00001] [jakarta.enterprise.system.jmx] [tid: _ThreadID=270 _ThreadName=Thread-34] [levelValue: 800] [[
+  JMXStartupService and JMXConnectors have been shut down.]]
+
+[2023-11-25T15:35:49.232491-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=273 _ThreadName=RunLevelControllerThread-1700937349218] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@377949f1[name=/projetoPOO], urls=[
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/classes/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/lib/mysql-connector-j-8.1.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/ejb/projetoPOO//
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/projetoPOO/
+][delegate=true, context=/projetoPOO, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=12, pathTimestamps.size=1, resourceEntryCache.size=0]]]
+
+[2023-11-25T15:35:49.271544-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00092] [jakarta.enterprise.system.core] [tid: _ThreadID=276 _ThreadName=Thread-39] [levelValue: 800] [[
+  Server shutdown initiated]]
+
+[2023-11-25T15:35:49.431580-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=273 _ThreadName=RunLevelControllerThread-1700937349218] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@4d37ead4[name=], urls=[
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/lib/install/applications/__admingui/WEB-INF/classes/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/lib/install/applications/__admingui/WEB-INF/lib/console-core-7.0.3-SNAPSHOT.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/lib/install/applications/__admingui/WEB-INF/lib/console-core-7.0.3.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/ejb/__admingui//
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/lib/install/applications/__admingui/WEB-INF/extra/woodstock-webui-jsf-suntheme-6.0.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/lib/install/applications/__admingui/WEB-INF/extra/dojo-ajax-nodemo-1.12.4.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/lib/install/applications/__admingui/WEB-INF/extra/woodstock-webui-jsf-6.0.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/lib/install/applications/__admingui/WEB-INF/extra/json-2.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/lib/install/applications/__admingui/WEB-INF/extra/prototype-1.7.3.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/lib/install/applications/__admingui/WEB-INF/extra/commons-io-2.11.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/__admingui/
+][delegate=true, context=, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=614, pathTimestamps.size=2, resourceEntryCache.size=4]]]
+
+[2023-11-25T15:35:49.437437-03:00] [GF 7.0.3] [SEVERE] [AS-WEB-UTIL-00016] [org.glassfish.web.loader.ReferenceCleaner] [tid: _ThreadID=273 _ThreadName=RunLevelControllerThread-1700937349218] [levelValue: 1000] [[
+  The web application [] created a ThreadLocal with key of [class java.lang.ThreadLocal (toString: java.lang.ThreadLocal@1106ecb0)] and a value of [class org.glassfish.admingui.theme.AdminguiThemeContext (toString: org.glassfish.admingui.theme.AdminguiThemeContext@13aa3640)] but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.]]
+
+[2023-11-25T15:35:49.438414-03:00] [GF 7.0.3] [SEVERE] [AS-WEB-UTIL-00016] [org.glassfish.web.loader.ReferenceCleaner] [tid: _ThreadID=273 _ThreadName=RunLevelControllerThread-1700937349218] [levelValue: 1000] [[
+  The web application [] created a ThreadLocal with key of [class java.lang.ThreadLocal (toString: java.lang.ThreadLocal@1106ecb0)] and a value of [class org.glassfish.admingui.theme.AdminguiThemeContext (toString: org.glassfish.admingui.theme.AdminguiThemeContext@13aa3640)] but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.]]
+
+[2023-11-25T15:35:49.438414-03:00] [GF 7.0.3] [SEVERE] [AS-WEB-UTIL-00016] [org.glassfish.web.loader.ReferenceCleaner] [tid: _ThreadID=273 _ThreadName=RunLevelControllerThread-1700937349218] [levelValue: 1000] [[
+  The web application [] created a ThreadLocal with key of [class java.lang.ThreadLocal (toString: java.lang.ThreadLocal@1106ecb0)] and a value of [class org.glassfish.admingui.theme.AdminguiThemeContext (toString: org.glassfish.admingui.theme.AdminguiThemeContext@13aa3640)] but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.]]
+
+[2023-11-25T15:35:49.440366-03:00] [GF 7.0.3] [SEVERE] [AS-WEB-UTIL-00016] [org.glassfish.web.loader.ReferenceCleaner] [tid: _ThreadID=273 _ThreadName=RunLevelControllerThread-1700937349218] [levelValue: 1000] [[
+  The web application [] created a ThreadLocal with key of [class java.lang.ThreadLocal (toString: java.lang.ThreadLocal@1106ecb0)] and a value of [class org.glassfish.admingui.theme.AdminguiThemeContext (toString: org.glassfish.admingui.theme.AdminguiThemeContext@13aa3640)] but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.]]
+
+[2023-11-25T15:35:49.440366-03:00] [GF 7.0.3] [SEVERE] [AS-WEB-UTIL-00016] [org.glassfish.web.loader.ReferenceCleaner] [tid: _ThreadID=273 _ThreadName=RunLevelControllerThread-1700937349218] [levelValue: 1000] [[
+  The web application [] created a ThreadLocal with key of [class java.lang.ThreadLocal (toString: java.lang.ThreadLocal@1106ecb0)] and a value of [class org.glassfish.admingui.theme.AdminguiThemeContext (toString: org.glassfish.admingui.theme.AdminguiThemeContext@13aa3640)] but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.]]
+
+[2023-11-25T15:35:49.500433-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=278 _ThreadName=RunLevelControllerThread-1700937349473] [levelValue: 800] [[
+  JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool]]]
+
+[2023-11-25T15:35:49.518008-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00013] [jakarta.enterprise.system.core] [tid: _ThreadID=270 _ThreadName=Thread-34] [levelValue: 800] [[
+  Shutdown procedure finished]]
+
+[2023-11-25T15:35:49.519960-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=31 _ThreadName=GlassFish Shutdown Hook] [levelValue: 800] [[
+  Completed shutdown of GlassFish runtime]]
+
+[2023-11-25T15:44:44.038398-03:00] [GF 7.0.3] [INFO] [] [com.sun.enterprise.server.logging.LogManagerService] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Using property file: C:\Users\zCodexs\Documents\GitHub\alimentos\server\glassfish\domains\domain1\config\logging.properties]]
+
+[2023-11-25T15:44:44.130174-03:00] [GF 7.0.3] [INFO] [NCLS-LOGGING-00009] [com.sun.enterprise.server.logging.LogManagerService] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Running GlassFish Version: Eclipse GlassFish 7.0.3 (branch: master, commit: 8e1807085bf84d182c5344675a3fb243a5134037, timestamp: 2023-03-29T19:58:00Z)]]
+
+[2023-11-25T15:44:44.452355-03:00] [GF 7.0.3] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [admin-realm] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2023-11-25T15:44:44.455283-03:00] [GF 7.0.3] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [file] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2023-11-25T15:44:44.462119-03:00] [GF 7.0.3] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [certificate] of classtype [com.sun.enterprise.security.auth.realm.certificate.CertificateRealm] successfully created.]]
+
+[2023-11-25T15:44:44.794845-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 61ms - bound to [/0.0.0.0:8080]]]
+
+[2023-11-25T15:44:44.821007-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 3ms - bound to [/0.0.0.0:8181]]]
+
+[2023-11-25T15:44:44.828817-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 3ms - bound to [/0.0.0.0:4848]]]
+
+[2023-11-25T15:44:44.920593-03:00] [GF 7.0.3] [INFO] [SEC-SVCS-00100] [jakarta.enterprise.security.services] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Authorization Service has successfully initialized.]]
+
+[2023-11-25T15:44:45.000264-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.ha.store.spi.BackingStoreFactoryRegistry] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry]]
+
+[2023-11-25T15:44:45.074465-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 3ms - bound to [/0.0.0.0:3700]]]
+
+[2023-11-25T15:44:46.261692-03:00] [GF 7.0.3] [INFO] [NCLS-SECURITY-01002] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Java security manager is disabled.]]
+
+[2023-11-25T15:44:46.262668-03:00] [GF 7.0.3] [INFO] [NCLS-SECURITY-01010] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Entering Security Startup Service.]]
+
+[2023-11-25T15:44:46.271455-03:00] [GF 7.0.3] [INFO] [NCLS-SECURITY-01143] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Loading policy provider org.glassfish.exousia.modules.locked.SimplePolicyProvider.]]
+
+[2023-11-25T15:44:46.335894-03:00] [GF 7.0.3] [INFO] [NCLS-SECURITY-01011] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Security Service(s) started successfully.]]
+
+[2023-11-25T15:44:46.740097-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Created HTTP listener http-listener-1 on host/port 0.0.0.0:8080]]
+
+[2023-11-25T15:44:46.744002-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Created HTTP listener http-listener-2 on host/port 0.0.0.0:8181]]
+
+[2023-11-25T15:44:46.745956-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Created HTTP listener admin-listener on host/port 0.0.0.0:4848]]
+
+[2023-11-25T15:44:46.771340-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00200] [jakarta.enterprise.web] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Created virtual server server]]
+
+[2023-11-25T15:44:46.775245-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00200] [jakarta.enterprise.web] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Created virtual server __asadmin]]
+
+[2023-11-25T15:44:47.114078-03:00] [GF 7.0.3] [INFO] [AS-WEB-CORE-00306] [jakarta.enterprise.web.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Setting JAAS app name glassfish-web]]
+
+[2023-11-25T15:44:47.115055-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00201] [jakarta.enterprise.web] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Virtual server server loaded default web module ]]
+
+[2023-11-25T15:44:47.986670-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Loading application [projetoPOO] at [/projetoPOO]]]
+
+[2023-11-25T15:44:47.988622-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00022] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Loading application projetoPOO done in 2.854 ms]]
+
+[2023-11-25T15:44:47.992529-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00017] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Eclipse GlassFish 7.0.3 (branch: master, commit: 8e1807085bf84d182c5344675a3fb243a5134037, timestamp: 2023-03-29T19:58:00Z) startup time: Embedded (3.028 ms), startup services (4.072 ms), total (7.100 ms)]]
+
+[2023-11-25T15:44:48.062823-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 3ms - bound to [/0.0.0.0:7676]]]
+
+[2023-11-25T15:44:48.286405-03:00] [GF 7.0.3] [INFO] [NCLS-JMX-00005] [jakarta.enterprise.system.jmx] [tid: _ThreadID=127 _ThreadName=Thread-9] [levelValue: 800] [[
+  JMXStartupService has started JMXConnector on JMXService URL service:jmx:rmi://DESKTOP-M36LNG6:8686/jndi/rmi://DESKTOP-M36LNG6:8686/jmxrmi]]
+
+[2023-11-25T15:44:49.224437-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=165 _ThreadName=pool-18-thread-1] [levelValue: 800] [[
+  Created HTTP listener http-listener-2 on host/port 0.0.0.0:8181]]
+
+[2023-11-25T15:44:49.233225-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=165 _ThreadName=pool-18-thread-1] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 3ms - bound to [/0.0.0.0:8181]]]
+
+[2023-11-25T15:44:49.354606-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=162 _ThreadName=pool-15-thread-1] [levelValue: 800] [[
+  Created HTTP listener http-listener-1 on host/port 0.0.0.0:8080]]
+
+[2023-11-25T15:44:49.363394-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=162 _ThreadName=pool-15-thread-1] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 3ms - bound to [/0.0.0.0:8080]]]
+
+[2023-11-25T15:44:49.954508-03:00] [GF 7.0.3] [INFO] [] [org.jboss.weld.Version] [tid: _ThreadID=172 _ThreadName=Thread-23] [levelValue: 800] [[
+  WELD-000900: 5.1.0 (Final)]]
+
+[2023-11-25T15:44:51.174571-03:00] [GF 7.0.3] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=172 _ThreadName=Thread-23] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jms.injection.JMSCDIExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2023-11-25T15:44:51.213624-03:00] [GF 7.0.3] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=172 _ThreadName=Thread-23] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jersey.ext.cdi1x.internal.ProcessAllAnnotatedTypes.processAnnotatedType(@Observes ProcessAnnotatedType<?>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2023-11-25T15:44:51.221433-03:00] [GF 7.0.3] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=172 _ThreadName=Thread-23] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] org.glassfish.sse.impl.ServerSentEventCdiExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2023-11-25T15:44:52.778098-03:00] [GF 7.0.3] [INFO] [NCLS-REST-00001] [jakarta.enterprise.admin.rest] [tid: _ThreadID=96 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Listening to REST requests at context: /management/domain.]]
+
+[2023-11-25T15:44:54.321756-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.soteria.servlet.SamRegistrationInstaller] [tid: _ThreadID=172 _ThreadName=Thread-23] [levelValue: 800] [[
+  Initializing Soteria 3.0.2 for context '']]
+
+[2023-11-25T15:44:54.468733-03:00] [GF 7.0.3] [INFO] [faces.config.listener.version] [jakarta.enterprise.resource.webcontainer.faces.config] [tid: _ThreadID=172 _ThreadName=Thread-23] [levelValue: 800] [[
+  Inicializando Mojarra 4.0.2 para o contexto '']]
+
+[2023-11-25T15:44:55.848970-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=172 _ThreadName=Thread-23] [levelValue: 800] [[
+  Loading application [__admingui] at [/]]]
+
+[2023-11-25T15:44:55.850923-03:00] [GF 7.0.3] [INFO] [NCLS-CORE-00022] [jakarta.enterprise.system.core] [tid: _ThreadID=172 _ThreadName=Thread-23] [levelValue: 800] [[
+  Loading application __admingui done in 6.960 ms]]
+
+[2023-11-25T15:44:57.119702-03:00] [GF 7.0.3] [WARNING] [] [jakarta.enterprise.system.container.web.com.sun.web.security] [tid: _ThreadID=98 _ThreadName=admin-listener(4)] [levelValue: 900] [[
+  Context path from ServletContext:  differs from path from bundle: /]]
+
+[2023-11-25T16:03:36.202408-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=95 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@4cf230bf[name=/projetoPOO], urls=[
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/classes/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/lib/mysql-connector-j-8.1.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/ejb/projetoPOO//
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/projetoPOO/
+][delegate=true, context=/projetoPOO, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=12, pathTimestamps.size=1, resourceEntryCache.size=0]]]
+
+[2023-11-25T16:03:36.692556-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=193 _ThreadName=http-listener-1(5)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T16:03:37.350659-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=95 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Loading application [projetoPOO] at [/projetoPOO]]]
+
+[2023-11-25T16:03:37.405335-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=95 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  projetoPOO was successfully deployed in 1.250 milliseconds.]]
+
+[2023-11-25T16:04:26.034412-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=95 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@35c04eee[name=/projetoPOO], urls=[
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/classes/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/lib/mysql-connector-j-8.1.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/ejb/projetoPOO/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/projetoPOO/
+][delegate=true, context=/projetoPOO, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=2, pathTimestamps.size=1, resourceEntryCache.size=0]]]
+
+[2023-11-25T16:04:26.467909-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=192 _ThreadName=http-listener-1(4)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T16:04:26.582138-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=95 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Loading application [projetoPOO] at [/projetoPOO]]]
+
+[2023-11-25T16:04:26.599712-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=95 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  projetoPOO was successfully deployed in 589 milliseconds.]]
+
+[2023-11-25T16:27:55.670109-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=99 _ThreadName=admin-listener(5)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@5cda1652[name=/projetoPOO], urls=[
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/classes/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/lib/mysql-connector-j-8.1.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/ejb/projetoPOO/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/projetoPOO/
+][delegate=true, context=/projetoPOO, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=7, pathTimestamps.size=1, resourceEntryCache.size=298]]]
+
+[2023-11-25T16:27:56.342822-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=99 _ThreadName=admin-listener(5)] [levelValue: 800] [[
+  Loading application [projetoPOO] at [/projetoPOO]]]
+
+[2023-11-25T16:27:56.371135-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=99 _ThreadName=admin-listener(5)] [levelValue: 800] [[
+  projetoPOO was successfully deployed in 746 milliseconds.]]
+
+[2023-11-25T17:18:30.364470-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=95 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@5346250c[name=/projetoPOO], urls=[
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/classes/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/lib/mysql-connector-j-8.1.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/ejb/projetoPOO/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/projetoPOO/
+][delegate=true, context=/projetoPOO, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=7, pathTimestamps.size=1, resourceEntryCache.size=297]]]
+
+[2023-11-25T17:18:30.431835-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=192 _ThreadName=http-listener-1(4)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T17:18:31.109832-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=193 _ThreadName=http-listener-1(5)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T17:18:31.520534-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=95 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Loading application [projetoPOO] at [/projetoPOO]]]
+
+[2023-11-25T17:18:31.575210-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=95 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  projetoPOO was successfully deployed in 1.286 milliseconds.]]
+
+[2023-11-25T17:21:17.211541-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=97 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@7fed8077[name=/projetoPOO], urls=[
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/classes/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/lib/mysql-connector-j-8.1.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/ejb/projetoPOO/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/projetoPOO/
+][delegate=true, context=/projetoPOO, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=2, pathTimestamps.size=1, resourceEntryCache.size=0]]]
+
+[2023-11-25T17:21:17.372635-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=190 _ThreadName=http-listener-1(2)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T17:21:17.917167-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=97 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  Loading application [projetoPOO] at [/projetoPOO]]]
+
+[2023-11-25T17:21:17.935717-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=97 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  projetoPOO was successfully deployed in 748 milliseconds.]]
+
+[2023-11-25T17:24:04.294807-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=96 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@9f56c6f[name=/projetoPOO], urls=[
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/classes/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/lib/mysql-connector-j-8.1.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/ejb/projetoPOO/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/projetoPOO/
+][delegate=true, context=/projetoPOO, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=2, pathTimestamps.size=1, resourceEntryCache.size=0]]]
+
+[2023-11-25T17:24:04.495932-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=189 _ThreadName=http-listener-1(1)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T17:24:04.952857-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=96 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Loading application [projetoPOO] at [/projetoPOO]]]
+
+[2023-11-25T17:24:04.968987-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=96 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  projetoPOO was successfully deployed in 700 milliseconds.]]
+
+[2023-11-25T17:28:18.420150-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=96 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@7b05dd67[name=/projetoPOO], urls=[
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/classes/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/lib/mysql-connector-j-8.1.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/ejb/projetoPOO/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/projetoPOO/
+][delegate=true, context=/projetoPOO, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=7, pathTimestamps.size=1, resourceEntryCache.size=297]]]
+
+[2023-11-25T17:28:18.689621-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=191 _ThreadName=http-listener-1(3)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T17:28:19.041608-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=96 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Loading application [projetoPOO] at [/projetoPOO]]]
+
+[2023-11-25T17:28:19.057230-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=96 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  projetoPOO was successfully deployed in 663 milliseconds.]]
+
+[2023-11-25T17:38:17.276521-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=96 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@7643ed26[name=/projetoPOO], urls=[
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/classes/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/lib/mysql-connector-j-8.1.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/ejb/projetoPOO/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/projetoPOO/
+][delegate=true, context=/projetoPOO, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=2, pathTimestamps.size=1, resourceEntryCache.size=0]]]
+
+[2023-11-25T17:38:17.831881-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=96 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Loading application [projetoPOO] at [/projetoPOO]]]
+
+[2023-11-25T17:38:17.869960-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=96 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  projetoPOO was successfully deployed in 633 milliseconds.]]
+
+[2023-11-25T17:40:11.907649-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=95 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@770e875e[name=/projetoPOO], urls=[
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/classes/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/lib/mysql-connector-j-8.1.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/ejb/projetoPOO/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/projetoPOO/
+][delegate=true, context=/projetoPOO, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=2, pathTimestamps.size=1, resourceEntryCache.size=0]]]
+
+[2023-11-25T17:40:12.084873-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=192 _ThreadName=http-listener-1(4)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T17:40:12.384734-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=95 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Loading application [projetoPOO] at [/projetoPOO]]]
+
+[2023-11-25T17:40:12.398402-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=95 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  projetoPOO was successfully deployed in 515 milliseconds.]]
+
+[2023-11-25T17:45:09.986095-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=99 _ThreadName=admin-listener(5)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@58d8c73d[name=/projetoPOO], urls=[
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/classes/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/lib/mysql-connector-j-8.1.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/ejb/projetoPOO/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/projetoPOO/
+][delegate=true, context=/projetoPOO, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=2, pathTimestamps.size=1, resourceEntryCache.size=0]]]
+
+[2023-11-25T17:45:10.430976-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=99 _ThreadName=admin-listener(5)] [levelValue: 800] [[
+  Loading application [projetoPOO] at [/projetoPOO]]]
+
+[2023-11-25T17:45:10.443670-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=99 _ThreadName=admin-listener(5)] [levelValue: 800] [[
+  projetoPOO was successfully deployed in 481 milliseconds.]]
+
+[2023-11-25T17:57:53.089000-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=96 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@2aa1c5df[name=/projetoPOO], urls=[
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/classes/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/lib/mysql-connector-j-8.1.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/ejb/projetoPOO/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/projetoPOO/
+][delegate=true, context=/projetoPOO, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=2, pathTimestamps.size=1, resourceEntryCache.size=0]]]
+
+[2023-11-25T17:57:53.672343-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=96 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Loading application [projetoPOO] at [/projetoPOO]]]
+
+[2023-11-25T17:57:53.706049-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=96 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  projetoPOO was successfully deployed in 652 milliseconds.]]
+
+[2023-11-25T17:57:54.832983-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=96 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@e3c4b39[name=/projetoPOO], urls=[
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/classes/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/lib/mysql-connector-j-8.1.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/ejb/projetoPOO/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/projetoPOO/
+][delegate=true, context=/projetoPOO, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=2, pathTimestamps.size=1, resourceEntryCache.size=0]]]
+
+[2023-11-25T17:57:55.186315-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=191 _ThreadName=http-listener-1(3)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T17:57:55.292273-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=96 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Loading application [projetoPOO] at [/projetoPOO]]]
+
+[2023-11-25T17:57:55.307433-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=96 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  projetoPOO was successfully deployed in 499 milliseconds.]]
+
+[2023-11-25T17:58:56.299799-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=97 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@50c27b41[name=/projetoPOO], urls=[
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/classes/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/lib/mysql-connector-j-8.1.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/ejb/projetoPOO/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/projetoPOO/
+][delegate=true, context=/projetoPOO, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=2, pathTimestamps.size=1, resourceEntryCache.size=0]]]
+
+[2023-11-25T17:58:56.807997-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=97 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  Loading application [projetoPOO] at [/projetoPOO]]]
+
+[2023-11-25T17:58:56.820689-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=97 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  projetoPOO was successfully deployed in 543 milliseconds.]]
+
+[2023-11-25T18:18:35.187492-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.compiler.Compiler] [tid: _ThreadID=192 _ThreadName=http-listener-1(4)] [levelValue: 1000] [[
+  Error compiling file: C:\Users\zCodexs\Documents\GitHub\alimentos\server\glassfish\domains\domain1\generated\jsp\projetoPOO\org\apache\jsp\solicitarTroca_jsp.java]]
+
+[2023-11-25T18:18:35.193348-03:00] [GF 7.0.3] [WARNING] [] [jakarta.enterprise.web.vs.server] [tid: _ThreadID=192 _ThreadName=http-listener-1(4)] [levelValue: 900] [[
+  StandardWrapperValve[jsp]: Servlet.service() for servlet jsp threw exception
+org.glassfish.wasp.WaspException: PWC6033: Error in Javac compilation for JSP
+
+PWC6199: Generated servlet error:
+source value 8 is obsolete and will be removed in a future release
+
+PWC6199: Generated servlet error:
+target value 8 is obsolete and will be removed in a future release
+
+PWC6199: Generated servlet error:
+To suppress warnings about obsolete options, use -Xlint:-options.
+
+PWC6197: An error occurred at line: 4 in the jsp file: /solicitarTroca.jsp
+PWC6199: Generated servlet error:
+cannot find symbol
+  symbol:   class Connection
+  location: class org.apache.jsp.solicitarTroca_jsp
+
+PWC6197: An error occurred at line: 4 in the jsp file: /solicitarTroca.jsp
+PWC6199: Generated servlet error:
+cannot find symbol
+  symbol:   variable DriverManager
+  location: class org.apache.jsp.solicitarTroca_jsp
+
+PWC6197: An error occurred at line: 4 in the jsp file: /solicitarTroca.jsp
+PWC6199: Generated servlet error:
+cannot find symbol
+  symbol:   class PreparedStatement
+  location: class org.apache.jsp.solicitarTroca_jsp
+
+PWC6197: An error occurred at line: 4 in the jsp file: /solicitarTroca.jsp
+PWC6199: Generated servlet error:
+cannot find symbol
+  symbol:   class ResultSet
+  location: class org.apache.jsp.solicitarTroca_jsp
+
+PWC6197: An error occurred at line: 4 in the jsp file: /solicitarTroca.jsp
+PWC6199: Generated servlet error:
+cannot find symbol
+  symbol:   class PreparedStatement
+  location: class org.apache.jsp.solicitarTroca_jsp
+
+
+	at org.glassfish.wasp.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:89)
+	at org.glassfish.wasp.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:247)
+	at org.glassfish.wasp.compiler.Compiler.generateClass(Compiler.java:346)
+	at org.glassfish.wasp.compiler.Compiler.compile(Compiler.java:399)
+	at org.glassfish.wasp.JspCompilationContext.compile(JspCompilationContext.java:561)
+	at org.glassfish.wasp.servlet.JspServletWrapper.service(JspServletWrapper.java:288)
+	at org.glassfish.wasp.servlet.JspServlet.serviceJspFile(JspServlet.java:358)
+	at org.glassfish.wasp.servlet.JspServlet.service(JspServlet.java:287)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1368)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:217)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:120)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:611)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:550)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:75)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:121)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:295)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:188)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:453)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:145)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:174)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:153)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:196)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:88)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:246)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:178)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:118)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:96)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:51)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:510)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:82)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:83)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:101)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:535)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:515)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+]]
+
+[2023-11-25T18:18:40.605783-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.compiler.Compiler] [tid: _ThreadID=193 _ThreadName=http-listener-1(5)] [levelValue: 1000] [[
+  Error compiling file: C:\Users\zCodexs\Documents\GitHub\alimentos\server\glassfish\domains\domain1\generated\jsp\projetoPOO\org\apache\jsp\solicitarTroca_jsp.java]]
+
+[2023-11-25T18:18:40.606761-03:00] [GF 7.0.3] [WARNING] [] [jakarta.enterprise.web.vs.server] [tid: _ThreadID=193 _ThreadName=http-listener-1(5)] [levelValue: 900] [[
+  StandardWrapperValve[jsp]: Servlet.service() for servlet jsp threw exception
+org.glassfish.wasp.WaspException: PWC6033: Error in Javac compilation for JSP
+
+PWC6199: Generated servlet error:
+source value 8 is obsolete and will be removed in a future release
+
+PWC6199: Generated servlet error:
+target value 8 is obsolete and will be removed in a future release
+
+PWC6199: Generated servlet error:
+To suppress warnings about obsolete options, use -Xlint:-options.
+
+PWC6197: An error occurred at line: 4 in the jsp file: /solicitarTroca.jsp
+PWC6199: Generated servlet error:
+cannot find symbol
+  symbol:   class Connection
+  location: class org.apache.jsp.solicitarTroca_jsp
+
+PWC6197: An error occurred at line: 4 in the jsp file: /solicitarTroca.jsp
+PWC6199: Generated servlet error:
+cannot find symbol
+  symbol:   variable DriverManager
+  location: class org.apache.jsp.solicitarTroca_jsp
+
+PWC6197: An error occurred at line: 4 in the jsp file: /solicitarTroca.jsp
+PWC6199: Generated servlet error:
+cannot find symbol
+  symbol:   class PreparedStatement
+  location: class org.apache.jsp.solicitarTroca_jsp
+
+PWC6197: An error occurred at line: 4 in the jsp file: /solicitarTroca.jsp
+PWC6199: Generated servlet error:
+cannot find symbol
+  symbol:   class ResultSet
+  location: class org.apache.jsp.solicitarTroca_jsp
+
+PWC6197: An error occurred at line: 4 in the jsp file: /solicitarTroca.jsp
+PWC6199: Generated servlet error:
+cannot find symbol
+  symbol:   class PreparedStatement
+  location: class org.apache.jsp.solicitarTroca_jsp
+
+
+	at org.glassfish.wasp.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:89)
+	at org.glassfish.wasp.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:247)
+	at org.glassfish.wasp.compiler.Compiler.generateClass(Compiler.java:346)
+	at org.glassfish.wasp.compiler.Compiler.compile(Compiler.java:399)
+	at org.glassfish.wasp.JspCompilationContext.compile(JspCompilationContext.java:561)
+	at org.glassfish.wasp.servlet.JspServletWrapper.service(JspServletWrapper.java:288)
+	at org.glassfish.wasp.servlet.JspServlet.serviceJspFile(JspServlet.java:358)
+	at org.glassfish.wasp.servlet.JspServlet.service(JspServlet.java:287)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1368)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:217)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:120)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:611)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:550)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:75)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:121)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:295)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:188)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:453)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:145)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:174)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:153)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:196)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:88)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:246)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:178)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:118)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:96)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:51)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:510)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:82)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:83)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:101)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:535)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:515)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+]]
+
+[2023-11-25T18:23:11.325157-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.compiler.Compiler] [tid: _ThreadID=190 _ThreadName=http-listener-1(2)] [levelValue: 1000] [[
+  Error compiling file: C:\Users\zCodexs\Documents\GitHub\alimentos\server\glassfish\domains\domain1\generated\jsp\projetoPOO\org\apache\jsp\painel_jsp.java]]
+
+[2023-11-25T18:23:11.327109-03:00] [GF 7.0.3] [WARNING] [] [jakarta.enterprise.web.vs.server] [tid: _ThreadID=190 _ThreadName=http-listener-1(2)] [levelValue: 900] [[
+  StandardWrapperValve[jsp]: Servlet.service() for servlet jsp threw exception
+org.glassfish.wasp.WaspException: PWC6033: Error in Javac compilation for JSP
+
+PWC6199: Generated servlet error:
+source value 8 is obsolete and will be removed in a future release
+
+PWC6199: Generated servlet error:
+target value 8 is obsolete and will be removed in a future release
+
+PWC6199: Generated servlet error:
+To suppress warnings about obsolete options, use -Xlint:-options.
+
+PWC6197: An error occurred at line: 278 in the jsp file: /painel.jsp
+PWC6199: Generated servlet error:
+'try' without 'catch', 'finally' or resource declarations
+
+PWC6197: An error occurred at line: 520 in the jsp file: /painel.jsp
+PWC6199: Generated servlet error:
+'else' without 'if'
+
+PWC6199: Generated servlet error:
+'catch' without 'try'
+
+PWC6199: Generated servlet error:
+'finally' without 'try'
+
+PWC6199: Generated servlet error:
+'try' without 'catch', 'finally' or resource declarations
+
+PWC6199: Generated servlet error:
+reached end of file while parsing
+
+
+	at org.glassfish.wasp.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:89)
+	at org.glassfish.wasp.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:247)
+	at org.glassfish.wasp.compiler.Compiler.generateClass(Compiler.java:346)
+	at org.glassfish.wasp.compiler.Compiler.compile(Compiler.java:399)
+	at org.glassfish.wasp.JspCompilationContext.compile(JspCompilationContext.java:561)
+	at org.glassfish.wasp.servlet.JspServletWrapper.service(JspServletWrapper.java:288)
+	at org.glassfish.wasp.servlet.JspServlet.serviceJspFile(JspServlet.java:358)
+	at org.glassfish.wasp.servlet.JspServlet.service(JspServlet.java:287)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1368)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:217)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:120)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:611)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:550)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:75)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:121)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:295)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:188)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:453)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:145)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:174)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:153)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:196)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:88)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:246)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:178)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:118)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:96)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:51)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:510)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:82)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:83)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:101)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:535)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:515)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+]]
+
+[2023-11-25T18:23:13.164941-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.compiler.Compiler] [tid: _ThreadID=189 _ThreadName=http-listener-1(1)] [levelValue: 1000] [[
+  Error compiling file: C:\Users\zCodexs\Documents\GitHub\alimentos\server\glassfish\domains\domain1\generated\jsp\projetoPOO\org\apache\jsp\painel_jsp.java]]
+
+[2023-11-25T18:23:13.165917-03:00] [GF 7.0.3] [WARNING] [] [jakarta.enterprise.web.vs.server] [tid: _ThreadID=189 _ThreadName=http-listener-1(1)] [levelValue: 900] [[
+  StandardWrapperValve[jsp]: Servlet.service() for servlet jsp threw exception
+org.glassfish.wasp.WaspException: PWC6033: Error in Javac compilation for JSP
+
+PWC6199: Generated servlet error:
+source value 8 is obsolete and will be removed in a future release
+
+PWC6199: Generated servlet error:
+target value 8 is obsolete and will be removed in a future release
+
+PWC6199: Generated servlet error:
+To suppress warnings about obsolete options, use -Xlint:-options.
+
+PWC6197: An error occurred at line: 278 in the jsp file: /painel.jsp
+PWC6199: Generated servlet error:
+'try' without 'catch', 'finally' or resource declarations
+
+PWC6197: An error occurred at line: 520 in the jsp file: /painel.jsp
+PWC6199: Generated servlet error:
+'else' without 'if'
+
+PWC6199: Generated servlet error:
+'catch' without 'try'
+
+PWC6199: Generated servlet error:
+'finally' without 'try'
+
+PWC6199: Generated servlet error:
+'try' without 'catch', 'finally' or resource declarations
+
+PWC6199: Generated servlet error:
+reached end of file while parsing
+
+
+	at org.glassfish.wasp.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:89)
+	at org.glassfish.wasp.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:247)
+	at org.glassfish.wasp.compiler.Compiler.generateClass(Compiler.java:346)
+	at org.glassfish.wasp.compiler.Compiler.compile(Compiler.java:399)
+	at org.glassfish.wasp.JspCompilationContext.compile(JspCompilationContext.java:561)
+	at org.glassfish.wasp.servlet.JspServletWrapper.service(JspServletWrapper.java:288)
+	at org.glassfish.wasp.servlet.JspServlet.serviceJspFile(JspServlet.java:358)
+	at org.glassfish.wasp.servlet.JspServlet.service(JspServlet.java:287)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1368)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:217)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:120)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:611)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:550)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:75)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:121)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:295)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:188)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:453)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:145)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:174)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:153)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:196)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:88)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:246)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:178)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:118)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:96)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:51)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:510)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:82)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:83)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:101)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:535)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:515)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+]]
+
+[2023-11-25T18:24:12.924091-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.compiler.Compiler] [tid: _ThreadID=191 _ThreadName=http-listener-1(3)] [levelValue: 1000] [[
+  Error compiling file: C:\Users\zCodexs\Documents\GitHub\alimentos\server\glassfish\domains\domain1\generated\jsp\projetoPOO\org\apache\jsp\painel_jsp.java]]
+
+[2023-11-25T18:24:12.925069-03:00] [GF 7.0.3] [WARNING] [] [jakarta.enterprise.web.vs.server] [tid: _ThreadID=191 _ThreadName=http-listener-1(3)] [levelValue: 900] [[
+  StandardWrapperValve[jsp]: Servlet.service() for servlet jsp threw exception
+org.glassfish.wasp.WaspException: PWC6033: Error in Javac compilation for JSP
+
+PWC6199: Generated servlet error:
+source value 8 is obsolete and will be removed in a future release
+
+PWC6199: Generated servlet error:
+target value 8 is obsolete and will be removed in a future release
+
+PWC6199: Generated servlet error:
+To suppress warnings about obsolete options, use -Xlint:-options.
+
+PWC6197: An error occurred at line: 278 in the jsp file: /painel.jsp
+PWC6199: Generated servlet error:
+'try' without 'catch', 'finally' or resource declarations
+
+PWC6197: An error occurred at line: 520 in the jsp file: /painel.jsp
+PWC6199: Generated servlet error:
+'else' without 'if'
+
+PWC6199: Generated servlet error:
+'catch' without 'try'
+
+PWC6199: Generated servlet error:
+'finally' without 'try'
+
+PWC6199: Generated servlet error:
+'try' without 'catch', 'finally' or resource declarations
+
+PWC6199: Generated servlet error:
+reached end of file while parsing
+
+
+	at org.glassfish.wasp.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:89)
+	at org.glassfish.wasp.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:247)
+	at org.glassfish.wasp.compiler.Compiler.generateClass(Compiler.java:346)
+	at org.glassfish.wasp.compiler.Compiler.compile(Compiler.java:399)
+	at org.glassfish.wasp.JspCompilationContext.compile(JspCompilationContext.java:561)
+	at org.glassfish.wasp.servlet.JspServletWrapper.service(JspServletWrapper.java:288)
+	at org.glassfish.wasp.servlet.JspServlet.serviceJspFile(JspServlet.java:358)
+	at org.glassfish.wasp.servlet.JspServlet.service(JspServlet.java:287)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1368)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:217)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:120)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:611)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:550)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:75)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:121)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:295)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:188)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:453)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:145)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:174)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:153)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:196)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:88)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:246)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:178)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:118)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:96)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:51)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:510)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:82)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:83)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:101)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:535)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:515)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+]]
+
+[2023-11-25T18:24:13.865530-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.compiler.Compiler] [tid: _ThreadID=193 _ThreadName=http-listener-1(5)] [levelValue: 1000] [[
+  Error compiling file: C:\Users\zCodexs\Documents\GitHub\alimentos\server\glassfish\domains\domain1\generated\jsp\projetoPOO\org\apache\jsp\painel_jsp.java]]
+
+[2023-11-25T18:24:13.866507-03:00] [GF 7.0.3] [WARNING] [] [jakarta.enterprise.web.vs.server] [tid: _ThreadID=193 _ThreadName=http-listener-1(5)] [levelValue: 900] [[
+  StandardWrapperValve[jsp]: Servlet.service() for servlet jsp threw exception
+org.glassfish.wasp.WaspException: PWC6033: Error in Javac compilation for JSP
+
+PWC6199: Generated servlet error:
+source value 8 is obsolete and will be removed in a future release
+
+PWC6199: Generated servlet error:
+target value 8 is obsolete and will be removed in a future release
+
+PWC6199: Generated servlet error:
+To suppress warnings about obsolete options, use -Xlint:-options.
+
+PWC6197: An error occurred at line: 278 in the jsp file: /painel.jsp
+PWC6199: Generated servlet error:
+'try' without 'catch', 'finally' or resource declarations
+
+PWC6197: An error occurred at line: 520 in the jsp file: /painel.jsp
+PWC6199: Generated servlet error:
+'else' without 'if'
+
+PWC6199: Generated servlet error:
+'catch' without 'try'
+
+PWC6199: Generated servlet error:
+'finally' without 'try'
+
+PWC6199: Generated servlet error:
+'try' without 'catch', 'finally' or resource declarations
+
+PWC6199: Generated servlet error:
+reached end of file while parsing
+
+
+	at org.glassfish.wasp.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:89)
+	at org.glassfish.wasp.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:247)
+	at org.glassfish.wasp.compiler.Compiler.generateClass(Compiler.java:346)
+	at org.glassfish.wasp.compiler.Compiler.compile(Compiler.java:399)
+	at org.glassfish.wasp.JspCompilationContext.compile(JspCompilationContext.java:561)
+	at org.glassfish.wasp.servlet.JspServletWrapper.service(JspServletWrapper.java:288)
+	at org.glassfish.wasp.servlet.JspServlet.serviceJspFile(JspServlet.java:358)
+	at org.glassfish.wasp.servlet.JspServlet.service(JspServlet.java:287)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1368)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:217)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:120)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:611)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:550)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:75)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:121)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:295)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:188)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:453)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:145)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:174)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:153)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:196)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:88)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:246)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:178)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:118)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:96)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:51)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:510)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:82)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:83)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:101)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:535)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:515)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+]]
+
+[2023-11-25T18:24:14.255185-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.compiler.Compiler] [tid: _ThreadID=190 _ThreadName=http-listener-1(2)] [levelValue: 1000] [[
+  Error compiling file: C:\Users\zCodexs\Documents\GitHub\alimentos\server\glassfish\domains\domain1\generated\jsp\projetoPOO\org\apache\jsp\painel_jsp.java]]
+
+[2023-11-25T18:24:14.256136-03:00] [GF 7.0.3] [WARNING] [] [jakarta.enterprise.web.vs.server] [tid: _ThreadID=190 _ThreadName=http-listener-1(2)] [levelValue: 900] [[
+  StandardWrapperValve[jsp]: Servlet.service() for servlet jsp threw exception
+org.glassfish.wasp.WaspException: PWC6033: Error in Javac compilation for JSP
+
+PWC6199: Generated servlet error:
+source value 8 is obsolete and will be removed in a future release
+
+PWC6199: Generated servlet error:
+target value 8 is obsolete and will be removed in a future release
+
+PWC6199: Generated servlet error:
+To suppress warnings about obsolete options, use -Xlint:-options.
+
+PWC6197: An error occurred at line: 278 in the jsp file: /painel.jsp
+PWC6199: Generated servlet error:
+'try' without 'catch', 'finally' or resource declarations
+
+PWC6197: An error occurred at line: 520 in the jsp file: /painel.jsp
+PWC6199: Generated servlet error:
+'else' without 'if'
+
+PWC6199: Generated servlet error:
+'catch' without 'try'
+
+PWC6199: Generated servlet error:
+'finally' without 'try'
+
+PWC6199: Generated servlet error:
+'try' without 'catch', 'finally' or resource declarations
+
+PWC6199: Generated servlet error:
+reached end of file while parsing
+
+
+	at org.glassfish.wasp.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:89)
+	at org.glassfish.wasp.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:247)
+	at org.glassfish.wasp.compiler.Compiler.generateClass(Compiler.java:346)
+	at org.glassfish.wasp.compiler.Compiler.compile(Compiler.java:399)
+	at org.glassfish.wasp.JspCompilationContext.compile(JspCompilationContext.java:561)
+	at org.glassfish.wasp.servlet.JspServletWrapper.service(JspServletWrapper.java:288)
+	at org.glassfish.wasp.servlet.JspServlet.serviceJspFile(JspServlet.java:358)
+	at org.glassfish.wasp.servlet.JspServlet.service(JspServlet.java:287)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1368)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:217)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:120)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:611)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:550)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:75)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:121)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:295)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:188)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:453)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:145)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:174)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:153)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:196)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:88)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:246)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:178)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:118)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:96)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:51)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:510)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:82)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:83)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:101)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:535)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:515)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+]]
+
+[2023-11-25T18:25:12.359755-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.compiler.Compiler] [tid: _ThreadID=191 _ThreadName=http-listener-1(3)] [levelValue: 1000] [[
+  Error compiling file: C:\Users\zCodexs\Documents\GitHub\alimentos\server\glassfish\domains\domain1\generated\jsp\projetoPOO\org\apache\jsp\painel_jsp.java]]
+
+[2023-11-25T18:25:12.360734-03:00] [GF 7.0.3] [WARNING] [] [jakarta.enterprise.web.vs.server] [tid: _ThreadID=191 _ThreadName=http-listener-1(3)] [levelValue: 900] [[
+  StandardWrapperValve[jsp]: Servlet.service() for servlet jsp threw exception
+org.glassfish.wasp.WaspException: PWC6033: Error in Javac compilation for JSP
+
+PWC6199: Generated servlet error:
+source value 8 is obsolete and will be removed in a future release
+
+PWC6199: Generated servlet error:
+target value 8 is obsolete and will be removed in a future release
+
+PWC6199: Generated servlet error:
+To suppress warnings about obsolete options, use -Xlint:-options.
+
+PWC6197: An error occurred at line: 278 in the jsp file: /painel.jsp
+PWC6199: Generated servlet error:
+'try' without 'catch', 'finally' or resource declarations
+
+PWC6197: An error occurred at line: 516 in the jsp file: /painel.jsp
+PWC6199: Generated servlet error:
+'else' without 'if'
+
+PWC6199: Generated servlet error:
+'catch' without 'try'
+
+PWC6199: Generated servlet error:
+'finally' without 'try'
+
+PWC6199: Generated servlet error:
+'try' without 'catch', 'finally' or resource declarations
+
+PWC6199: Generated servlet error:
+reached end of file while parsing
+
+
+	at org.glassfish.wasp.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:89)
+	at org.glassfish.wasp.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:247)
+	at org.glassfish.wasp.compiler.Compiler.generateClass(Compiler.java:346)
+	at org.glassfish.wasp.compiler.Compiler.compile(Compiler.java:399)
+	at org.glassfish.wasp.JspCompilationContext.compile(JspCompilationContext.java:561)
+	at org.glassfish.wasp.servlet.JspServletWrapper.service(JspServletWrapper.java:288)
+	at org.glassfish.wasp.servlet.JspServlet.serviceJspFile(JspServlet.java:358)
+	at org.glassfish.wasp.servlet.JspServlet.service(JspServlet.java:287)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1368)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:217)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:120)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:611)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:550)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:75)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:121)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:295)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:188)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:453)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:145)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:174)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:153)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:196)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:88)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:246)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:178)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:118)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:96)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:51)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:510)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:82)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:83)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:101)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:535)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:515)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+]]
+
+[2023-11-25T18:26:25.540616-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.compiler.Compiler] [tid: _ThreadID=193 _ThreadName=http-listener-1(5)] [levelValue: 1000] [[
+  Error compiling file: C:\Users\zCodexs\Documents\GitHub\alimentos\server\glassfish\domains\domain1\generated\jsp\projetoPOO\org\apache\jsp\painel_jsp.java]]
+
+[2023-11-25T18:26:25.541593-03:00] [GF 7.0.3] [WARNING] [] [jakarta.enterprise.web.vs.server] [tid: _ThreadID=193 _ThreadName=http-listener-1(5)] [levelValue: 900] [[
+  StandardWrapperValve[jsp]: Servlet.service() for servlet jsp threw exception
+org.glassfish.wasp.WaspException: PWC6033: Error in Javac compilation for JSP
+
+PWC6199: Generated servlet error:
+source value 8 is obsolete and will be removed in a future release
+
+PWC6199: Generated servlet error:
+target value 8 is obsolete and will be removed in a future release
+
+PWC6199: Generated servlet error:
+To suppress warnings about obsolete options, use -Xlint:-options.
+
+PWC6197: An error occurred at line: 314 in the jsp file: /painel.jsp
+PWC6199: Generated servlet error:
+'catch' without 'try'
+
+PWC6197: An error occurred at line: 278 in the jsp file: /painel.jsp
+PWC6199: Generated servlet error:
+'try' without 'catch', 'finally' or resource declarations
+
+PWC6197: An error occurred at line: 518 in the jsp file: /painel.jsp
+PWC6199: Generated servlet error:
+'else' without 'if'
+
+PWC6199: Generated servlet error:
+'catch' without 'try'
+
+PWC6199: Generated servlet error:
+'finally' without 'try'
+
+PWC6199: Generated servlet error:
+'try' without 'catch', 'finally' or resource declarations
+
+PWC6199: Generated servlet error:
+reached end of file while parsing
+
+
+	at org.glassfish.wasp.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:89)
+	at org.glassfish.wasp.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:247)
+	at org.glassfish.wasp.compiler.Compiler.generateClass(Compiler.java:346)
+	at org.glassfish.wasp.compiler.Compiler.compile(Compiler.java:399)
+	at org.glassfish.wasp.JspCompilationContext.compile(JspCompilationContext.java:561)
+	at org.glassfish.wasp.servlet.JspServletWrapper.service(JspServletWrapper.java:288)
+	at org.glassfish.wasp.servlet.JspServlet.serviceJspFile(JspServlet.java:358)
+	at org.glassfish.wasp.servlet.JspServlet.service(JspServlet.java:287)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1368)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:217)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:120)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:611)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:550)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:75)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:121)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:295)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:188)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:453)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:145)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:174)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:153)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:196)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:88)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:246)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:178)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:118)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:96)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:51)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:510)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:82)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:83)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:101)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:535)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:515)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+]]
+
+[2023-11-25T18:27:46.460809-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.compiler.Compiler] [tid: _ThreadID=189 _ThreadName=http-listener-1(1)] [levelValue: 1000] [[
+  Error compiling file: C:\Users\zCodexs\Documents\GitHub\alimentos\server\glassfish\domains\domain1\generated\jsp\projetoPOO\org\apache\jsp\painel_jsp.java]]
+
+[2023-11-25T18:27:46.461785-03:00] [GF 7.0.3] [WARNING] [] [jakarta.enterprise.web.vs.server] [tid: _ThreadID=189 _ThreadName=http-listener-1(1)] [levelValue: 900] [[
+  StandardWrapperValve[jsp]: Servlet.service() for servlet jsp threw exception
+org.glassfish.wasp.WaspException: PWC6033: Error in Javac compilation for JSP
+
+PWC6199: Generated servlet error:
+source value 8 is obsolete and will be removed in a future release
+
+PWC6199: Generated servlet error:
+target value 8 is obsolete and will be removed in a future release
+
+PWC6199: Generated servlet error:
+To suppress warnings about obsolete options, use -Xlint:-options.
+
+PWC6197: An error occurred at line: 278 in the jsp file: /painel.jsp
+PWC6199: Generated servlet error:
+variable usuarioID is already defined in method _jspService(jakarta.servlet.http.HttpServletRequest,jakarta.servlet.http.HttpServletResponse)
+
+
+	at org.glassfish.wasp.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:89)
+	at org.glassfish.wasp.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:247)
+	at org.glassfish.wasp.compiler.Compiler.generateClass(Compiler.java:346)
+	at org.glassfish.wasp.compiler.Compiler.compile(Compiler.java:399)
+	at org.glassfish.wasp.JspCompilationContext.compile(JspCompilationContext.java:561)
+	at org.glassfish.wasp.servlet.JspServletWrapper.service(JspServletWrapper.java:288)
+	at org.glassfish.wasp.servlet.JspServlet.serviceJspFile(JspServlet.java:358)
+	at org.glassfish.wasp.servlet.JspServlet.service(JspServlet.java:287)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1368)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:217)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:120)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:611)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:550)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:75)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:121)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:295)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:188)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:453)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:145)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:174)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:153)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:196)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:88)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:246)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:178)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:118)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:96)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:51)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:510)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:82)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:83)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:101)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:535)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:515)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+]]
+
+[2023-11-25T18:49:58.716974-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=192 _ThreadName=http-listener-1(4)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T18:50:02.299519-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=193 _ThreadName=http-listener-1(5)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T18:50:03.248640-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=190 _ThreadName=http-listener-1(2)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T18:50:36.597713-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=191 _ThreadName=http-listener-1(3)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T18:50:45.925141-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=190 _ThreadName=http-listener-1(2)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T18:51:23.292961-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=189 _ThreadName=http-listener-1(1)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T18:51:24.699670-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=191 _ThreadName=http-listener-1(3)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T19:24:53.179845-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=96 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@6961c346[name=/projetoPOO], urls=[
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/classes/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/lib/mysql-connector-j-8.1.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/ejb/projetoPOO/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/projetoPOO/
+][delegate=true, context=/projetoPOO, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=7, pathTimestamps.size=1, resourceEntryCache.size=301]]]
+
+[2023-11-25T19:24:53.717595-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=96 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Loading application [projetoPOO] at [/projetoPOO]]]
+
+[2023-11-25T19:24:53.747862-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=96 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  projetoPOO was successfully deployed in 1.817 milliseconds.]]
+
+[2023-11-25T19:33:55.041607-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=98 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@232be21f[name=/projetoPOO], urls=[
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/classes/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/lib/mysql-connector-j-8.1.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/ejb/projetoPOO/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/projetoPOO/
+][delegate=true, context=/projetoPOO, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=7, pathTimestamps.size=1, resourceEntryCache.size=288]]]
+
+[2023-11-25T19:33:55.576178-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=98 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Loading application [projetoPOO] at [/projetoPOO]]]
+
+[2023-11-25T19:33:55.600603-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=98 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  projetoPOO was successfully deployed in 589 milliseconds.]]
+
+[2023-11-25T19:50:54.769791-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=98 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@2fd0641[name=/projetoPOO], urls=[
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/classes/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/lib/mysql-connector-j-8.1.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/ejb/projetoPOO/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/projetoPOO/
+][delegate=true, context=/projetoPOO, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=7, pathTimestamps.size=1, resourceEntryCache.size=288]]]
+
+[2023-11-25T19:50:55.270660-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=98 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Loading application [projetoPOO] at [/projetoPOO]]]
+
+[2023-11-25T19:50:55.297019-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=98 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  projetoPOO was successfully deployed in 563 milliseconds.]]
+
+[2023-11-25T20:08:37.006822-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=97 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@775f479c[name=/projetoPOO], urls=[
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/classes/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/lib/mysql-connector-j-8.1.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/ejb/projetoPOO/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/projetoPOO/
+][delegate=true, context=/projetoPOO, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=7, pathTimestamps.size=1, resourceEntryCache.size=297]]]
+
+[2023-11-25T20:08:37.335625-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=193 _ThreadName=http-listener-1(5)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T20:08:37.526390-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=97 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  Loading application [projetoPOO] at [/projetoPOO]]]
+
+[2023-11-25T20:08:37.547869-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=97 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  projetoPOO was successfully deployed in 573 milliseconds.]]
+
+[2023-11-25T21:02:32.767588-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=97 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@1f5c3ff5[name=/projetoPOO], urls=[
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/classes/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/lib/mysql-connector-j-8.1.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/ejb/projetoPOO/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/projetoPOO/
+][delegate=true, context=/projetoPOO, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=7, pathTimestamps.size=1, resourceEntryCache.size=299]]]
+
+[2023-11-25T21:02:33.238643-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=97 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  Loading application [projetoPOO] at [/projetoPOO]]]
+
+[2023-11-25T21:02:33.262072-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=97 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  projetoPOO was successfully deployed in 1.739 milliseconds.]]
+
+[2023-11-25T21:10:40.880774-03:00] [GF 7.0.3] [SEVERE] [] [jakarta.enterprise.logging.stderr] [tid: _ThreadID=193 _ThreadName=http-listener-1(5)] [levelValue: 1000] [[
+  java.lang.IllegalArgumentException: Timestamp format must be yyyy-mm-dd hh:mm:ss[.fffffffff]
+	at java.sql/java.sql.Timestamp.valueOf(Timestamp.java:196)
+	at org.apache.jsp.addRecord_jsp._jspService(addRecord_jsp.java:88)
+	at org.glassfish.wasp.runtime.HttpJspBase.service(HttpJspBase.java:68)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.glassfish.wasp.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.glassfish.wasp.servlet.JspServlet.serviceJspFile(JspServlet.java:358)
+	at org.glassfish.wasp.servlet.JspServlet.service(JspServlet.java:287)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1368)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:217)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:120)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:611)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:550)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:75)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:121)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:295)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:188)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:453)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:145)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:174)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:153)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:196)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:88)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:246)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:178)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:118)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:96)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:51)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:510)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:82)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:83)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:101)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:535)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:515)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+]]
+
+[2023-11-25T21:10:40.888585-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=190 _ThreadName=http-listener-1(2)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T21:10:42.044870-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=192 _ThreadName=http-listener-1(4)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T21:10:42.778124-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=191 _ThreadName=http-listener-1(3)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T21:10:43.150110-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=189 _ThreadName=http-listener-1(1)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T21:10:43.325848-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=193 _ThreadName=http-listener-1(5)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T21:10:47.303073-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=190 _ThreadName=http-listener-1(2)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T21:10:47.586212-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=192 _ThreadName=http-listener-1(4)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T21:10:47.721922-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=191 _ThreadName=http-listener-1(3)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T21:16:41.353294-03:00] [GF 7.0.3] [SEVERE] [] [jakarta.enterprise.logging.stderr] [tid: _ThreadID=189 _ThreadName=http-listener-1(1)] [levelValue: 1000] [[
+  java.lang.IllegalArgumentException: Timestamp format must be yyyy-mm-dd hh:mm:ss[.fffffffff]
+	at java.sql/java.sql.Timestamp.valueOf(Timestamp.java:196)
+	at org.apache.jsp.addRecord_jsp._jspService(addRecord_jsp.java:88)
+	at org.glassfish.wasp.runtime.HttpJspBase.service(HttpJspBase.java:68)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.glassfish.wasp.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.glassfish.wasp.servlet.JspServlet.serviceJspFile(JspServlet.java:358)
+	at org.glassfish.wasp.servlet.JspServlet.service(JspServlet.java:287)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1368)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:217)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:120)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:611)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:550)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:75)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:121)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:295)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:188)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:453)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:145)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:174)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:153)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:196)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:88)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:246)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:178)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:118)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:96)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:51)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:510)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:82)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:83)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:101)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:535)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:515)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+]]
+
+[2023-11-25T21:16:41.359151-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=193 _ThreadName=http-listener-1(5)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T21:17:34.490223-03:00] [GF 7.0.3] [SEVERE] [] [jakarta.enterprise.logging.stderr] [tid: _ThreadID=190 _ThreadName=http-listener-1(2)] [levelValue: 1000] [[
+  java.lang.IllegalArgumentException: Timestamp format must be yyyy-mm-dd hh:mm:ss[.fffffffff]
+	at java.sql/java.sql.Timestamp.valueOf(Timestamp.java:196)
+	at org.apache.jsp.addRecord_jsp._jspService(addRecord_jsp.java:88)
+	at org.glassfish.wasp.runtime.HttpJspBase.service(HttpJspBase.java:68)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.glassfish.wasp.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.glassfish.wasp.servlet.JspServlet.serviceJspFile(JspServlet.java:358)
+	at org.glassfish.wasp.servlet.JspServlet.service(JspServlet.java:287)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1368)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:217)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:120)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:611)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:550)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:75)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:121)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:295)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:188)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:453)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:145)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:174)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:153)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:196)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:88)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:246)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:178)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:118)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:96)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:51)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:510)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:82)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:83)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:101)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:535)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:515)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+]]
+
+[2023-11-25T21:17:34.494129-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=192 _ThreadName=http-listener-1(4)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T21:37:14.862548-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=96 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@7077a07[name=/projetoPOO], urls=[
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/classes/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/lib/mysql-connector-j-8.1.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/ejb/projetoPOO/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/projetoPOO/
+][delegate=true, context=/projetoPOO, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=7, pathTimestamps.size=1, resourceEntryCache.size=300]]]
+
+[2023-11-25T21:37:15.380644-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=96 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Loading application [projetoPOO] at [/projetoPOO]]]
+
+[2023-11-25T21:37:15.405057-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=96 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  projetoPOO was successfully deployed in 574 milliseconds.]]
+
+[2023-11-25T21:38:08.043277-03:00] [GF 7.0.3] [WARNING] [] [jakarta.enterprise.web.vs.server] [tid: _ThreadID=193 _ThreadName=http-listener-1(5)] [levelValue: 900] [[
+  StandardWrapperValve[jsp]: Servlet.service() for servlet jsp threw exception
+java.lang.NumberFormatException: Cannot parse null string
+	at java.base/java.lang.Integer.parseInt(Integer.java:627)
+	at java.base/java.lang.Integer.parseInt(Integer.java:781)
+	at org.apache.jsp.addRecord_jsp._jspService(addRecord_jsp.java:58)
+	at org.glassfish.wasp.runtime.HttpJspBase.service(HttpJspBase.java:68)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.glassfish.wasp.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.glassfish.wasp.servlet.JspServlet.serviceJspFile(JspServlet.java:358)
+	at org.glassfish.wasp.servlet.JspServlet.service(JspServlet.java:287)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1368)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:217)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:120)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:611)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:550)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:75)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:121)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:295)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:188)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:453)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:145)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:174)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:153)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:196)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:88)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:246)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:178)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:118)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:96)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:51)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:510)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:82)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:83)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:101)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:535)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:515)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+]]
+

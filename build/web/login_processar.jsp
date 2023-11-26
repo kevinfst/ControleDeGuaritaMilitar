@@ -58,7 +58,7 @@ try {
         
         response.sendRedirect("painel.jsp");
     } else {
-        out.println("Login falhou. Verifique suas credenciais. <a href='login.jsp'>Tentar novamente</a>");
+        out.println("Login falhou. Verifique suas credenciais. <a href='index.jsp'>Tentar novamente</a>");
     }
     
     ps.close();

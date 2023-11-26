@@ -18,16 +18,29 @@
             .btn i {
                 margin-right: 8px;
             }
+
+            .bg-successs{
+                background-color:  #0b1c18;
+            }
+            .back-to-home {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+            }
         </style>
     </head>
 
-    <body style="background-color: #508bfc;">
-        <section class="vh-100" >
+
+    <a href="index.jsp" class="btn back-to-home text-light">
+        <img src="imagens/iconEx.png" alt="Ícone" style="width: 68px; height: auto;">
+    </a>
+    <body style="background-image: url('imagens/wpp.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <section class="vh-100">
             <div class="container py-5 h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                        <div class="card shadow-2-strong" style="border-radius: 1rem;">
-                            <div class="card-body p-5 text-center">
+                        <div class="card shadow-2-strong bg-successs" style="border-radius: 1rem;">
+                            <div class="card-body p-5 text-center text-light" style="">
                                 <h3 class="mb-5">Registrar</h3>
                                 <form action="registro_processar.jsp" method="post" class="row g-3 needs-validation" novalidate>
 
@@ -104,8 +117,8 @@
                                             <i class="fas fa-medal"></i> <!-- Ícone de medalha -->
                                             <select id="nm_patente" aria-label="Escolha a Patente" name="nm_patente" class="form-control form-control-lg form-select" required>
                                                 <option selected disabled value="">Escolha a patente</option>
-                                                <option value="sentinela">Sentinela</option>
-                                                <option value="comandante">Comandante</option>
+                                                <option value="Sentinela">Sentinela</option>
+                                                <option value="Comandante">Comandante</option>
                                             </select>
                                             <div class="invalid-feedback">
                                                 Por favor, selecione uma patente.
@@ -127,10 +140,10 @@
                                     </div>
 
                                     <div class="col-12">
-                                        <button class="btn btn-primary btn-lg btn-block" type="submit">Registrar</button>
+                                        <button class="btn btn-success  btn-lg btn-block" type="submit">Registrar</button>
                                     </div>
                                     <div class="text-center">
-                                        <p>Possui conta? <a href="index.jsp">Logar-se</a></p>
+                                        <p>Possui conta? <a href="index.jsp" class=" text-success">Logar-se</a></p>
 
                                     </div>
 
