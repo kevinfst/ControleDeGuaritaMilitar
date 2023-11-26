@@ -391,10 +391,10 @@
                                     <div class="mb-3">
                                         <label for="nome_soldado" class="form-label">Nome do Soldado</label>                                       
                                         <select class="form-select" id="nome_soldado" name="id_usuario" required> 
+                                            <option selected disabled value="">Escolha o soldado</option>  
                                             <%while (rs.next()) { 
                                              String nm_usuario = rs.getString("nm_usuario");
-                                               String id_usuario = rs.getString("id_usuario");%>  
-                                            <option selected disabled value="">Escolha o soldado</option>                                            
+                                               String id_usuario = rs.getString("id_usuario");%>                                                                                    
                                             <option value="<%= id_usuario %>"><%= nm_usuario %></option>
                                             <% } %>
                                         </select>

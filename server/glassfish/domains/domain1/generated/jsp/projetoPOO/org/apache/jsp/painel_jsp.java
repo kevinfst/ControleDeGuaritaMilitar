@@ -491,12 +491,12 @@ public final class painel_jsp extends org.glassfish.wasp.runtime.HttpJspBase
       out.write("                                    <div class=\"mb-3\">\n");
       out.write("                                        <label for=\"nome_soldado\" class=\"form-label\">Nome do Soldado</label>                                       \n");
       out.write("                                        <select class=\"form-select\" id=\"nome_soldado\" name=\"id_usuario\" required> \n");
+      out.write("                                            <option selected disabled value=\"\">Escolha o soldado</option>  \n");
       out.write("                                            ");
 while (rs.next()) { 
                                              String nm_usuario = rs.getString("nm_usuario");
                                                String id_usuario = rs.getString("id_usuario");
-      out.write("  \n");
-      out.write("                                            <option selected disabled value=\"\">Escolha o soldado</option>                                            \n");
+      out.write("                                                                                    \n");
       out.write("                                            <option value=\"");
       out.print( id_usuario );
       out.write('"');

@@ -35778,3 +35778,21 @@ java.lang.NumberFormatException: Cannot parse null string
 	at java.base/java.lang.Thread.run(Thread.java:1623)
 ]]
 
+[2023-11-25T22:07:56.357892-03:00] [GF 7.0.3] [INFO] [] [org.glassfish.web.loader.WebappClassLoader] [tid: _ThreadID=99 _ThreadName=admin-listener(5)] [levelValue: 800] [[
+  close(), this:
+org.glassfish.web.loader.WebappClassLoader@24da0b6[name=/projetoPOO], urls=[
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/classes/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/build/web/WEB-INF/lib/mysql-connector-j-8.1.0.jar
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/ejb/projetoPOO/
+file:/C:/Users/zCodexs/Documents/GitHub/alimentos/server/glassfish/domains/domain1/generated/projetoPOO/
+][delegate=true, context=/projetoPOO, status=RUNNING, antiJARLocking=false, securityManager=false, packageDefinitionSecurityEnabled=false, repositories=RepositoryManager[WEB-INF/classes/], notFound.size=7, pathTimestamps.size=1, resourceEntryCache.size=301]]]
+
+[2023-11-25T22:07:56.769219-03:00] [GF 7.0.3] [SEVERE] [] [org.glassfish.wasp.servlet.JspServlet] [tid: _ThreadID=189 _ThreadName=http-listener-1(1)] [levelValue: 1000] [[
+  PWC6117: File "null" not found]]
+
+[2023-11-25T22:07:56.855153-03:00] [GF 7.0.3] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=99 _ThreadName=admin-listener(5)] [levelValue: 800] [[
+  Loading application [projetoPOO] at [/projetoPOO]]]
+
+[2023-11-25T22:07:56.876615-03:00] [GF 7.0.3] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=99 _ThreadName=admin-listener(5)] [levelValue: 800] [[
+  projetoPOO was successfully deployed in 552 milliseconds.]]
+
