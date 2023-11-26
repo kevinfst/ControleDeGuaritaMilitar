@@ -81,6 +81,9 @@
          
      String nm_patente = (String) session.getAttribute("nm_patente");
 
+  
+     
+
 
 
 
@@ -400,13 +403,7 @@
                                         </select>
                                     </div>
 
-                                    <div class="mb-3">
-                                        <label for="dia_hora_guarda" class="form-label">Data e Hora da Guarda</label>
-                                        <input type="date" class="form-control" id="dia_hora_guarda" name="dia_hora_guarda" required>
-                                        <div class="invalid-feedback">
-                                            Por favor, insira a data.
-                                        </div>
-                                    </div>
+                                   
 
 
                                     <div class="mb-3">
@@ -460,7 +457,8 @@
                             <th class="text-center">ID</th>
                             <th class="text-center">Nome do Soldado</th>
                             <th class="text-center">Patente</th>
-                            <th class="text-center">Data / Hora</th>
+                            <th class="text-center">Entrada</th> 
+                            <th class="text-center">Saída</th> 
                             <th class="text-center">Tipo de Escala</th>
                             <th class="text-center">Corte de Cabelo</th>
                             <th class="text-center">Identificação Militar</th>
@@ -469,41 +467,42 @@
                     </thead>
                     <tbody>
                         <%
-                        int loggedInUserId = (int) session.getAttribute("idUsuario");
-                        try {
-                            Class.forName("com.mysql.cj.jdbc.Driver");
-                            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
-                            Statement stmt = conn.createStatement();
-                            String query = "SELECT * FROM escala_guarda INNER JOIN usuario ON escala_guarda.id_usuario = usuario.id_usuario";
-                            ResultSet rs = stmt.executeQuery(query);
-                            while (rs.next()) { 
-                                int idEscala = rs.getInt("id");
-                                String nomeSoldado = rs.getString("nm_usuario");
-                                String patente = rs.getString("nm_patente");
-                           
-        String diaHoraGuarda = rs.getString("dia_hora_guarda");
+    int loggedInUserId = (int) session.getAttribute("idUsuario");
+    try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+        Statement stmt = conn.createStatement();
+        String query = "SELECT * FROM escala_guarda INNER JOIN usuario ON escala_guarda.id_usuario = usuario.id_usuario LEFT JOIN registro_entrada_saida ON escala_guarda.id_usuario = registro_entrada_saida.id_usuario";
+        ResultSet rs = stmt.executeQuery(query);
+        while (rs.next()) { 
+            int idEscala = rs.getInt("id");
+            String nomeSoldado = rs.getString("nm_usuario");
+            String patente = rs.getString("nm_patente");     
+            String diaHoraEntrada = rs.getString("data_hora_entrada");
+            String diaHoraSaida = rs.getString("data_hora_saida");
+            String tipoEscala = rs.getString("tipo_escala");
+            boolean corteCabeloConforme = rs.getBoolean("corte_cabelo_conformidade");
+            boolean identificacaoConforme = rs.getBoolean("identificacao_militar_conformidade");
 
-        // Supondo que "diaHoraGuarda" seja uma string representando a data e hora
-        SimpleDateFormat formatoOriginal = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        SimpleDateFormat formatoNovo = new SimpleDateFormat("dd/MM/yyyy");
+            // Verifica se diaHoraEntrada e diaHoraSaida são nulos e exibe "Não registrado" se for o caso
+           
+            diaHoraEntrada = (diaHoraEntrada != null) ? diaHoraEntrada : "Não registrado";
+            
+            diaHoraSaida = (diaHoraSaida != null) ? diaHoraSaida : "Não registrado";
+           
 
-        Date data;
+            // Aqui você pode inserir os dados existentes na tabela conforme necessário
+            // Por exemplo, você pode exibir os valores em HTML ou fazer qualquer outra manipulação necessária
+%> 
+  
+            
+<tr>
     
-            data = formatoOriginal.parse(diaHoraGuarda);
-            String dataFormatada = formatoNovo.format(data);
-   
-    
-
-                                String tipoEscala = rs.getString("tipo_escala");
-                                boolean corteCabeloConforme = rs.getBoolean("corte_cabelo_conformidade");
-                                boolean identificacaoConforme = rs.getBoolean("identificacao_militar_conformidade");
-        
-                        %>
-                        <tr>
                             <td><%= idEscala %></td>
                             <td><%= nomeSoldado %></td>
                             <td><%= patente %></td>
-                            <td><%= dataFormatada %></td>
+                            <td><%= diaHoraEntrada %></td> 
+                            <td><%= diaHoraSaida %></td> 
                             <% if (tipoEscala.equals("Vermelha")) { %>
                             <td class="text-danger"><%= tipoEscala %></td>
                             <% } else  { %>

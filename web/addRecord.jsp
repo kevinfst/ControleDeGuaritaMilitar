@@ -2,7 +2,7 @@
 
 <%
 // Retrieve form data from request
-String hora_guarda = request.getParameter("dia_hora_guarda");
+
 String escala = request.getParameter("tipo_escala");
 int cabelo_conformidade = Integer.parseInt(request.getParameter("corte_cabelo_conformidade"));
 int identificacao_conformidade = Integer.parseInt(request.getParameter("identificacao_militar_conformidade"));
@@ -31,13 +31,12 @@ try {
     conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 
     // SQL query to insert a new record
-   String escalaDef = "INSERT INTO escala_guarda (id_usuario, dia_hora_guarda, corte_cabelo_conformidade, identificacao_militar_conformidade, tipo_escala) VALUES (?,?,?,?,?)";    
+   String escalaDef = "INSERT INTO escala_guarda (id_usuario, corte_cabelo_conformidade, identificacao_militar_conformidade, tipo_escala) VALUES (?,?,?,?)";    
 stmt = conn.prepareStatement(escalaDef); //executar
 stmt.setInt(1, id_usuario);
-stmt.setTimestamp(2, Timestamp.valueOf(hora_guarda + " 00:00:00")); // Converte a string para java.sql.Timestamp
-stmt.setInt(3, cabelo_conformidade);
-stmt.setInt(4, identificacao_conformidade);
-stmt.setString(5, escala);
+stmt.setInt(2, cabelo_conformidade);
+stmt.setInt(3, identificacao_conformidade);
+stmt.setString(4, escala);
 
 
    

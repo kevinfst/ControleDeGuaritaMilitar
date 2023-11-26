@@ -6,6 +6,7 @@
 int idEscala = Integer.parseInt(request.getParameter("idEscala"));
 Integer idUsuarioLogado = (Integer) session.getAttribute("idUsuario");
 
+
 try {
     if (idUsuarioLogado != null) {
         int idUsuario = idUsuarioLogado.intValue();
