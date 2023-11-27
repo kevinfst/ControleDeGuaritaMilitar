@@ -3,8 +3,10 @@
 <html lang="en">
 
     <head>
+        <!-- Configuração da página -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Links para os estilos Bootstrap e Font Awesome -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN5P1+2N4qI1i1tI6Ar2RT5I07f6JvRM" crossorigin="anonymous">
         <style>
@@ -30,20 +32,23 @@
         </style>
     </head>
 
-
+    <!-- Barra de navegação de retorno à página inicial -->
     <a href="index.jsp" class="btn back-to-home text-light">
         <img src="imagens/iconEx.png" alt="Ícone" style="width: 68px; height: auto;">
     </a>
     <body style="background-image: url('imagens/wpp.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <!-- Seção de registro -->
         <section class="vh-100">
             <div class="container py-5 h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                        <!-- Cartão de registro -->
                         <div class="card shadow-2-strong bg-successs" style="border-radius: 1rem;">
                             <div class="card-body p-5 text-center text-light" style="">
                                 <h3 class="mb-5">Registrar</h3>
+                                <!-- Formulário de registro -->
                                 <form action="registro_processar.jsp" method="post" class="row g-3 needs-validation" novalidate>
-
+                                    <!-- Nome Completo -->
                                     <div class="col-md-6">
                                         <label for="name" class="form-label">Nome Completo</label>
                                         <div class="form-outline mb-4">
@@ -54,7 +59,7 @@
                                             </div>
                                         </div>
                                     </div>
-
+                                    <!-- Nome de Usuário -->
                                     <div class="col-md-6">
                                         <label for="nm_usuarioLogin" class="form-label">Nome de Usuário</label>
                                         <div class="form-outline mb-4">
@@ -66,7 +71,7 @@
                                         </div>
                                     </div>
 
-
+                                    
                                     <div class="col-md-6">
                                         <label for="nm_guerra" class="form-label">Nome de Guerra</label>
                                         <div class="form-outline mb-4">
@@ -110,7 +115,7 @@
                                             </div>
                                         </div>
                                     </div>
-
+                                    
                                     <div class="col-md-12">
                                         <label for="nm_patente" class="form-label">Escolha a Patente</label>
                                         <div class="form-outline mb-4">
@@ -126,7 +131,7 @@
                                         </div>
                                     </div>
 
-
+                                    
                                     <div class="col-12">
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
@@ -138,10 +143,11 @@
                                             </div>
                                         </div>
                                     </div>
-
+                                    <!-- Botão de Registro -->
                                     <div class="col-12">
                                         <button class="btn btn-success  btn-lg btn-block" type="submit">Registrar</button>
                                     </div>
+                                    <!-- Link para login -->
                                     <div class="text-center">
                                         <p>Possui conta? <a href="index.jsp" class=" text-success">Logar-se</a></p>
 
@@ -154,20 +160,21 @@
                 </div>
             </div>
         </section>
-
+        
+        <!-- Script para validação do formulário usando Bootstrap -->
         <script>
             (() => {
                 'use strict'
-
+                // Seleciona todos os formulários com a classe 'needs-validation'
                 const forms = document.querySelectorAll('.needs-validation')
-
+                 // Adiciona um ouvinte de evento de envio para cada formulário
                 Array.from(forms).forEach(form => {
                     form.addEventListener('submit', event => {
                         if (!form.checkValidity()) {
                             event.preventDefault()
                             event.stopPropagation()
                         }
-
+                        // Adiciona a classe 'was-validated' ao formulário
                         form.classList.add('was-validated')
                     }, false)
                 })

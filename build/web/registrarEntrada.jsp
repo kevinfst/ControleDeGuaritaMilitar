@@ -10,10 +10,11 @@ try {
     if (idUsuarioLogado != null) {
         int idUsuario = idUsuarioLogado.intValue();
 
+        // Carregar o driver JDBC e estabelecer a conexão com o banco de dados
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 
-        // Verifique se já existe um registro de entrada para esta escala
+        // Verificar se já existe um registro de entrada para esta escala
         String verificaQuery = "SELECT * FROM registro_entrada_saida WHERE id_usuario = ? AND id_registro = ? AND data_hora_entrada IS NOT NULL AND data_hora_saida IS NULL";
         try (PreparedStatement verificaStmt = conn.prepareStatement(verificaQuery)) {
             verificaStmt.setInt(1, idUsuario);
@@ -29,7 +30,7 @@ try {
                 </script>
 <%
             } else {
-                // Verifique se já existe um registro de saída para esta escala
+                // Verificar se já existe um registro de saída para esta escala
                 String verificaSaidaQuery = "SELECT * FROM registro_entrada_saida WHERE id_usuario = ? AND id_registro = ? AND data_hora_saida IS NOT NULL";
                 try (PreparedStatement verificaSaidaStmt = conn.prepareStatement(verificaSaidaQuery)) {
                     verificaSaidaStmt.setInt(1, idUsuario);
@@ -45,7 +46,7 @@ try {
                         </script>
 <%
                     } else {
-                        // Insira o registro de entrada
+                        // Inserir o registro de entrada
                         String insertQuery = "INSERT INTO registro_entrada_saida (id_usuario, id_registro, data_hora_entrada) VALUES (?, ?, NOW())";
                         try (PreparedStatement insertStmt = conn.prepareStatement(insertQuery)) {
                             insertStmt.setInt(1, idUsuario);
@@ -67,6 +68,7 @@ try {
             verificaRs.close();
         }
 
+        // Fechar a conexão com o banco de dados
         conn.close();
     } else {
         // O atributo idUsuario não está definido na sessão
@@ -78,6 +80,8 @@ try {
 <%
     }
 } catch (Exception e) {
+    // Imprimir rastreamento de pilha em caso de exceção
     e.printStackTrace();
 }
 %>
+

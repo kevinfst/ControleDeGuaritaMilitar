@@ -6,6 +6,7 @@
     // Importando a classe de conexão com o banco de dados
     Connection conn = null;
     try {
+        // Carregando o driver JDBC e estabelecendo a conexão com o banco de dados
         Class.forName("com.mysql.cj.jdbc.Driver");
         conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
     } catch (Exception e) {
@@ -34,6 +35,7 @@
 
     // Atualizando os dados no banco de dados
     try {
+        // Preparando a consulta SQL para atualização do perfil do usuário
         String updateQuery = "UPDATE usuario SET nm_usuario=?, cd_idade=?, dt_dataNascimento=?, nm_guerra=?, nm_patente=?, nm_usuarioLogin=?, cd_senha=? WHERE id_usuario=?";
         PreparedStatement pstmt = conn.prepareStatement(updateQuery);
         pstmt.setString(1, nomeUsuario);
@@ -45,12 +47,13 @@
         pstmt.setString(7, senhaUsuario);
         pstmt.setInt(8, Integer.parseInt(request.getParameter("usuarioID"))); // Certifique-se de ter um campo oculto no formulário para armazenar o id_usuario
 
+        // Executando a atualização no banco de dados
         pstmt.executeUpdate();
         pstmt.close();
         conn.close();
         
+        // Invalidando a sessão para garantir que o usuário faça login novamente com as novas credenciais
         session.invalidate();
-
 
         // Redirecionar para a página de perfil após a atualização
         response.sendRedirect("index.jsp");
@@ -63,10 +66,8 @@
 <html>
 <head>
     <title>Atualização de Perfil</title>
-    <!-- Inclua aqui os seus estilos CSS, se necessário -->
 </head>
 <body>
     <h2>Perfil Atualizado com Sucesso!</h2>
-    <!-- Inclua aqui qualquer conteúdo adicional que você deseja exibir após a atualização do perfil -->
 </body>
 </html>
