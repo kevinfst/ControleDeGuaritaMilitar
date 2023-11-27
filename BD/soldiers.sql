@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2023 at 12:03 AM
+-- Generation Time: Nov 27, 2023 at 03:03 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -35,14 +35,6 @@ CREATE TABLE `escala_guarda` (
   `identificacao_militar_conformidade` tinyint(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `escala_guarda`
---
-
-INSERT INTO `escala_guarda` (`id`, `id_usuario`, `tipo_escala`, `corte_cabelo_conformidade`, `identificacao_militar_conformidade`) VALUES
-(77, 21, 'Cinza', 1, 0),
-(78, 20, 'Vermelha', 1, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -55,14 +47,6 @@ CREATE TABLE `registro_entrada_saida` (
   `data_hora_entrada` datetime DEFAULT NULL,
   `data_hora_saida` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `registro_entrada_saida`
---
-
-INSERT INTO `registro_entrada_saida` (`id_registro`, `id_usuario`, `data_hora_entrada`, `data_hora_saida`) VALUES
-(20, 20, '2023-11-26 19:55:28', '2023-11-26 19:55:33'),
-(21, 21, '2023-11-26 20:01:18', '2023-11-26 20:01:19');
 
 -- --------------------------------------------------------
 
@@ -77,14 +61,6 @@ CREATE TABLE `troca_horario` (
   `data_solicitacao` datetime DEFAULT NULL,
   `status_solicitacao` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `troca_horario`
---
-
-INSERT INTO `troca_horario` (`id_troca`, `id_usuario_solicitante`, `id_usuario_destinatario`, `data_solicitacao`, `status_solicitacao`) VALUES
-(77, 20, 21, '2023-11-26 20:02:26', 'pendente'),
-(78, 20, 21, '2023-11-26 20:02:27', 'pendente');
 
 -- --------------------------------------------------------
 
@@ -102,14 +78,6 @@ CREATE TABLE `usuario` (
   `nm_usuarioLogin` varchar(50) NOT NULL,
   `cd_senha` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `usuario`
---
-
-INSERT INTO `usuario` (`id_usuario`, `nm_usuario`, `cd_idade`, `dt_dataNascimento`, `nm_guerra`, `nm_patente`, `nm_usuarioLogin`, `cd_senha`) VALUES
-(20, '13', 13, '2023-11-28', '13', 'Comandante', '13', '13'),
-(21, '15', 15, '2023-12-04', '15', 'Comandante', '15', '15');
 
 --
 -- Indexes for dumped tables
@@ -151,7 +119,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `escala_guarda`
 --
 ALTER TABLE `escala_guarda`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
 -- AUTO_INCREMENT for table `registro_entrada_saida`
@@ -163,7 +131,7 @@ ALTER TABLE `registro_entrada_saida`
 -- AUTO_INCREMENT for table `troca_horario`
 --
 ALTER TABLE `troca_horario`
-  MODIFY `id_troca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `id_troca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT for table `usuario`

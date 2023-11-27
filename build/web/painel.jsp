@@ -403,9 +403,6 @@
                                         </select>
                                     </div>
 
-                                   
-
-
                                     <div class="mb-3">
                                         <label for="tipo_escala" class="form-label">Tipo de Escala</label>
                                         <select class="form-select" id="tipo_escala" name="tipo_escala" required>  
@@ -514,9 +511,14 @@
 
                                 <% if (loggedInUserId != rs.getInt("id_usuario")) { %>
 
-                                <form action="solicitarTroca.jsp" method="post">
+                                <form action="solicitarTroca.jsp" method="post" class="mb-2">
                                     <input type="hidden" name="idEscala" value="<%= rs.getInt("id_usuario") %>">
                                     <button class="btn btn-primary" type="submit" value="<%= rs.getInt("id_usuario") %>">Solicitar Troca</button>
+                                </form>
+                                
+                                <form action="deleteRecord.jsp" method="post">
+                                    <input type="hidden" name="idEscala" value="<%= rs.getInt("id_usuario") %>">
+                                    <button class="btn btn-danger" type="submit" value="<%= rs.getInt("id_usuario") %>">Remover</button>
                                 </form>
                                 <% } %>
                             </td>

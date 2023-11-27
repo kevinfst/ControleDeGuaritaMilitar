@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%
-// Recupere o ID da escala para o qual deseja registrar a saída
+// Recupere o ID da escala para a qual deseja registrar a saída
 int idEscala = Integer.parseInt(request.getParameter("idEscala"));
 Integer idUsuarioLogado = (Integer) session.getAttribute("idUsuario");
 
@@ -14,27 +14,46 @@ try {
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 
         // Verifique se já existe um registro de entrada para esta escala
-        String verificaQuery = "SELECT * FROM registro_entrada_saida WHERE id_usuario = ? AND id_registro = ? AND data_hora_entrada IS NOT NULL AND data_hora_saida IS NULL";
+        String verificaQuery = "SELECT * FROM registro_entrada_saida WHERE id_usuario = ? AND id_registro = ? AND data_hora_entrada IS NOT NULL";
         try (PreparedStatement verificaStmt = conn.prepareStatement(verificaQuery)) {
             verificaStmt.setInt(1, idUsuario);
             verificaStmt.setInt(2, idEscala);
             ResultSet verificaRs = verificaStmt.executeQuery();
 
             if (verificaRs.next()) {
-                // Atualize o registro de entrada existente com a data e hora de saída
-                String updateQuery = "UPDATE registro_entrada_saida SET data_hora_saida = NOW() WHERE id_usuario = ? AND id_registro = ?";
-                try (PreparedStatement updateStmt = conn.prepareStatement(updateQuery)) {
-                    updateStmt.setInt(1, idUsuario);
-                    updateStmt.setInt(2, idEscala);
-                    updateStmt.executeUpdate();
-                    out.println("Saída registrada com sucesso.");
-
-                    // Redirecione para a página anterior
-                    response.sendRedirect(request.getHeader("referer"));
+                // Verifique se a saída já foi registrada
+                Timestamp dataHoraSaida = verificaRs.getTimestamp("data_hora_saida");
+                if (dataHoraSaida == null) {
+                    // Saída ainda não registrada, prossiga com o registro
+                    String updateQuery = "UPDATE registro_entrada_saida SET data_hora_saida = NOW() WHERE id_usuario = ? AND id_registro = ?";
+                    try (PreparedStatement updateStmt = conn.prepareStatement(updateQuery)) {
+                        updateStmt.setInt(1, idUsuario);
+                        updateStmt.setInt(2, idEscala);
+                        updateStmt.executeUpdate();
+                        %>
+                        <script>
+                            alert("Saída registrada com sucesso.");
+                            window.location.href = document.referrer; // Volta para a página anterior
+                        </script>
+                        <%
+                    }
+                } else {
+                    // Saída já registrada, mostre um alerta informando
+                    %>
+                    <script>
+                        alert("Erro: Já há uma saída registrada para esta escala.");
+                        window.location.href = document.referrer; // Volta para a página anterior
+                    </script>
+                    <%
                 }
             } else {
                 // Nenhum registro de entrada encontrado para esta escala
-                out.println("Erro: Nenhum registro de entrada encontrado para esta escala.");
+                %>
+                <script>
+                    alert("Erro: Nenhum registro de entrada encontrado para esta escala.");
+                    window.location.href = document.referrer; // Volta para a página anterior
+                </script>
+                <%
             }
 
             verificaRs.close();
@@ -42,8 +61,12 @@ try {
 
         conn.close();
     } else {
-        // O atributo idUsuario não está definido na sessão
-        out.println("Erro: Usuário não autenticado.");
+        %>
+        <script>
+            alert("Erro: Usuário não autenticado.");
+            window.location.href = document.referrer; // Volta para a página anterior
+        </script>
+        <%
     }
 } catch (Exception e) {
     e.printStackTrace();

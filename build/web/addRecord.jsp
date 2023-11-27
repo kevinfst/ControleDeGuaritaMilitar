@@ -8,14 +8,12 @@ int cabelo_conformidade = Integer.parseInt(request.getParameter("corte_cabelo_co
 int identificacao_conformidade = Integer.parseInt(request.getParameter("identificacao_militar_conformidade"));
 int id_usuario = Integer.parseInt(request.getParameter("id_usuario"));
 
-
 // Generate a random 12-digit barcode
 Random random = new Random();
 StringBuilder barcodeBuilder = new StringBuilder();
 for (int i = 0; i < 12; i++) {
     barcodeBuilder.append(random.nextInt(10));
 }
-String codigoDeBarras = barcodeBuilder.toString();
 
 // Database connection parameters
 String dbUrl = "jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
@@ -30,27 +28,39 @@ try {
     Class.forName("com.mysql.cj.jdbc.Driver");
     conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 
-    // SQL query to insert a new record
-   String escalaDef = "INSERT INTO escala_guarda (id_usuario, corte_cabelo_conformidade, identificacao_militar_conformidade, tipo_escala) VALUES (?,?,?,?)";    
-stmt = conn.prepareStatement(escalaDef); //executar
-stmt.setInt(1, id_usuario);
-stmt.setInt(2, cabelo_conformidade);
-stmt.setInt(3, identificacao_conformidade);
-stmt.setString(4, escala);
+    // Verificar se o ID já existe no banco de dados
+    String checkIdQuery = "SELECT 1 FROM escala_guarda WHERE id_usuario = ?";
+    PreparedStatement checkIdStmt = conn.prepareStatement(checkIdQuery);
+    checkIdStmt.setInt(1, id_usuario);
+    ResultSet resultSet = checkIdStmt.executeQuery();
 
-
-   
-    
-
-    // Execute the SQL query to insert the new record
-    int rowsAffected = stmt.executeUpdate();
-
-    if (rowsAffected > 0) {
-        // Record was successfully added
-        response.sendRedirect("painel.jsp");
+    if (resultSet.next()) {
+        // ID já existe no banco, emita um alerta
+%>
+        <script>
+            alert("Soldado já inserido.");
+            window.location.href = "painel.jsp";
+        </script>
+<%
     } else {
-        // Record insertion failed
-        response.sendRedirect("your_failure_page.jsp");
+        // ID não existe no banco, proceda com a inserção
+        String escalaDef = "INSERT INTO escala_guarda (id_usuario, corte_cabelo_conformidade, identificacao_militar_conformidade, tipo_escala) VALUES (?,?,?,?)";
+        stmt = conn.prepareStatement(escalaDef);
+        stmt.setInt(1, id_usuario);
+        stmt.setInt(2, cabelo_conformidade);
+        stmt.setInt(3, identificacao_conformidade);
+        stmt.setString(4, escala);
+
+        // Execute the SQL query to insert the new record
+        int rowsAffected = stmt.executeUpdate();
+
+        if (rowsAffected > 0) {
+            // Record was successfully added
+            response.sendRedirect("painel.jsp");
+        } else {
+            // Record insertion failed
+            response.sendRedirect("your_failure_page.jsp");
+        }
     }
 
 } catch (Exception e) {
