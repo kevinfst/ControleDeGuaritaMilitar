@@ -501,34 +501,39 @@
                 diaHoraSaida = (diaHoraSaida != null) ? diaHoraSaida : "Não registrado";
         %>
 
-        <tr>
-            <td><%= idEscala %></td>
-            <td><%= nomeSoldado %></td>
-            <td><%= patente %></td>
-            <td><%= diaHoraEntrada %></td> 
-            <td><%= diaHoraSaida %></td> 
-            <% if (tipoEscala.equals("Vermelha")) { %>
-            <td class="text-danger"><%= tipoEscala %></td>
-            <% } else  { %>
-            <td class="text-body-secondary"><%= tipoEscala %></td>
-            <% } %>
-            <td><%= corteCabeloConforme ? "Conforme" : "Não Conforme" %></td>
-            <td><%= identificacaoConforme ? "Conforme" : "Não Conforme" %></td>
-            <td>
-                <% if (loggedInUserId != rs.getInt("id_usuario")) { %>
-                <!-- Formulário para solicitar troca -->
-                <form action="solicitarTroca.jsp" method="post" class="mb-2">
-                    <input type="hidden" name="idEscala" value="<%= rs.getInt("id_usuario") %>">
-                    <button class="btn btn-primary" type="submit" value="<%= rs.getInt("id_usuario") %>">Solicitar Troca</button>
-                </form>
+       <tr>
+    <td><%= idEscala %></td>
+    <td><%= nomeSoldado %></td>
+    <td><%= patente %></td>
+    <td><%= diaHoraEntrada %></td>
+    <td><%= diaHoraSaida %></td>
+    <% if (tipoEscala.equals("Vermelha")) { %>
+        <td class="text-danger"><%= tipoEscala %></td>
+    <% } else  { %>
+        <td class="text-body-secondary"><%= tipoEscala %></td>
+    <% } %>
+    <td><%= corteCabeloConforme ? "Conforme" : "Não Conforme" %></td>
+    <td><%= identificacaoConforme ? "Conforme" : "Não Conforme" %></td>
+    <td>
+        <% if (loggedInUserId != rs.getInt("id_usuario")) { %>
+            <!-- Formulário para solicitar troca -->
+            <form action="solicitarTroca.jsp" method="post" class="mb-2">
+                <input type="hidden" name="idEscala" value="<%= rs.getInt("id_usuario") %>">
+                <button class="btn btn-primary" type="submit" value="<%= rs.getInt("id_usuario") %>">Solicitar Troca</button>
+            </form>
+            
+            <%-- Verifica se a patente é igual a "Comandante" antes de exibir o botão "Remover" --%>
+            <% if ("Comandante".equals(nomePatente)) { %>
                 <!-- Formulário para remover registro -->
                 <form action="deleteRecord.jsp" method="post">
                     <input type="hidden" name="idEscala" value="<%= rs.getInt("id_usuario") %>">
                     <button class="btn btn-danger" type="submit" value="<%= rs.getInt("id_usuario") %>">Remover</button>
                 </form>
-                <% } %>
-            </td>
-        </tr>
+            <% } %>
+        <% } %>
+    </td>
+</tr>
+
         <% } %>
         <%
             rs.close();
