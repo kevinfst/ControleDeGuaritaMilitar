@@ -50,15 +50,6 @@
 
     </head>
 
-
-
-
-
-
-
-
-
-
     <body>
         <%
      String nomeUsuario = (String) session.getAttribute("nomeUsuario");
@@ -81,17 +72,6 @@
          
      String nm_patente = (String) session.getAttribute("nm_patente");
 
-  
-     
-
-
-
-
-
-
-         
-         
-         
 
         %>
 
@@ -184,10 +164,6 @@
     </div>
 </div>
 
-
-
-
-
                 </div>
 <!-- Elementos à direita -->
 
@@ -269,14 +245,6 @@
     </div>
 </div>
 
-
-
-
-
-
-
-
-
         <!-- Novo Modal para Solicitações de Troca -->
 <div class="modal" id="solicitacoesTrocaModal">
     <div class="modal-dialog modal-lg">
@@ -357,8 +325,7 @@
                         %>                      
                     </tbody>
                 </table>
-            
-                    
+                      
                     </div>
 <!-- Rodapé do Modal -->
 <div class="modal-footer">
@@ -456,8 +423,6 @@
                 </div>
             </div>
         </div>
-
-
                 <!-- Tabela para Escala de Guarda -->
 <table id="soldadoTable" class="table table-striped text-center">
     <thead>
