@@ -124,6 +124,7 @@
                                                 <option selected disabled value="">Escolha a patente</option>
                                                 <option value="Sentinela">Sentinela</option>
                                                 <option value="Comandante">Comandante</option>
+                                                <option value="Cabo">Cabo</option>
                                             </select>
                                             <div class="invalid-feedback">
                                                 Por favor, selecione uma patente.

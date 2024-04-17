@@ -1,5 +1,11 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="java.io.*" %>
+<%@ page import= "java.math.BigInteger"%>
+<%@ page import= "java.security.MessageDigest"%>
+<%@ page import= "java.security.NoSuchAlgorithmException"%>
+
+
+
 <%
     // Obtendo parâmetros do formulário de login
     String email = request.getParameter("email");
@@ -12,7 +18,7 @@
         Statement stmt = conn.createStatement();
         
         // Verificando as credenciais do usuário no banco de dados
-        String verificarUsuario = "SELECT * FROM usuario WHERE nm_usuarioLogin=? AND cd_senha=?";
+        String verificarUsuario = "SELECT * FROM usuario WHERE nm_usuarioLogin=? AND cd_senha=md5(?)";
         PreparedStatement ps = conn.prepareStatement(verificarUsuario);
         ps.setString(1, email);
         ps.setString(2, senha);
@@ -40,8 +46,10 @@
             String usLogin = rs.getString("nm_usuarioLogin");
             session.setAttribute("nm_usuarioLogin", usLogin);
             
-            String usSenha = rs.getString("cd_senha");
-            session.setAttribute("cd_senha", usSenha);
+
+            
+            
+         session.setAttribute("cd_senha", senha);
             
             String nm_patente = rs.getString("nm_patente");
             session.setAttribute("nm_patente", nm_patente);

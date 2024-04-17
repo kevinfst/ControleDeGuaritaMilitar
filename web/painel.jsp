@@ -216,6 +216,7 @@
                             <option selected disabled>Escolha a patente</option>
                             <option value="Sentinela" <%= "Sentinela".equals(nomePatente) ? "selected" : "" %>>Sentinela</option>
                             <option value="Comandante" <%= "Comandante".equals(nomePatente) ? "selected" : "" %>>Comandante</option>
+                            <option value="Cabo" <%= "Cabo".equals(nomePatente) ? "selected" : "" %>>Cabo</option>
                         </select>
                     </div>
 
@@ -343,9 +344,9 @@
     <div class="card-body">
 
         <%       
-         if ("Comandante".equals(nomePatente)) { 
+         if ("Cabo".equals(nomePatente)) { 
         %>
-        <!-- Mostra o botão apenas se a patente do parâmetro for "Comandante" -->
+        <!-- Mostra o botão apenas se a patente do parâmetro for "Cabo" -->
         <button type="button" class="btn bg-success btn-lg btn-block text-light" data-bs-toggle="modal" data-bs-target="#addModal">
             Adicionar novo
         </button>
@@ -376,11 +377,13 @@
                                 <label for="nome_soldado" class="form-label">Nome do Soldado</label>                                       
                                 <select class="form-select" id="nome_soldado" name="id_usuario" required> 
                                     <option selected disabled value="">Escolha o soldado</option>  
-                                    <%while (rs.next()) { 
-                                     String nm_usuario = rs.getString("nm_usuario");
-                                       String id_usuario = rs.getString("id_usuario");%>                                                                                    
-                                    <option value="<%= id_usuario %>"><%= nm_usuario %></option>
-                                    <% } %>
+                                    <% while (rs.next()) { 
+                                        String nm_usuario = rs.getString("nm_usuario");
+                                        String id_usuario = rs.getString("id_usuario");
+                                        String patente_usuario = rs.getString("nm_patente");
+                                        if (!"Cabo".equals(patente_usuario)) {%>
+                                            <option value="<%= id_usuario %>"><%= nm_usuario %></option>
+                                        <% }} %>
                                 </select>
                             </div>
 
@@ -487,8 +490,8 @@
                 <button class="btn btn-primary" type="submit" value="<%= rs.getInt("id_usuario") %>">Solicitar Troca</button>
             </form>
             
-            <%-- Verifica se a patente é igual a "Comandante" antes de exibir o botão "Remover" --%>
-            <% if ("Comandante".equals(nomePatente)) { %>
+            <%-- Verifica se a patente é igual a "Cabo" antes de exibir o botão "Remover" --%>
+            <% if ("Cabo".equals(nomePatente)) { %>
                 <!-- Formulário para remover registro -->
                 <form action="deleteRecord.jsp" method="post">
                     <input type="hidden" name="idEscala" value="<%= rs.getInt("id_usuario") %>">

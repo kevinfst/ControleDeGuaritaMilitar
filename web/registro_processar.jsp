@@ -31,7 +31,7 @@ try {
         out.println("Nome de usuário já está em uso. Escolha outro.");
     } else {
         // Inserir novo usuário no banco de dados
-        String inserirUsuario = "INSERT INTO usuario (nm_usuario,cd_idade,dt_dataNascimento,nm_guerra,nm_patente,nm_usuarioLogin,cd_senha) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String inserirUsuario = "INSERT INTO usuario (nm_usuario,cd_idade,dt_dataNascimento,nm_guerra,nm_patente,nm_usuarioLogin,cd_senha) VALUES (?, ?, ?, ?, ?, ?,md5(?))";
         ps = conn.prepareStatement(inserirUsuario);
         ps.setString(1, nome);
         ps.setInt(2, idade);
