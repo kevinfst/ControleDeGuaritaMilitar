@@ -220,20 +220,21 @@
                         </select>
                     </div>
 
-                    <!-- Campo de entrada para o login -->
-                    <div class="form-group">
-                        <label for="loginInput"><strong>Login</strong></label>
-                        <input type="text" class="form-control" id="loginInput" name="loginInput" value="<%= usLogin%>">
-                        <input type="hidden" class="form-control" id="usuarioID" name="usuarioID" value="<%= usuarioID%>">
-                    </div>
-                    <!-- Campo de entrada para a senha -->
-                    <div class="form-group">
-                        <label for="senhaInput"><strong>Senha</strong></label>
-                        <div class="input-group">
-                            <input type="password" class="form-control" id="senhaInput" name="senhaInput" value="<%= usSenha%>" readonly>
-                            <button class="btn btn-secondary" type="button" id="mostrarSenhaBtn">Mostrar</button>
-                        </div>
-                    </div>
+                   <!-- Campo de entrada para o login -->
+<div class="form-group">
+    <label for="loginInput"><strong>Login</strong></label>
+    <input type="text" class="form-control" id="loginInput" name="loginInput" value="<%= usLogin%>" readonly>
+    <!-- Adicionado readonly para tornar somente leitura -->
+</div>
+<!-- Campo de entrada para a senha -->
+<div class="form-group">
+    <label for="senhaInput"><strong>Nova Senha</strong></label>
+    <div class="input-group">
+        <input type="password" class="form-control" id="senhaInput" name="senhaInput" value="<%= usSenha%>" required>
+        <!-- Removido o valor da senha para que o usuário insira uma nova senha -->
+        <button class="btn btn-secondary" type="button" id="mostrarSenhaBtn">Mostrar</button>
+    </div>
+</div>
                 </div>
 
                 <!-- Rodapé do Modal -->
