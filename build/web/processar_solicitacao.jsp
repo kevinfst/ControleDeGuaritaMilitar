@@ -1,65 +1,37 @@
 <%@ page import="java.sql.*" %>
+<%@ page import="javax.sql.*" %>
 
 <%
+    // Recupere os parâmetros enviados do formulário
+    String idSolicitacao = request.getParameter("id_solicitacao");
+    String acao = request.getParameter("acao");
+
     try {
-        // Carregar o driver JDBC
+        // Conexão com o banco de dados
         Class.forName("com.mysql.cj.jdbc.Driver");
-        
-        // Estabelecer a conexão com o banco de dados
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
         
-        // Criar uma instrução SQL
-        Statement stmt = conn.createStatement();
-        
-        // Obter parâmetros da solicitação
-        String idSolicitacao = request.getParameter("id_solicitacao");
-        String acao = request.getParameter("acao");
-        
-        if (acao.equals("aceitar")) {
-            // Lógica para aceitar a solicitação
-            
-            // Atualizar o status_solicitacao para "Aceita" na tabela troca_horario
-            String updateQuery = "UPDATE troca_horario SET status_solicitacao = 'Aceita' WHERE id_usuario_solicitante = " + idSolicitacao;
-            stmt.executeUpdate(updateQuery);
-            
-            // Obter os detalhes da solicitação
-            String selectQuery = "SELECT * FROM troca_horario WHERE id_usuario_solicitante = " + idSolicitacao;
-            ResultSet rs = stmt.executeQuery(selectQuery);
-            
-            if (rs.next()) {
-                String idUsuarioSolicitante = rs.getString("id_usuario_solicitante");
-                String idUsuarioDestinatario = rs.getString("id_usuario_destinatario");
-                
-                // Obter e trocar as datas na tabela escala_guarda
-                String updateEscalaQuery = "UPDATE escala_guarda SET id_usuario = CASE WHEN id_usuario = " + idUsuarioSolicitante + " THEN " + idUsuarioDestinatario + " ELSE " + idUsuarioSolicitante + " END WHERE id_usuario IN (" + idUsuarioSolicitante + ", " + idUsuarioDestinatario + ")";
-                stmt.executeUpdate(updateEscalaQuery);
-                
-                // Excluir a entrada da tabela troca_horario após aceitar
-                String deleteQuery = "DELETE FROM troca_horario WHERE id_usuario_solicitante = " + idUsuarioSolicitante;
-                stmt.executeUpdate(deleteQuery);
+        // Atualize o status da solicitação com base na ação
+        String updateQuery = "";
+        if (acao != null && idSolicitacao != null) {
+            if (acao.equals("aceitar")) {
+                updateQuery = "UPDATE solicitar_observacao SET status_solicitacao = 'Aceita' WHERE id_usuario_solicitante = ?";
+            } else if (acao.equals("recusar")) {
+                updateQuery = "UPDATE solicitar_observacao SET status_solicitacao = 'Recusada' WHERE id_usuario_solicitante = ?";
             }
-            
-            rs.close();
-        } else if (acao.equals("recusar")) {
-            // Lógica para recusar a solicitação
-            
-            // Atualizar o status_solicitacao para "Recusada" na tabela troca_horario
-            String updateQuery = "UPDATE troca_horario SET status_solicitacao = 'Recusada' WHERE id_usuario_solicitante = " + idSolicitacao;
-            stmt.executeUpdate(updateQuery);
-            
-            // Excluir a entrada da tabela troca_horario após recusar
-            String deleteQuery = "DELETE FROM troca_horario WHERE id_usuario_solicitante = " + idSolicitacao;
-            stmt.executeUpdate(deleteQuery);
+            PreparedStatement pstmt = conn.prepareStatement(updateQuery);
+            pstmt.setString(1, idSolicitacao);
+            pstmt.executeUpdate();
+            pstmt.close();
         }
-        
-        // Fechar a instrução e a conexão
-        stmt.close();
+
+        // Fechando a conexão
         conn.close();
         
-        // Redirecionar de volta para a página anterior ou outra página desejada após o processamento
-        response.sendRedirect("painel.jsp");
+        // Redirecionar de volta para a página anterior ou para uma página de confirmação
+        response.sendRedirect("painel.jsp"); // Substitua "pagina_anterior.jsp" pela página para onde deseja redirecionar
     } catch (Exception e) {
-        // Imprimir rastreamento de pilha em caso de exceção
         e.printStackTrace();
+        // Tratamento de erros, se necessário
     }
 %>
