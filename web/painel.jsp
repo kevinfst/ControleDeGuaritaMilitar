@@ -146,20 +146,28 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <!-- Formulário para registrar entrada -->
-                            <li>
-                                <form action="registrarEntrada.jsp" method="post">
-                                    <input type="hidden" name="idEscala" value="<%= usuarioID %>">
-                                    <button class="dropdown-item btn btn-success rounded" type="submit">Registrar Entrada</button>
-                                </form>
-                            </li>
-                            <!-- Formulário para registrar saída -->
-                            <li>
-                                <form action="registrarSaida.jsp" method="post">
-                                    <input type="hidden" name="idEscala" value="<%= usuarioID %>">
-                                    <button class="dropdown-item btn btn-danger rounded" type="submit">Registrar Saída</button>
-                                </form>
-                            </li>
+                           <%
+// Verifica se a patente do usuário é "Sentinela"
+if ("Sentinela".equals(nomePatente)) {
+%>
+    <!-- Formulário para registrar entrada -->
+    <li>
+        <form action="registrarEntrada.jsp" method="post">
+            <input type="hidden" name="idEscala" value="<%= usuarioID %>">
+            <button class="dropdown-item btn btn-success rounded" type="submit">Registrar Entrada</button>
+        </form>
+    </li>
+    <!-- Formulário para registrar saída -->
+    <li>
+        <form action="registrarSaida.jsp" method="post">
+            <input type="hidden" name="idEscala" value="<%= usuarioID %>">
+            <button class="dropdown-item btn btn-danger rounded" type="submit">Registrar Saída</button>
+        </form>
+    </li>
+<%
+}
+%>
+
                             <!-- Formulário para registrar observação -->
                             <%
    
