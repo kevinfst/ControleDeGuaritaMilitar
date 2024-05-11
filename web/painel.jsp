@@ -265,7 +265,7 @@
                         <!-- Campo de seleção para a patente -->
                         <div class="form-group">
                             <label for="patenteInput"><strong>Patente</strong></label>
-                            <select id="nm_patente" aria-label="Escolha a Patente" name="nm_patente" class="form-control form-control-lg form-select" required value="<%= nm_patente%>">
+                            <select id="nm_patente" aria-label="Escolha a Patente" name="nm_patente" class="form-control form-control-lg form-select" disabled>
                                 <option selected disabled>Escolha a patente</option>
                                 <option value="Sentinela" <%= "Sentinela".equals(nomePatente) ? "selected" : "" %>>Sentinela</option>
                                 <option value="Comandante" <%= "Comandante".equals(nomePatente) ? "selected" : "" %>>Comandante</option>
@@ -615,11 +615,19 @@
             <%
             } else {
             %>
-            <p class="mt-3" style="color: white;">Você não está autenticado. Por favor, faça login <a href='index.jsp'>aqui</a>.</p>
+            <script>
+
+    
+        // Exibe um alerta
+        alert("Você não está autenticado. Por favor, faça login.");
+        // Redireciona para index.jsp
+        window.location.href = "index.jsp";
+   
+            </script>
             <%
             }
             %>
-
+           
             <div class="card-footer text-body-secondary">
             </div>
         </div>

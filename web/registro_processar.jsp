@@ -18,9 +18,6 @@ try {
     // Estabelecer a conexão com o banco de dados
     Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
     
-    // Criar uma instrução SQL
-    Statement stmt = conn.createStatement();
-    
     // Verificar se o nome de usuário já está em uso
     String verificaUsuario = "SELECT * FROM usuario WHERE nm_usuarioLogin=?";
     PreparedStatement ps = conn.prepareStatement(verificaUsuario);
@@ -28,7 +25,12 @@ try {
     ResultSet rs = ps.executeQuery();
     
     if (rs.next()) {
-        out.println("Nome de usuário já está em uso. Escolha outro.");
+%>
+        <script>
+            alert("Nome de usuário já está em uso. Escolha outro.");
+            window.location.href = "registro.jsp"; // Redirecionar de volta para registro.jsp
+        </script>
+<%
     } else {
         // Inserir novo usuário no banco de dados
         String inserirUsuario = "INSERT INTO usuario (nm_usuario,cd_idade,dt_dataNascimento,nm_guerra,nm_patente,nm_usuarioLogin,cd_senha) VALUES (?, ?, ?, ?, ?, ?,md5(?))";
@@ -42,13 +44,13 @@ try {
         ps.setString(7, senha);
 
         ps.executeUpdate();
-        out.println("Registro bem-sucedido. <a href='index.jsp'>Faça o login</a>");
+        // Após o registro bem-sucedido, redirecionar para a página de login
+        response.sendRedirect("index.jsp");
     }
     
     // Fechar recursos
     rs.close();
     ps.close();
-    stmt.close();
     conn.close();
 } catch (Exception e) {
     // Tratar exceções, se ocorrerem

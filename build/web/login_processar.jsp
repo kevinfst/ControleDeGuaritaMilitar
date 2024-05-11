@@ -4,8 +4,6 @@
 <%@ page import= "java.security.MessageDigest"%>
 <%@ page import= "java.security.NoSuchAlgorithmException"%>
 
-
-
 <%
     // Obtendo parâmetros do formulário de login
     String email = request.getParameter("email");
@@ -46,18 +44,20 @@
             String usLogin = rs.getString("nm_usuarioLogin");
             session.setAttribute("nm_usuarioLogin", usLogin);
             
-
-            
-            
-         session.setAttribute("cd_senha", senha);
+            session.setAttribute("cd_senha", senha);
             
             String nm_patente = rs.getString("nm_patente");
             session.setAttribute("nm_patente", nm_patente);
             
             response.sendRedirect("painel.jsp");
         } else {
-            // Falha no login. Exibindo mensagem e link para tentar novamente
-            out.println("Login falhou. Verifique suas credenciais. <a href='index.jsp'>Tentar novamente</a>");
+            // Falha no login. Exibindo mensagem e link para tentar novamente como um alerta
+%>
+<script>
+    alert("Login falhou. Verifique suas credenciais.");
+    window.location.href = 'index.jsp';
+</script>
+<%
         }
         
         // Fechando recursos
@@ -66,6 +66,10 @@
         conn.close();
     } catch (Exception e) {
         // Exibindo mensagem de erro
-        out.println("Erro: " + e.getMessage());
+%>
+<script>
+    alert("Erro: <%= e.getMessage() %>");
+</script>
+<%
     }
 %>
