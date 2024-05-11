@@ -265,7 +265,7 @@
                         <!-- Campo de seleção para a patente -->
                         <div class="form-group">
                             <label for="patenteInput"><strong>Patente</strong></label>
-                            <select id="nm_patente" aria-label="Escolha a Patente" name="nm_patente" class="form-control form-control-lg form-select" disabled>
+                            <select id="nm_patente" aria-label="<Escolha a Patente" name="nm_patente" class="form-control form-control-lg form-select" disabled>
                                 <option selected disabled>Escolha a patente</option>
                                 <option value="Sentinela" <%= "Sentinela".equals(nomePatente) ? "selected" : "" %>>Sentinela</option>
                                 <option value="Comandante" <%= "Comandante".equals(nomePatente) ? "selected" : "" %>>Comandante</option>
@@ -438,179 +438,210 @@
     </div>
 
 
-    <!-- Container principal para as escalas de guarda -->
-    <div class="container card text-center mt-5">
-        <div class="card-header">
-            <h2 class="">Escalas de Guarda</h2>
-        </div>
-        <div class="card-body">
+<!-- Container principal para as escalas de guarda -->
+<div class="container card text-center mt-5">
+    <div class="card-header">
+        <h2 class="">Escalas de Guarda</h2>
+    </div>
+    <div class="card-body">
 
-            <%       
-             if ("Cabo".equals(nomePatente)) { 
-            %>
-            <!-- Mostra o botão apenas se a patente do parâmetro for "Cabo" -->
-            <button type="button" class="btn bg-success btn-lg btn-block text-light" data-bs-toggle="modal" data-bs-target="#addModal">
-                Adicionar novo
-            </button>
-            <% } %>
-            <br>
-            <br>
+        <% if ("Cabo".equals(nomePatente)) { %>
+        <!-- Mostra o botão apenas se a patente do parâmetro for "Cabo" -->
+        <button type="button" class="btn bg-success btn-lg btn-block text-light" data-bs-toggle="modal" data-bs-target="#addModal">
+            Adicionar novo
+        </button>
+        <% } %>
+        <br>
+        <br>
 
-            <!-- Add Modal -->
+        <!-- Add Modal -->
 
-            <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="addModalLabel">Adicionar Nova Escala</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <!-- Formulário para adicionar nova escala -->
-                            <form method="post" action="addRecord.jsp" class="needs-validation" novalidate>
-                                <% try {
-                                // Conexão com o banco de dados
-                                Class.forName("com.mysql.cj.jdbc.Driver");
-                                       Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
-                                       Statement stmt = conn.createStatement();
-                                       String query = "SELECT * FROM usuario";
-                                       ResultSet rs = stmt.executeQuery(query); %>
-                                <div class="mb-3">
-                                    <label for="nome_soldado" class="form-label">Nome do Soldado</label>                                       
-                                    <select class="form-select" id="nome_soldado" name="id_usuario" required> 
-                                        <option selected disabled value="">Escolha o soldado</option>  
-                                        <% while (rs.next()) { 
-                                            String nm_usuario = rs.getString("nm_usuario");
-                                            String id_usuario = rs.getString("id_usuario");
-                                            String patente_usuario = rs.getString("nm_patente");
-                                            if (!"Cabo".equals(patente_usuario)) {%>
-                                        <option value="<%= id_usuario %>"><%= nm_usuario %></option>
-                                        <% }} %>
-                                    </select>
-                                </div>
+        <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addModalLabel">Adicionar Nova Escala</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Formulário para adicionar nova escala -->
+                        <form method="post" action="addRecord.jsp" class="needs-validation" novalidate>
+                            <% try {
+                            // Conexão com o banco de dados
+                            Class.forName("com.mysql.cj.jdbc.Driver");
+                            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+                            Statement stmt = conn.createStatement();
+                            String query = "SELECT * FROM usuario";
+                            ResultSet rs = stmt.executeQuery(query); %>
+                            <div class="mb-3">
+                                <label for="nome_soldado" class="form-label">Nome do Soldado</label>
+                                <select class="form-select" id="nome_soldado" name="id_usuario" required>
+                                    <option selected disabled value="">Escolha o soldado</option>
+                                    <% while (rs.next()) { 
+                                        String nm_usuario = rs.getString("nm_usuario");
+                                        String id_usuario = rs.getString("id_usuario");
+                                        String patente_usuario = rs.getString("nm_patente");
+                                        if (!"Cabo".equals(patente_usuario)) {%>
+                                    <option value="<%= id_usuario %>"><%= nm_usuario %></option>
+                                    <% }} %>
+                                </select>
+                            </div>
 
-                                <div class="mb-3">
-                                    <label for="tipo_escala" class="form-label">Tipo de Escala</label>
-                                    <select class="form-select" id="tipo_escala" name="tipo_escala" required>  
-                                        <option selected disabled value="">Escolha a escala</option>
-                                        <option value="Cinza">Cinza</option>
-                                        <option value="Vermelha">Vermelha</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="corte_cabelo_conformidade" class="form-label">Corte de Cabelo</label>
-                                    <select class="form-select" id="corte_cabelo_conformidade" name="corte_cabelo_conformidade" required>  
-                                        <option selected disabled value="">Escolha a conformidade</option>
-                                        <option value="1">Conforme</option>
-                                        <option value="0">Não Conforme</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="identificacao_militar_conformidade" class="form-label">Identificação Militar</label>
-                                    <select class="form-select" id="identificacao_militar_conformidade" name="identificacao_militar_conformidade" required>  
-                                        <option selected disabled value="">Escolha a conformidade</option>
-                                        <option value="1">Conforme</option>
-                                        <option value="0">Não Conforme</option>
-                                    </select>
-                                </div>
+                            <div class="mb-3">
+                                <label for="tipo_escala" class="form-label">Tipo de Escala</label>
+                                <select class="form-select" id="tipo_escala" name="tipo_escala" required>
+                                    <option selected disabled value="">Escolha a escala</option>
+                                    <option value="Cinza">Cinza</option>
+                                    <option value="Vermelha">Vermelha</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="corte_cabelo_conformidade" class="form-label">Corte de Cabelo</label>
+                                <select class="form-select" id="corte_cabelo_conformidade" name="corte_cabelo_conformidade" required>
+                                    <option selected disabled value="">Escolha a conformidade</option>
+                                    <option value="1">Conforme</option>
+                                    <option value="0">Não Conforme</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="identificacao_militar_conformidade" class="form-label">Identificação Militar</label>
+                                <select class="form-select" id="identificacao_militar_conformidade" name="identificacao_militar_conformidade" required>
+                                    <option selected disabled value="">Escolha a conformidade</option>
+                                    <option value="1">Conforme</option>
+                                    <option value="0">Não Conforme</option>
+                                </select>
+                            </div>
 
-                                <button type="submit" class="btn btn-primary">Adicionar</button>
-                                <%
-                                            rs.close();
-                                            stmt.close();
-                                            conn.close();
-                                        } catch (Exception e) {
-                                            e.printStackTrace();
-                                        }
-                                %>
-                            </form>
-                        </div>
+                            <button type="submit" class="btn btn-primary">Adicionar</button>
+                            <%
+                                        rs.close();
+                                        stmt.close();
+                                        conn.close();
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+                            %>
+                        </form>
                     </div>
                 </div>
             </div>
-            <!-- Tabela para Escala de Guarda -->
-            <table id="soldadoTable" class="table table-striped text-center">
-                <thead>
-                    <tr>
-                        <th class="text-center">ID</th>
-                        <th class="text-center">Nome do Soldado</th>
-                        <th class="text-center">Patente</th>
-                        <th class="text-center">Entrada</th> 
-                        <th class="text-center">Saída</th> 
-                        <th class="text-center">Tipo de Escala</th>
-                        <th class="text-center">Corte de Cabelo</th>
-                        <th class="text-center">Identificação Militar</th>
-                        <th class="text-center">Ações</th>                 
-                    </tr>
-                </thead>
-                <tbody>
-                    <%
-                    // Obtém o ID do usuário logado
-                    int loggedInUserId = (int) session.getAttribute("idUsuario");
-                    try {
-                        // Conecta-se ao banco de dados
-                        Class.forName("com.mysql.cj.jdbc.Driver");
-                        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
-                        Statement stmt = conn.createStatement();
-                        // Consulta para obter dados da escala de guarda, usuários e registros de entrada/saída
-                        String query = "SELECT * FROM escala_guarda INNER JOIN usuario ON escala_guarda.id_usuario = usuario.id_usuario LEFT JOIN registro_entrada_saida ON escala_guarda.id_usuario = registro_entrada_saida.id_usuario";
-                        ResultSet rs = stmt.executeQuery(query);
-                        while (rs.next()) { 
-                            // Extrai dados da consulta
-                            int idEscala = rs.getInt("id");
-                            String nomeSoldado = rs.getString("nm_usuario");
-                            String patente = rs.getString("nm_patente");     
-                            String diaHoraEntrada = rs.getString("data_hora_entrada");
-                            String diaHoraSaida = rs.getString("data_hora_saida");
-                            String tipoEscala = rs.getString("tipo_escala");
-                            boolean corteCabeloConforme = rs.getBoolean("corte_cabelo_conformidade");
-                            boolean identificacaoConforme = rs.getBoolean("identificacao_militar_conformidade");
+        </div>
+        <!-- Adiciona filtro de pesquisa por data -->
+        <form method="get" action="painel.jsp" class="mb-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="data_inicio" class="form-label">Data de Início</label>
+                    <input type="date" class="form-control" id="data_inicio" name="data_inicio">
+                </div>
+                <div class="col-md-6">
+                    <label for="data_fim" class="form-label">Data de Fim</label>
+                    <input type="date" class="form-control" id="data_fim" name="data_fim">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <button type="submit" class="btn btn-success">Filtrar</button>
+                </div>
 
-                            // Verifica se diaHoraEntrada e diaHoraSaida são nulos e exibe "Não registrado" se for o caso
-                            diaHoraEntrada = (diaHoraEntrada != null) ? diaHoraEntrada : "Não registrado";
-                            diaHoraSaida = (diaHoraSaida != null) ? diaHoraSaida : "Não registrado";
-                    %>
+                <div class="col-md-6">
+                    <a href="painel.jsp" class="btn btn-primary">Limpar filtro</a>
+                </div>
 
-                    <tr>
-                        <td><%= idEscala %></td>
-                        <td><%= nomeSoldado %></td>
-                        <td><%= patente %></td>
-                        <td><%= diaHoraEntrada %></td>
-                        <td><%= diaHoraSaida %></td>
-                        <% if (tipoEscala.equals("Vermelha")) { %>
-                        <td class="text-danger"><%= tipoEscala %></td>
-                        <% } else  { %>
-                        <td class="text-body-secondary"><%= tipoEscala %></td>
-                        <% } %>
-                        <td><%= corteCabeloConforme ? "Conforme" : "Não Conforme" %></td>
-                        <td><%= identificacaoConforme ? "Conforme" : "Não Conforme" %></td>
-                        <td>
-                            <% if (loggedInUserId != rs.getInt("id_usuario")) { %>
+            </div>
+        </form>
 
-
-                            <%-- Verifica se a patente é igual a "Cabo" antes de exibir o botão "Remover" --%>
-                            <% if ("Cabo".equals(nomePatente)) { %>
-                            <!-- Formulário para remover registro -->
-                            <form action="deleteRecord.jsp" method="post">
-                                <input type="hidden" name="idEscala" value="<%= rs.getInt("id_usuario") %>">
-                                <button class="btn btn-danger" type="submit" value="<%= rs.getInt("id_usuario") %>">Remover</button>
-                            </form>
-                            <% } %>
-                            <% } %>
-                        </td>
-                    </tr>
-
-                    <% } %>
-                    <%
-                        rs.close();
-                        stmt.close();
-                        conn.close();
-                    } catch (Exception e) {
-                        e.printStackTrace();
+        <!-- Tabela para Escala de Guarda -->
+        <table id="soldadoTable" class="table table-striped text-center">
+            <thead>
+                <tr>
+                    <th class="text-center">ID</th>
+                    <th class="text-center">Nome do Soldado</th>
+                    <th class="text-center">Patente</th>
+                    <th class="text-center">Entrada</th>
+                    <th class="text-center">Saída</th>
+                    <th class="text-center">Tipo de Escala</th>
+                    <th class="text-center">Corte de Cabelo</th>
+                    <th class="text-center">Identificação Militar</th>
+                    <th class="text-center">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% 
+                // Obtém o ID do usuário logado
+                int loggedInUserId = (int) session.getAttribute("idUsuario");
+                String dataInicio = request.getParameter("data_inicio");
+                String dataFim = request.getParameter("data_fim");
+                try {
+                    // Conecta-se ao banco de dados
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+                    Statement stmt = conn.createStatement();
+                    // Consulta para obter dados da escala de guarda, usuários e registros de entrada/saída, filtrados por data se as datas forem fornecidas
+                    String query = "SELECT * FROM escala_guarda INNER JOIN usuario ON escala_guarda.id_usuario = usuario.id_usuario LEFT JOIN registro_entrada_saida ON escala_guarda.id_usuario = registro_entrada_saida.id_usuario";
+                    if (dataInicio != null && dataFim != null) {
+                        query += " WHERE data_hora_entrada BETWEEN '" + dataInicio + "' AND '" + dataFim + "'";
                     }
-                    %>
-                </tbody>
-            </table>
+                    ResultSet rs = stmt.executeQuery(query);
+                    while (rs.next()) {
+                        // Extrai dados da consulta
+                        int idEscala = rs.getInt("id");
+                        String nomeSoldado = rs.getString("nm_usuario");
+                        String patente = rs.getString("nm_patente");
+                        String diaHoraEntrada = rs.getString("data_hora_entrada");
+                        String diaHoraSaida = rs.getString("data_hora_saida");
+                        String tipoEscala = rs.getString("tipo_escala");
+                        boolean corteCabeloConforme = rs.getBoolean("corte_cabelo_conformidade");
+                        boolean identificacaoConforme = rs.getBoolean("identificacao_militar_conformidade");
+
+                        // Verifica se diaHoraEntrada e diaHoraSaida são nulos e exibe "Não registrado" se for o caso
+                        diaHoraEntrada = (diaHoraEntrada != null) ? diaHoraEntrada : "Não registrado";
+                        diaHoraSaida = (diaHoraSaida != null) ? diaHoraSaida : "Não registrado";
+                %>
+
+                <tr>
+                    <td><%= idEscala %></td>
+                    <td><%= nomeSoldado %></td>
+                    <td><%= patente %></td>
+                    <td><%= diaHoraEntrada %></td>
+                    <td><%= diaHoraSaida %></td>
+                    <% if (tipoEscala.equals("Vermelha")) { %>
+                    <td class="text-danger"><%= tipoEscala %></td>
+                    <% } else { %>
+                    <td class="text-body-secondary"><%= tipoEscala %></td>
+                    <% } %>
+                    <td><%= corteCabeloConforme ? "Conforme" : "Não Conforme" %></td>
+                    <td><%= identificacaoConforme ? "Conforme" : "Não Conforme" %></td>
+                    <td>
+                        <% if (loggedInUserId != rs.getInt("id_usuario")) { %>
+
+
+                        <%-- Verifica se a patente é igual a "Cabo" antes de exibir o botão "Remover" --%>
+                        <% if ("Cabo".equals(nomePatente)) { %>
+                        <!-- Formulário para remover registro -->
+                        <form action="deleteRecord.jsp" method="post">
+                            <input type="hidden" name="idEscala" value="<%= rs.getInt("id_usuario") %>">
+                            <button class="btn btn-danger" type="submit" value="<%= rs.getInt("id_usuario") %>">Remover</button>
+                        </form>
+                        <% } %>
+                        <% } %>
+                    </td>
+                </tr>
+
+                <% } %>
+                <%
+                    rs.close();
+                    stmt.close();
+                    conn.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
 
             <%
             } else {
