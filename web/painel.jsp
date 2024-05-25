@@ -678,7 +678,7 @@
                                             String nm_usuario = rs.getString("nm_usuario");
                                             String id_usuario = rs.getString("id_usuario");
                                             String patente_usuario = rs.getString("nm_patente");
-                                            if (!"Cabo".equals(patente_usuario)) {%>
+                                             if (!"Cabo".equals(patente_usuario) && !"Comandante".equals(patente_usuario)) {%>
                                         <option value="<%= id_usuario %>"><%= nm_usuario %></option>
                                         <% }} %>
                                     </select>
