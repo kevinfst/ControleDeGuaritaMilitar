@@ -5,8 +5,12 @@
         <group>
             <file>file:/C:/Users/Kevin/Documents/GitHub/ControleDeGuaritaMilitar/web/painel.jsp</file>
             <file>file:/C:/Users/Kevin/Documents/GitHub/ControleDeGuaritaMilitar/web/atualizarPerfil.jsp</file>
+            <file>file:/C:/Users/Kevin/Documents/GitHub/ControleDeGuaritaMilitar/web/logout.jsp</file>
+            <file>file:/C:/Users/Kevin/Documents/GitHub/ControleDeGuaritaMilitar/web/processar_solicitacao.jsp</file>
+            <file>file:/C:/Users/Kevin/Documents/GitHub/ControleDeGuaritaMilitar/web/registro_processar.jsp</file>
+            <file>file:/C:/Users/Kevin/Documents/GitHub/ControleDeGuaritaMilitar/web/registrarSaida.jsp</file>
             <file>file:/C:/Users/Kevin/Documents/GitHub/ControleDeGuaritaMilitar/web/registrarEntrada.jsp</file>
-            <file>file:/C:/Users/Kevin/Documents/GitHub/ControleDeGuaritaMilitar/web/solicitarTroca.jsp</file>
+            <file>file:/C:/Users/Kevin/Documents/GitHub/ControleDeGuaritaMilitar/web/login_processar.jsp</file>
         </group>
     </open-files>
 </project-private>

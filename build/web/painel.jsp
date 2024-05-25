@@ -456,118 +456,120 @@
         </div>
     </div>
 
-    <!-- Modal para exibir o histórico de escala de guarda -->
-    <div class="modal" id="historicoModal" tabindex="-999" aria-modal="true" role="dialog" style="display: none;">
+   <!-- Modal para exibir o histórico de escala de guarda -->
+<div class="modal" id="historicoModal" tabindex="-999" aria-modal="true" role="dialog" style="display: none;">
 
-        <div class="modal-dialog modal-lg"> 
-            <div class="modal-content">
-                <!-- Cabeçalho do Modal -->
-                <div class="modal-header">
-                    <h5 class="modal-title">Histórico de Escala de Guarda</h5>
-                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close" id="closeModalButton"></button>
-                </div>
-                <!-- Corpo do Modal -->
-                <div class="modal-body">
-                    <!-- Tabela para exibir o histórico de escala de guarda -->
-                    <div class="container">
-                        <h2>Tabela de Soldados</h2>
-                        <!-- Tabela de Soldados -->
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Nome do Soldado</th>
-                                    <th>Patente</th>
-                                    <th>Entrada</th>
-                                    <th>Saída</th>
-                                    <th>Tipo de Escala</th>
-                                    <th>Corte de Cabelo</th>
-                                    <th>Identificação Militar</th>
-                                    <th>Data de Remoção</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <%
-                            // Defina o número de resultados por página e a página atual
-                            int resultadosPorPagina = 5;
-                            int paginaAtual = (request.getParameter("pagina") != null) ? Integer.parseInt(request.getParameter("pagina")) : 1;
-
-                            try {
-                                // Conexão com o banco de dados
-                                Class.forName("com.mysql.cj.jdbc.Driver");
-                                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
-
-                                // Consulta SQL para obter o histórico de escala de guarda, com limitação de resultados por página
-                                String query = "SELECT SQL_CALC_FOUND_ROWS h.*, u.nm_usuario, u.nm_patente FROM historico_escala_guarda h INNER JOIN usuario u ON h.id_usuario = u.id_usuario LIMIT ?, ?";
-                                PreparedStatement pstmt = conn.prepareStatement(query);
-                                pstmt.setInt(1, (paginaAtual - 1) * resultadosPorPagina); // Calcula o deslocamento
-                                pstmt.setInt(2, resultadosPorPagina); // Define o número de resultados por página
-                                ResultSet rs = pstmt.executeQuery();
-
-                                // Iteração sobre os resultados da consulta
-                                while (rs.next()) { 
-                                    int id = rs.getInt("id");
-                                    String nm_usuario = rs.getString("nm_usuario");
-                                    String patente = rs.getString("nm_patente");
-                                    String data_hora_entrada = rs.getString("data_hora_entrada");
-                                    String data_hora_saida = rs.getString("data_hora_saida");
-                                    String tipo_escala = rs.getString("tipo_escala");
-                                    String corte_cabelo_conformidade = rs.getString("corte_cabelo_conformidade");
-                                    String identificacao_militar_conformidade = rs.getString("identificacao_militar_conformidade");
-                                    String data_remocao = rs.getString("data_remocao");
-                                %>
-                                <tr>
-                                    <!-- Exibindo informações de cada registro na tabela -->
-                                    <td><%= id %></td>
-                                    <td><%= nm_usuario %></td>
-                                    <td><%= patente %></td>
-                                    <td><%= data_hora_entrada %></td>
-                                    <td><%= data_hora_saida %></td>
-                                    <td><%= tipo_escala %></td>
-                                    <td><%= corte_cabelo_conformidade %></td>
-                                    <td><%= identificacao_militar_conformidade %></td>
-                                    <td><%= data_remocao %></td>
-                                </tr>
-                                <%  
-                                    }
-                                    rs.close();
-                                    pstmt.close();
-
-                                    // Consulta SQL para obter o número total de linhas (para cálculo da paginação)
-                                    PreparedStatement countStmt = conn.prepareStatement("SELECT FOUND_ROWS()");
-                                    ResultSet countRs = countStmt.executeQuery();
-                                    if (countRs.next()) {
-                                        int totalRegistros = countRs.getInt(1);
-                                        int totalPaginas = (int) Math.ceil((double) totalRegistros / resultadosPorPagina);
-                                %>
-                            </tbody>
-                        </table>
-
-                        <!-- Adicione os botões de paginação -->
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item <%= (paginaAtual == 1) ? "disabled" : "" %>"><a class="page-link" href="?pagina=<%= paginaAtual - 1 %>">Anterior</a></li>
-                                <% for (int i = 1; i <= totalPaginas; i++) { %>
-                            <li class="page-item <%= (paginaAtual == i) ? "active" : "" %>"><a class="page-link" href="?pagina=<%= i %>"><%= i %></a></li>
-                                <% } %>
-                            <li class="page-item <%= (paginaAtual == totalPaginas) ? "disabled" : "" %>"><a class="page-link" href="?pagina=<%= paginaAtual + 1 %>">Próximo</a></li>
-                        </ul>
-                        <%
-                            }
-                            countRs.close();
-                            countStmt.close();
-
-                            conn.close();
-                        } catch (Exception e) {
-                            out.println("Erro: " + e.getMessage());
-                            e.printStackTrace();
-                        }
-                        %>
-                    </div>
-                </div>
-
+    <div class="modal-dialog modal-lg"> 
+        <div class="modal-content">
+            <!-- Cabeçalho do Modal -->
+            <div class="modal-header">
+                <h5 class="modal-title">Histórico de Escala de Guarda</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close" id="closeModalButton"></button>
             </div>
+            <!-- Corpo do Modal -->
+            <div class="modal-body">
+                <!-- Tabela para exibir o histórico de escala de guarda -->
+                <div class="container">
+                    <h2>Tabela de Soldados</h2>
+                    <!-- Tabela de Soldados -->
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome do Soldado</th>
+                                <th>Patente</th>
+                                <th>Entrada</th>
+                                <th>Saída</th>
+                                <th>Tipo de Escala</th>
+                                <th>Corte de Cabelo</th>
+                                <th>Identificação Militar</th>
+                                <th>Data de Remoção</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%
+                        // Defina o número de resultados por página e a página atual
+                        int resultadosPorPagina = 5;
+                        int paginaAtual = (request.getParameter("pagina") != null) ? Integer.parseInt(request.getParameter("pagina")) : 1;
+
+                        try {
+                            // Conexão com o banco de dados
+                            Class.forName("com.mysql.cj.jdbc.Driver");
+                            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+
+                            // Consulta SQL para obter o histórico de escala de guarda, com limitação de resultados por página
+                            String query = "SELECT SQL_CALC_FOUND_ROWS h.*, u.nm_usuario, u.nm_patente FROM historico_escala_guarda h INNER JOIN usuario u ON h.id_usuario = u.id_usuario LIMIT ?, ?";
+                            PreparedStatement pstmt = conn.prepareStatement(query);
+                            pstmt.setInt(1, (paginaAtual - 1) * resultadosPorPagina); // Calcula o deslocamento
+                            pstmt.setInt(2, resultadosPorPagina); // Define o número de resultados por página
+                            ResultSet rs = pstmt.executeQuery();
+
+                            // Iteração sobre os resultados da consulta
+                            while (rs.next()) { 
+                                int id = rs.getInt("id");
+                                String nm_usuario = rs.getString("nm_usuario");
+                                String patente = rs.getString("nm_patente");
+                                String data_hora_entrada = rs.getString("data_hora_entrada");
+                                String data_hora_saida = rs.getString("data_hora_saida");
+                                String tipo_escala = rs.getString("tipo_escala");
+                                // Convertendo valores de 1 e 0 para "Sim" e "Não"
+                                String corte_cabelo_conformidade = rs.getInt("corte_cabelo_conformidade") == 1 ? "Sim" : "Não";
+                                String identificacao_militar_conformidade = rs.getInt("identificacao_militar_conformidade") == 1 ? "Sim" : "Não";
+                                String data_remocao = rs.getString("data_remocao");
+                            %>
+                            <tr>
+                                <!-- Exibindo informações de cada registro na tabela -->
+                                <td><%= id %></td>
+                                <td><%= nm_usuario %></td>
+                                <td><%= patente %></td>
+                                <td><%= data_hora_entrada %></td>
+                                <td><%= data_hora_saida %></td>
+                                <td><%= tipo_escala %></td>
+                                <td><%= corte_cabelo_conformidade %></td>
+                                <td><%= identificacao_militar_conformidade %></td>
+                                <td><%= data_remocao %></td>
+                            </tr>
+                            <%  
+                                }
+                                rs.close();
+                                pstmt.close();
+
+                                // Consulta SQL para obter o número total de linhas (para cálculo da paginação)
+                                PreparedStatement countStmt = conn.prepareStatement("SELECT FOUND_ROWS()");
+                                ResultSet countRs = countStmt.executeQuery();
+                                if (countRs.next()) {
+                                    int totalRegistros = countRs.getInt(1);
+                                    int totalPaginas = (int) Math.ceil((double) totalRegistros / resultadosPorPagina);
+                            %>
+                        </tbody>
+                    </table>
+
+                    <!-- Adicione os botões de paginação -->
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item <%= (paginaAtual == 1) ? "disabled" : "" %>"><a class="page-link" href="?pagina=<%= paginaAtual - 1 %>">Anterior</a></li>
+                            <% for (int i = 1; i <= totalPaginas; i++) { %>
+                        <li class="page-item <%= (paginaAtual == i) ? "active" : "" %>"><a class="page-link" href="?pagina=<%= i %>"><%= i %></a></li>
+                            <% } %>
+                        <li class="page-item <%= (paginaAtual == totalPaginas) ? "disabled" : "" %>"><a class="page-link" href="?pagina=<%= paginaAtual + 1 %>">Próximo</a></li>
+                    </ul>
+                    <%
+                        }
+                        countRs.close();
+                        countStmt.close();
+
+                        conn.close();
+                    } catch (Exception e) {
+                        out.println("Erro: " + e.getMessage());
+                        e.printStackTrace();
+                    }
+                    %>
+                </div>
+            </div>
+
         </div>
     </div>
+</div>
+
 
     <style>
         .modal-show {
