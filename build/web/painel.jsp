@@ -284,15 +284,14 @@
 
                         <!-- Campo de seleção para a patente -->
                         <div class="form-group">
-                            <label for="nm_patente"><strong>Patente</strong></label>
-                            <select id="nm_patente" aria-label="<Escolha a Patente" name="nm_patente" class="form-control form-control-lg form-select" disabled>
-                                <option selected disabled>Escolha a patente</option>
+                            <label for="patenteInput"><strong>Patente</strong></label>
+                            <input type="text" class="form-control" id="patenteInput" name="patenteInput" value="<%= nm_patente %>" disabled>
+                            <select id="nm_patente" aria-label="Escolha a Patente" name="nm_patente" class="form-control form-control-lg form-select" required value="<%= nm_patente %>" style="display: none;">
                                 <option value="Sentinela" <%= "Sentinela".equals(nomePatente) ? "selected" : "" %>>Sentinela</option>
                                 <option value="Comandante" <%= "Comandante".equals(nomePatente) ? "selected" : "" %>>Comandante</option>
                                 <option value="Cabo" <%= "Cabo".equals(nomePatente) ? "selected" : "" %>>Cabo</option>
                             </select>
                         </div>
-
                         <!-- Campo de entrada para o login -->
                         <div class="form-group">
                             <label for="loginInput"><strong>Login</strong></label>

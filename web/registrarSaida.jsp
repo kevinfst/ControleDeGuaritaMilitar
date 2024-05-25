@@ -1,6 +1,14 @@
 <%@ page import="java.sql.*, java.io.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Saída</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+</head>
+<body>
 <%
 // Recupere o ID da escala para a qual deseja registrar a saída
 int idEscala = Integer.parseInt(request.getParameter("idEscala"));
@@ -32,27 +40,48 @@ try {
                         updateStmt.setInt(2, idEscala);
                         updateStmt.executeUpdate();
 %>
+                        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
                         <script>
-                            alert("Saída registrada com sucesso.");
-                            window.location.href = document.referrer; // Volta para a página anterior
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Sucesso!',
+                                text:'Saída registrada com sucesso.',
+                                confirmButtonText: 'OK'
+                            }).then(function() {
+                                window.location.href = document.referrer; // Volta para a página anterior
+                            });
                         </script>
 <%
                     }
                 } else {
                     // Saída já registrada, mostre um alerta informando
 %>
+                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
                     <script>
-                        alert("Erro: Já há uma saída registrada para esta escala.");
-                        window.location.href = document.referrer; // Volta para a página anterior
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Erro',
+                            text: 'Já há uma saída registrada para esta escala.',
+                            confirmButtonText: 'OK'
+                        }).then(function() {
+                            window.location.href = document.referrer; // Volta para a página anterior
+                        });
                     </script>
 <%
                 }
             } else {
                 // Nenhum registro de entrada encontrado para esta escala
 %>
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
                 <script>
-                    alert("Erro: Nenhum registro de entrada encontrado para esta escala.");
-                    window.location.href = document.referrer; // Volta para a página anterior
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Erro',
+                        text: 'Nenhum registro de entrada encontrado para esta escala.',
+                        confirmButtonText: 'OK'
+                    }).then(function() {
+                        window.location.href = document.referrer; // Volta para a página anterior
+                    });
                 </script>
 <%
             }
@@ -65,14 +94,36 @@ try {
     } else {
         // O atributo idUsuario não está definido na sessão
 %>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
         <script>
-            alert("Erro: Usuário não autenticado.");
-            window.location.href = document.referrer; // Volta para a página anterior
+            Swal.fire({
+                icon: 'error',
+                title: 'Erro',
+                text: 'Usuário não autenticado.',
+                confirmButtonText: 'OK'
+            }).then(function() {
+                window.location.href = document.referrer; // Volta para a página anterior
+            });
         </script>
 <%
     }
 } catch (Exception e) {
     // Imprimir rastreamento de pilha em caso de exceção
     e.printStackTrace();
+%>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Erro',
+            text: 'Ocorreu um erro inesperado. Por favor, tente novamente.',
+            confirmButtonText: 'OK'
+        }).then(function() {
+            window.location.href = document.referrer; // Volta para a página anterior
+        });
+    </script>
+<%
 }
 %>
+</body>
+</html>

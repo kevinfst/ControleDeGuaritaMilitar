@@ -3,7 +3,15 @@
 <%@ page import= "java.math.BigInteger"%>
 <%@ page import= "java.security.MessageDigest"%>
 <%@ page import= "java.security.NoSuchAlgorithmException"%>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processar Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+</head>
+<body>
 <%
     // Obtendo parâmetros do formulário de login
     String email = request.getParameter("email");
@@ -53,9 +61,16 @@
         } else {
             // Falha no login. Exibindo mensagem e link para tentar novamente como um alerta
 %>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script>
-    alert("Login falhou. Verifique suas credenciais.");
-    window.location.href = 'index.jsp';
+    Swal.fire({
+        icon: 'error',
+        title: 'Login falhou',
+        text: 'Verifique suas credenciais.',
+        confirmButtonText: 'OK'
+    }).then(function() {
+        window.location.href = 'index.jsp';
+    });
 </script>
 <%
         }
@@ -67,9 +82,19 @@
     } catch (Exception e) {
         // Exibindo mensagem de erro
 %>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script>
-    alert("Erro: <%= e.getMessage() %>");
+    Swal.fire({
+        icon: 'error',
+        title: 'Erro',
+        text: '<%= e.getMessage() %>',
+        confirmButtonText: 'OK'
+    }).then(function() {
+        window.location.href = 'index.jsp';
+    });
 </script>
 <%
     }
 %>
+</body>
+</html>
