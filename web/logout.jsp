@@ -11,6 +11,5 @@
     <meta http-equiv="refresh" content="0;url=index.jsp">
 </head>
 <body>
-    <p>Você foi desconectado com sucesso. Aguarde enquanto você é redirecionado para a página de login.</p>
 </body>
 </html>

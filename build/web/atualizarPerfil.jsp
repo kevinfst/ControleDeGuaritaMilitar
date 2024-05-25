@@ -68,6 +68,5 @@
 <title>Atualização de Perfil</title>
 </head>
 <body>
-<h2>Perfil Atualizado com Sucesso!</h2>
 </body>
 </html>

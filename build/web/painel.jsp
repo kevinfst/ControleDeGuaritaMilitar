@@ -4,16 +4,16 @@
 <%@ page import="java.util.Date" %>
 
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
     <head>
         <title>Painel do Usuário</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-         <!-- SweetAlert2 CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-    <!-- SweetAlert2 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!-- SweetAlert2 CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+        <!-- SweetAlert2 JS -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         <style>.edit-icon {
                 color: blue;
@@ -143,16 +143,25 @@
                                     Observações
                                 </button>
                             </li>
-                            <% } %>
-
                             <!-- Separador -->
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
+
+                            <% } %>
+                            <li>
+                                <button type="button" class="dropdown-item btn btn-primary" data-toggle="modal" data-target="#historicoModal"  id="openModalButton">
+                                    Histórico
+                                </button>
+                            </li>
+                            <!-- Separador -->
                             <%
                         // Verifica se a patente do usuário é "Sentinela"
                         if ("Sentinela".equals(nomePatente)) {
                             %>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
                             <!-- Formulário para registrar entrada -->
                             <li>
                                 <form action="registrarEntrada.jsp" method="post">
@@ -275,7 +284,7 @@
 
                         <!-- Campo de seleção para a patente -->
                         <div class="form-group">
-                            <label for="patenteInput"><strong>Patente</strong></label>
+                            <label for="nm_patente"><strong>Patente</strong></label>
                             <select id="nm_patente" aria-label="<Escolha a Patente" name="nm_patente" class="form-control form-control-lg form-select" disabled>
                                 <option selected disabled>Escolha a patente</option>
                                 <option value="Sentinela" <%= "Sentinela".equals(nomePatente) ? "selected" : "" %>>Sentinela</option>
@@ -442,318 +451,498 @@
                 <!-- Rodapé do Modal -->
                 <div class="modal-footer">
                     <button class="btn btn-primary" type="submit">Registrar</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>   
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" >Fechar</button>   
                 </div>
             </form>
         </div>
     </div>
 
+    <!-- Modal para exibir o histórico de escala de guarda -->
+    <div class="modal" id="historicoModal" tabindex="-999" aria-modal="true" role="dialog" style="display: none;">
 
-<!-- Container principal para as escalas de guarda -->
-<div class="container card text-center mt-5">
-    <div class="card-header">
-        <h2 class="">Escalas de Guarda</h2>
-    </div>
-    <div class="card-body">
+        <div class="modal-dialog modal-lg"> 
+            <div class="modal-content">
+                <!-- Cabeçalho do Modal -->
+                <div class="modal-header">
+                    <h5 class="modal-title">Histórico de Escala de Guarda</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close" id="closeModalButton"></button>
+                </div>
+                <!-- Corpo do Modal -->
+                <div class="modal-body">
+                    <!-- Tabela para exibir o histórico de escala de guarda -->
+                    <div class="container">
+                        <h2>Tabela de Soldados</h2>
+                        <!-- Tabela de Soldados -->
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nome do Soldado</th>
+                                    <th>Patente</th>
+                                    <th>Entrada</th>
+                                    <th>Saída</th>
+                                    <th>Tipo de Escala</th>
+                                    <th>Corte de Cabelo</th>
+                                    <th>Identificação Militar</th>
+                                    <th>Data de Remoção</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%
+                            // Defina o número de resultados por página e a página atual
+                            int resultadosPorPagina = 5;
+                            int paginaAtual = (request.getParameter("pagina") != null) ? Integer.parseInt(request.getParameter("pagina")) : 1;
 
-        <% if ("Cabo".equals(nomePatente)) { %>
-        <!-- Mostra o botão apenas se a patente do parâmetro for "Cabo" -->
-        <button type="button" class="btn bg-success btn-lg btn-block text-light" data-bs-toggle="modal" data-bs-target="#addModal">
-            Adicionar novo
-        </button>
-        <% } %>
-        <br>
-        <br>
+                            try {
+                                // Conexão com o banco de dados
+                                Class.forName("com.mysql.cj.jdbc.Driver");
+                                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 
-        <!-- Add Modal -->
+                                // Consulta SQL para obter o histórico de escala de guarda, com limitação de resultados por página
+                                String query = "SELECT SQL_CALC_FOUND_ROWS h.*, u.nm_usuario, u.nm_patente FROM historico_escala_guarda h INNER JOIN usuario u ON h.id_usuario = u.id_usuario LIMIT ?, ?";
+                                PreparedStatement pstmt = conn.prepareStatement(query);
+                                pstmt.setInt(1, (paginaAtual - 1) * resultadosPorPagina); // Calcula o deslocamento
+                                pstmt.setInt(2, resultadosPorPagina); // Define o número de resultados por página
+                                ResultSet rs = pstmt.executeQuery();
 
-        <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="addModalLabel">Adicionar Nova Escala</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Formulário para adicionar nova escala -->
-                        <form method="post" action="addRecord.jsp" class="needs-validation" novalidate>
-                            <% try {
-                            // Conexão com o banco de dados
-                            Class.forName("com.mysql.cj.jdbc.Driver");
-                            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
-                            Statement stmt = conn.createStatement();
-                            String query = "SELECT * FROM usuario";
-                            ResultSet rs = stmt.executeQuery(query); %>
-                            <div class="mb-3">
-                                <label for="nome_soldado" class="form-label">Nome do Soldado</label>
-                                <select class="form-select" id="nome_soldado" name="id_usuario" required>
-                                    <option selected disabled value="">Escolha o soldado</option>
-                                    <% while (rs.next()) { 
-                                        String nm_usuario = rs.getString("nm_usuario");
-                                        String id_usuario = rs.getString("id_usuario");
-                                        String patente_usuario = rs.getString("nm_patente");
-                                        if (!"Cabo".equals(patente_usuario)) {%>
-                                    <option value="<%= id_usuario %>"><%= nm_usuario %></option>
-                                    <% }} %>
-                                </select>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="tipo_escala" class="form-label">Tipo de Escala</label>
-                                <select class="form-select" id="tipo_escala" name="tipo_escala" required>
-                                    <option selected disabled value="">Escolha a escala</option>
-                                    <option value="Cinza">Cinza</option>
-                                    <option value="Vermelha">Vermelha</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="corte_cabelo_conformidade" class="form-label">Corte de Cabelo</label>
-                                <select class="form-select" id="corte_cabelo_conformidade" name="corte_cabelo_conformidade" required>
-                                    <option selected disabled value="">Escolha a conformidade</option>
-                                    <option value="1">Conforme</option>
-                                    <option value="0">Não Conforme</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="identificacao_militar_conformidade" class="form-label">Identificação Militar</label>
-                                <select class="form-select" id="identificacao_militar_conformidade" name="identificacao_militar_conformidade" required>
-                                    <option selected disabled value="">Escolha a conformidade</option>
-                                    <option value="1">Conforme</option>
-                                    <option value="0">Não Conforme</option>
-                                </select>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary">Adicionar</button>
-                            <%
-                                        rs.close();
-                                        stmt.close();
-                                        conn.close();
-                                    } catch (Exception e) {
-                                        e.printStackTrace();
+                                // Iteração sobre os resultados da consulta
+                                while (rs.next()) { 
+                                    int id = rs.getInt("id");
+                                    String nm_usuario = rs.getString("nm_usuario");
+                                    String patente = rs.getString("nm_patente");
+                                    String data_hora_entrada = rs.getString("data_hora_entrada");
+                                    String data_hora_saida = rs.getString("data_hora_saida");
+                                    String tipo_escala = rs.getString("tipo_escala");
+                                    String corte_cabelo_conformidade = rs.getString("corte_cabelo_conformidade");
+                                    String identificacao_militar_conformidade = rs.getString("identificacao_militar_conformidade");
+                                    String data_remocao = rs.getString("data_remocao");
+                                %>
+                                <tr>
+                                    <!-- Exibindo informações de cada registro na tabela -->
+                                    <td><%= id %></td>
+                                    <td><%= nm_usuario %></td>
+                                    <td><%= patente %></td>
+                                    <td><%= data_hora_entrada %></td>
+                                    <td><%= data_hora_saida %></td>
+                                    <td><%= tipo_escala %></td>
+                                    <td><%= corte_cabelo_conformidade %></td>
+                                    <td><%= identificacao_militar_conformidade %></td>
+                                    <td><%= data_remocao %></td>
+                                </tr>
+                                <%  
                                     }
-                            %>
-                        </form>
+                                    rs.close();
+                                    pstmt.close();
+
+                                    // Consulta SQL para obter o número total de linhas (para cálculo da paginação)
+                                    PreparedStatement countStmt = conn.prepareStatement("SELECT FOUND_ROWS()");
+                                    ResultSet countRs = countStmt.executeQuery();
+                                    if (countRs.next()) {
+                                        int totalRegistros = countRs.getInt(1);
+                                        int totalPaginas = (int) Math.ceil((double) totalRegistros / resultadosPorPagina);
+                                %>
+                            </tbody>
+                        </table>
+
+                        <!-- Adicione os botões de paginação -->
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item <%= (paginaAtual == 1) ? "disabled" : "" %>"><a class="page-link" href="?pagina=<%= paginaAtual - 1 %>">Anterior</a></li>
+                                <% for (int i = 1; i <= totalPaginas; i++) { %>
+                            <li class="page-item <%= (paginaAtual == i) ? "active" : "" %>"><a class="page-link" href="?pagina=<%= i %>"><%= i %></a></li>
+                                <% } %>
+                            <li class="page-item <%= (paginaAtual == totalPaginas) ? "disabled" : "" %>"><a class="page-link" href="?pagina=<%= paginaAtual + 1 %>">Próximo</a></li>
+                        </ul>
+                        <%
+                            }
+                            countRs.close();
+                            countStmt.close();
+
+                            conn.close();
+                        } catch (Exception e) {
+                            out.println("Erro: " + e.getMessage());
+                            e.printStackTrace();
+                        }
+                        %>
                     </div>
                 </div>
+
             </div>
         </div>
-        <!-- Adiciona filtro de pesquisa por data -->
-        <form method="get" action="painel.jsp" class="mb-3">
-            <div class="row">
-                <div class="col-md-6">
-                    <label for="data_inicio" class="form-label">Data de Início</label>
-                    <input type="date" class="form-control" id="data_inicio" name="data_inicio">
-                </div>
-                <div class="col-md-6">
-                    <label for="data_fim" class="form-label">Data de Fim</label>
-                    <input type="date" class="form-control" id="data_fim" name="data_fim">
+    </div>
+
+    <style>
+        .modal-show {
+            display: block !important;
+        }
+        .modal-open {
+            overflow: hidden;
+        }
+        /*
+        .modal-backdrop{
+            background-color: transparent;
+        }*/
+
+
+    </style>
+    <script>
+        document.getElementById("closeModalButton").addEventListener("click", function () {
+            window.location.href = "painel.jsp";
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            // Selecionando os botões
+            const openModalButton = document.getElementById('openModalButton');
+            const closeModalButton = document.getElementById('closeModalButton');
+
+            // Selecionando o modal e seu conteúdo
+            const historicoModal = document.getElementById('historicoModal');
+            const modalContent = historicoModal.querySelector('.modal-content');
+
+            // Verificando se o modal estava aberto antes
+            const isModalOpen = localStorage.getItem('modalOpen');
+
+            // Se o modal estava aberto, exibi-lo
+            if (isModalOpen === 'true') {
+                historicoModal.classList.add('modal-show');
+            }
+
+            // Adicionando evento de clique para abrir o modal
+            openModalButton.addEventListener('click', function () {
+                historicoModal.classList.add('modal-show');
+                // Removendo a classe de transparência para permitir cliques
+                historicoModal.classList.remove('modal-transparent');
+                // Salvando o estado do modal
+                localStorage.setItem('modalOpen', 'true');
+            });
+
+            // Adicionando evento de clique para fechar o conteúdo do modal
+            closeModalButton.addEventListener('click', function () {
+                modalContent.style.display = 'none';
+                // Adicionando a classe de transparência para evitar cliques
+                historicoModal.classList.add('modal-transparent');
+                // Salvando o estado do modal
+                localStorage.setItem('modalOpen', 'false');
+            });
+        });
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+    <!-- Container principal para as escalas de guarda -->
+    <div class="container card text-center mt-5">
+        <div class="card-header">
+            <h2 class="">Escalas de Guarda</h2>
+        </div>
+        <div class="card-body">
+
+            <% if ("Cabo".equals(nomePatente)) { %>
+            <!-- Mostra o botão apenas se a patente do parâmetro for "Cabo" -->
+            <button type="button" class="btn bg-success btn-lg btn-block text-light" data-bs-toggle="modal" data-bs-target="#addModal">
+                Adicionar novo
+            </button>
+            <% } %>
+            <br>
+            <br>
+
+            <!-- Add Modal -->
+
+            <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="addModalLabel">Adicionar Nova Escala</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Formulário para adicionar nova escala -->
+                            <form method="post" action="addRecord.jsp" class="needs-validation" novalidate>
+                                <% try {
+                                // Conexão com o banco de dados
+                                Class.forName("com.mysql.cj.jdbc.Driver");
+                                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+                                Statement stmt = conn.createStatement();
+                                String query = "SELECT * FROM usuario";
+                                ResultSet rs = stmt.executeQuery(query); %>
+                                <div class="mb-3">
+                                    <label for="nome_soldado" class="form-label">Nome do Soldado</label>
+                                    <select class="form-select" id="nome_soldado" name="id_usuario" required>
+                                        <option selected disabled value="">Escolha o soldado</option>
+                                        <% while (rs.next()) { 
+                                            String nm_usuario = rs.getString("nm_usuario");
+                                            String id_usuario = rs.getString("id_usuario");
+                                            String patente_usuario = rs.getString("nm_patente");
+                                            if (!"Cabo".equals(patente_usuario)) {%>
+                                        <option value="<%= id_usuario %>"><%= nm_usuario %></option>
+                                        <% }} %>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="tipo_escala" class="form-label">Tipo de Escala</label>
+                                    <select class="form-select" id="tipo_escala" name="tipo_escala" required>
+                                        <option selected disabled value="">Escolha a escala</option>
+                                        <option value="Cinza">Cinza</option>
+                                        <option value="Vermelha">Vermelha</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="corte_cabelo_conformidade" class="form-label">Corte de Cabelo</label>
+                                    <select class="form-select" id="corte_cabelo_conformidade" name="corte_cabelo_conformidade" required>
+                                        <option selected disabled value="">Escolha a conformidade</option>
+                                        <option value="1">Conforme</option>
+                                        <option value="0">Não Conforme</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="identificacao_militar_conformidade" class="form-label">Identificação Militar</label>
+                                    <select class="form-select" id="identificacao_militar_conformidade" name="identificacao_militar_conformidade" required>
+                                        <option selected disabled value="">Escolha a conformidade</option>
+                                        <option value="1">Conforme</option>
+                                        <option value="0">Não Conforme</option>
+                                    </select>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Adicionar</button>
+                                <%
+                                            rs.close();
+                                            stmt.close();
+                                            conn.close();
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
+                                %>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row mt-3">
-                <div class="col-md-6">
-                    <button type="submit" class="btn btn-success">Filtrar</button>
+            <!-- Adiciona filtro de pesquisa por data -->
+            <form method="get" action="painel.jsp" class="mb-3">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="data_inicio" class="form-label">Data de Início</label>
+                        <input type="date" class="form-control" id="data_inicio" name="data_inicio">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="data_fim" class="form-label">Data de Fim</label>
+                        <input type="date" class="form-control" id="data_fim" name="data_fim">
+                    </div>
                 </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-success">Filtrar</button>
+                    </div>
 
-                <div class="col-md-6">
-                    <a href="painel.jsp" class="btn btn-primary">Limpar filtro</a>
+                    <div class="col-md-6">
+                        <a href="painel.jsp" class="btn btn-primary">Limpar filtro</a>
+                    </div>
+
                 </div>
+            </form>
 
-            </div>
-        </form>
+            <!-- Tabela para Escala de Guarda -->
+            <table id="soldadoTable" class="table table-striped text-center">
+                <thead>
+                    <tr>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Nome do Soldado</th>
+                        <th class="text-center">Patente</th>
+                        <th class="text-center">Entrada</th>
+                        <th class="text-center">Saída</th>
+                        <th class="text-center">Tipo de Escala</th>
+                        <th class="text-center">Corte de Cabelo</th>
+                        <th class="text-center">Identificação Militar</th>
+                        <th class="text-center">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% 
+                    // Obtém o ID do usuário logado
+                    int loggedInUserId = (int) session.getAttribute("idUsuario");
+                    String dataInicio = request.getParameter("data_inicio");
+                    String dataFim = request.getParameter("data_fim");
+                    try {
+                        // Conecta-se ao banco de dados
+                        Class.forName("com.mysql.cj.jdbc.Driver");
+                        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+                        Statement stmt = conn.createStatement();
+                        // Consulta para obter dados da escala de guarda, usuários e registros de entrada/saída, filtrados por data se as datas forem fornecidas
+                        String query = "SELECT * FROM escala_guarda INNER JOIN usuario ON escala_guarda.id_usuario = usuario.id_usuario LEFT JOIN registro_entrada_saida ON escala_guarda.id_usuario = registro_entrada_saida.id_usuario";
+                        if (dataInicio != null && dataFim != null) {
+                            query += " WHERE data_hora_entrada BETWEEN '" + dataInicio + "' AND '" + dataFim + "'";
+                        }
+                        ResultSet rs = stmt.executeQuery(query);
+                        while (rs.next()) {
+                            // Extrai dados da consulta
+                            int idEscala = rs.getInt("id");
+                            String nomeSoldado = rs.getString("nm_usuario");
+                            String patente = rs.getString("nm_patente");
+                            String diaHoraEntrada = rs.getString("data_hora_entrada");
+                            String diaHoraSaida = rs.getString("data_hora_saida");
+                            String tipoEscala = rs.getString("tipo_escala");
+                            boolean corteCabeloConforme = rs.getBoolean("corte_cabelo_conformidade");
+                            boolean identificacaoConforme = rs.getBoolean("identificacao_militar_conformidade");
 
-        <!-- Tabela para Escala de Guarda -->
-        <table id="soldadoTable" class="table table-striped text-center">
-            <thead>
-                <tr>
-                    <th class="text-center">ID</th>
-                    <th class="text-center">Nome do Soldado</th>
-                    <th class="text-center">Patente</th>
-                    <th class="text-center">Entrada</th>
-                    <th class="text-center">Saída</th>
-                    <th class="text-center">Tipo de Escala</th>
-                    <th class="text-center">Corte de Cabelo</th>
-                    <th class="text-center">Identificação Militar</th>
-                    <th class="text-center">Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% 
-                // Obtém o ID do usuário logado
-                int loggedInUserId = (int) session.getAttribute("idUsuario");
-                String dataInicio = request.getParameter("data_inicio");
-                String dataFim = request.getParameter("data_fim");
-                try {
-                    // Conecta-se ao banco de dados
-                    Class.forName("com.mysql.cj.jdbc.Driver");
-                    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/soldiers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
-                    Statement stmt = conn.createStatement();
-                    // Consulta para obter dados da escala de guarda, usuários e registros de entrada/saída, filtrados por data se as datas forem fornecidas
-                    String query = "SELECT * FROM escala_guarda INNER JOIN usuario ON escala_guarda.id_usuario = usuario.id_usuario LEFT JOIN registro_entrada_saida ON escala_guarda.id_usuario = registro_entrada_saida.id_usuario";
-                    if (dataInicio != null && dataFim != null) {
-                        query += " WHERE data_hora_entrada BETWEEN '" + dataInicio + "' AND '" + dataFim + "'";
-                    }
-                    ResultSet rs = stmt.executeQuery(query);
-                    while (rs.next()) {
-                        // Extrai dados da consulta
-                        int idEscala = rs.getInt("id");
-                        String nomeSoldado = rs.getString("nm_usuario");
-                        String patente = rs.getString("nm_patente");
-                        String diaHoraEntrada = rs.getString("data_hora_entrada");
-                        String diaHoraSaida = rs.getString("data_hora_saida");
-                        String tipoEscala = rs.getString("tipo_escala");
-                        boolean corteCabeloConforme = rs.getBoolean("corte_cabelo_conformidade");
-                        boolean identificacaoConforme = rs.getBoolean("identificacao_militar_conformidade");
+                            // Verifica se diaHoraEntrada e diaHoraSaida são nulos e exibe "Não registrado" se for o caso
+                            diaHoraEntrada = (diaHoraEntrada != null) ? diaHoraEntrada : "Não registrado";
+                            diaHoraSaida = (diaHoraSaida != null) ? diaHoraSaida : "Não registrado";
+                    %>
 
-                        // Verifica se diaHoraEntrada e diaHoraSaida são nulos e exibe "Não registrado" se for o caso
-                        diaHoraEntrada = (diaHoraEntrada != null) ? diaHoraEntrada : "Não registrado";
-                        diaHoraSaida = (diaHoraSaida != null) ? diaHoraSaida : "Não registrado";
-                %>
+                    <tr>
+                        <td><%= idEscala %></td>
+                        <td><%= nomeSoldado %></td>
+                        <td><%= patente %></td>
+                        <td><%= diaHoraEntrada %></td>
+                        <td><%= diaHoraSaida %></td>
+                        <% if (tipoEscala.equals("Vermelha")) { %>
+                        <td class="text-danger"><%= tipoEscala %></td>
+                        <% } else { %>
+                        <td class="text-body-secondary"><%= tipoEscala %></td>
+                        <% } %>
+                        <td><%= corteCabeloConforme ? "Conforme" : "Não Conforme" %></td>
+                        <td><%= identificacaoConforme ? "Conforme" : "Não Conforme" %></td>
+                        <td>
+                            <% if (loggedInUserId != rs.getInt("id_usuario")) { %>
 
-                <tr>
-                    <td><%= idEscala %></td>
-                    <td><%= nomeSoldado %></td>
-                    <td><%= patente %></td>
-                    <td><%= diaHoraEntrada %></td>
-                    <td><%= diaHoraSaida %></td>
-                    <% if (tipoEscala.equals("Vermelha")) { %>
-                    <td class="text-danger"><%= tipoEscala %></td>
-                    <% } else { %>
-                    <td class="text-body-secondary"><%= tipoEscala %></td>
+
+                            <%-- Verifica se a patente é igual a "Cabo" antes de exibir o botão "Remover" --%>
+                            <% if ("Cabo".equals(nomePatente)) { %>
+                            <!-- Formulário para remover registro -->
+                            <form action="deleteRecord.jsp" method="post">
+                                <input type="hidden" name="idEscala" value="<%= rs.getInt("id_usuario") %>">
+                                <button class="btn btn-danger" type="submit" value="<%= rs.getInt("id_usuario") %>">Remover</button>
+                            </form>
+                            <% } %>
+                            <% } %>
+                        </td>
+                    </tr>
+
                     <% } %>
-                    <td><%= corteCabeloConforme ? "Conforme" : "Não Conforme" %></td>
-                    <td><%= identificacaoConforme ? "Conforme" : "Não Conforme" %></td>
-                    <td>
-                        <% if (loggedInUserId != rs.getInt("id_usuario")) { %>
+                    <%
+                        rs.close();
+                        stmt.close();
+                        conn.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    %>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 
-                        <%-- Verifica se a patente é igual a "Cabo" antes de exibir o botão "Remover" --%>
-                        <% if ("Cabo".equals(nomePatente)) { %>
-                        <!-- Formulário para remover registro -->
-                        <form action="deleteRecord.jsp" method="post">
-                            <input type="hidden" name="idEscala" value="<%= rs.getInt("id_usuario") %>">
-                            <button class="btn btn-danger" type="submit" value="<%= rs.getInt("id_usuario") %>">Remover</button>
-                        </form>
-                        <% } %>
-                        <% } %>
-                    </td>
-                </tr>
 
-                <% } %>
-                <%
-                    rs.close();
-                    stmt.close();
-                    conn.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                %>
-            </tbody>
-        </table>
+    <%
+    } else {
+    %>
+    <script>
+
+
+        // Exibe um alerta
+        alert("Você não está autenticado. Por favor, faça login.");
+        // Redireciona para index.jsp
+        window.location.href = "index.jsp";
+
+    </script>
+    <%
+    }
+    %>
+
+    <div class="card-footer text-body-secondary">
     </div>
 </div>
 
 
 
-            <%
-            } else {
-            %>
-            <script>
-
-    
-        // Exibe um alerta
-        alert("Você não está autenticado. Por favor, faça login.");
-        // Redireciona para index.jsp
-        window.location.href = "index.jsp";
-   
-            </script>
-            <%
-            }
-            %>
-           
-            <div class="card-footer text-body-secondary">
-            </div>
-        </div>
 
 
-
-
-
-        <script>
-            // Função para confirmar exclusão de registro
-            function deleteRecord(recordId) {
-                if (confirm("Tem certeza de que deseja excluir este registro?")) {
-                    $.ajax({
-                        type: "POST",
-                        url: "deleteRecord.jsp",
-                        data: {recordId: recordId},
-                        success: function (data) {
-                            // Trate a resposta (por exemplo, mostre uma mensagem de sucesso ou atualize a página)
-                            // Você também pode usar JavaScript para ocultar o modal após uma exclusão bem-sucedida.
-                            location.reload(); // Atualiza a página
-                        }
-                    });
+<script>
+    // Função para confirmar exclusão de registro
+    function deleteRecord(recordId) {
+        if (confirm("Tem certeza de que deseja excluir este registro?")) {
+            $.ajax({
+                type: "POST",
+                url: "deleteRecord.jsp",
+                data: {recordId: recordId},
+                success: function (data) {
+                    // Trate a resposta (por exemplo, mostre uma mensagem de sucesso ou atualize a página)
+                    // Você também pode usar JavaScript para ocultar o modal após uma exclusão bem-sucedida.
+                    location.reload(); // Atualiza a página
                 }
-            }
-        </script>
-
-        <script>
-            // Função para alternar entre texto e senha
-            function togglePasswordVisibility() {
-                var passwordInput = document.getElementById("senhaInput");
-                var showPasswordBtn = document.getElementById("mostrarSenhaBtn");
-
-                if (passwordInput.type === "password") {
-                    passwordInput.type = "text";
-                    showPasswordBtn.textContent = "Ocultar";
-                } else {
-                    passwordInput.type = "password";
-                    showPasswordBtn.textContent = "Mostrar";
-                }
-            }
-
-            // Adiciona um ouvinte de evento ao botão
-            document.getElementById("mostrarSenhaBtn").addEventListener("click", togglePasswordVisibility);
-        </script>
-
-        <script>
-            (() => {
-                'use strict';
-
-                const forms = document.querySelectorAll('.needs-validation');
-
-                Array.from(forms).forEach(form => {
-                    form.addEventListener('submit', event => {
-                        if (!form.checkValidity()) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            })();
-        </script>
-
-        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-        <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
-        <script src="https://cdn.datatables.net/plug-ins/1.10.25/i18n/Portuguese-Brasil.json"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
-        <script>
-            // Inicializa o DataTable
-            $(document).ready(function () {
-                $('#soldadoTable').DataTable({
-                    "language": {
-                        "url": "//cdn.datatables.net/plug-ins/1.10.25/i18n/Portuguese-Brasil.json"
-                    },
-                    "responsive": true
-                });
             });
-        </script>
+        }
+    }
+</script>
+
+<script>
+    // Função para alternar entre texto e senha
+    function togglePasswordVisibility() {
+        var passwordInput = document.getElementById("senhaInput");
+        var showPasswordBtn = document.getElementById("mostrarSenhaBtn");
+
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            showPasswordBtn.textContent = "Ocultar";
+        } else {
+            passwordInput.type = "password";
+            showPasswordBtn.textContent = "Mostrar";
+        }
+    }
+
+    // Adiciona um ouvinte de evento ao botão
+    document.getElementById("mostrarSenhaBtn").addEventListener("click", togglePasswordVisibility);
+</script>
+
+<script>
+    (() => {
+        'use strict';
+
+        const forms = document.querySelectorAll('.needs-validation');
+
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+
+                form.classList.add('was-validated');
+            }, false);
+        });
+    })();
+</script>
+
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.10.25/i18n/Portuguese-Brasil.json"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<script>
+    // Inicialize o DataTable com a tradução para português brasileiro
+    $(document).ready(function () {
+        $('#soldadoTable').DataTable({
+            "responsive": true,
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Portuguese-Brasil.json"
+            }
+        });
+    });
+
+</script>
+
+
 </body>
 </html>
 
